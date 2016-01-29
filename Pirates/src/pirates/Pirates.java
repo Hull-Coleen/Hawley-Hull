@@ -12,14 +12,23 @@ import byui.cit260.pirates.model.Player;
  * @author Coleen
  */
 public class Pirates {
+    
+      public static void testPlayerClass()
+      {
+         Player PlayerOne = new Player();
+        Player PlayerTwo = new Player("Ashley", 4.5);
+        
+        PlayerOne.setName("Katelynn");
+        PlayerOne.setBestTime(5.6);
+        
+        System.out.println(PlayerOne.toString());
+        System.out.println(PlayerTwo.toString());
+      }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-         Player playerOne = new Player();
-         //playerOne.setName("Coleen");
-         //String
-         
+      testPlayerClass();
     }
+}
