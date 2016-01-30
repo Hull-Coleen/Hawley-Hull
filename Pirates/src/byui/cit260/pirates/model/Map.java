@@ -1,0 +1,71 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package byui.cit260.pirates.model;
+
+/**
+ *
+ * @author Thomas
+ */
+public class Map {
+    int col;
+    int row;
+
+    public Map(int col, int row) {
+        this.col = col;
+        this.row = row;
+    }
+
+    public Map() {
+    }
+    
+    public int getCol() {
+        return col;
+    }
+
+    public void setCol(int col) {
+        this.col = col;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 53 * hash + this.col;
+        hash = 53 * hash + this.row;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Map other = (Map) obj;
+        if (this.col != other.col) {
+            return false;
+        }
+        if (this.row != other.row) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Map{" + "col=" + col + ", row=" + row + '}';
+    }
+    
+}
