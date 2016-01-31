@@ -13,11 +13,13 @@ import java.util.Objects;
  */
 public class Avatar {
     boolean pirate;
-    Location coord;
+    Location coord = new Location();
     String name;
     public Avatar() {
-    }
-
+    
+    coord.setRow(3);
+    coord.setCol(5);
+            }
     public Avatar(boolean pirate, Location coord, String name) {
         this.pirate = pirate;
         this.coord = coord;
