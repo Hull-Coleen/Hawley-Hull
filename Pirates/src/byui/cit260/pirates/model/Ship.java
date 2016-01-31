@@ -113,3 +113,33 @@ public class Ship {
     }
     
 }
+ class SmallShip extends Ship{
+     final int SIZE = 3;
+     final int CANNONS = 1;
+     final int CREW = 3;
+     final int SPEED = 9;
+
+    public SmallShip() {
+    }
+     
+} 
+class MediumShip extends Ship{
+    final int SIZE = 6;
+    final int CANNONS = 3;
+    final int CREW = 6;
+    final int SPEED = 6;
+
+    public MediumShip() {
+    }
+}
+
+    class LargeShip extends Ship{
+        final int SIZE = 9;
+        final int CANNONS = 6;
+        final int CREW = 9;
+        final int SPEED = 3;
+
+    public LargeShip() {
+    }
+        
+    }
