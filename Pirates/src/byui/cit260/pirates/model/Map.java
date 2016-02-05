@@ -5,13 +5,15 @@
  */
 package byui.cit260.pirates.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Thomas
  */
-public class Map {
-    int col;
-    int row;
+public class Map implements Serializable{
+    private int col;
+    private int row;
 
     public Map(int col, int row) {
         this.col = col;

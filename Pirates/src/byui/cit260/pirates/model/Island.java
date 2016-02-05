@@ -5,15 +5,17 @@
  */
 package byui.cit260.pirates.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Thomas
  */
-public class Island {
-    boolean reef;
-    boolean natives;
-    boolean friendlyNatives;
-    int numFood;
+public class Island implements Serializable{
+   private boolean reef;
+    private boolean natives;
+    private boolean friendlyNatives;
+    private int numFood;
 
     public Island(boolean reef, boolean natives, boolean friendlyNatives, int numFood) {
         this.reef = reef;

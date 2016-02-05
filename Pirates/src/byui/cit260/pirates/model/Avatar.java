@@ -5,16 +5,17 @@
  */
 package byui.cit260.pirates.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 //import byui.cit260.pirates.model.Location;
 /**
  *
  * @author Thomas
  */
-public class Avatar {
-    boolean pirate;
-    Location coord = new Location();
-    String name;
+public class Avatar implements Serializable{
+   private boolean pirate;
+   private Location coord = new Location();
+    private String name;
     public Avatar() {
     
     coord.setRow(3);

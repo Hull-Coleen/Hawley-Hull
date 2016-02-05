@@ -5,14 +5,16 @@
  */
 package byui.cit260.pirates.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Coleen
  */
-public class Port {
-    int numFood;
-    int numAmmo;
-    boolean friendlyNatives;
+public class Port implements Serializable{
+    private int numFood;
+    private int numAmmo;
+    private boolean friendlyNatives;
 
     public Port(int numFood, int numAmmo, boolean friendlyNatives) {
         this.numFood = numFood;

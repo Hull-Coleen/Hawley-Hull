@@ -5,18 +5,19 @@
  */
 package byui.cit260.pirates.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Coleen
  */
-public class Ship {
-    String type;
-    int size;
-    int speed;
-    int cannons;
-    int crew;
+public class Ship implements Serializable{
+    private String type;
+    private int size;
+    private int speed;
+    private int cannons;
+    private int crew;
 
     public Ship(String type, int size, int speed, int cannons, int crew) {
         this.type = type;

@@ -5,17 +5,18 @@
  */
 package byui.cit260.pirates.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Coleen
  */
-public class Supplies {
-    int numFood;
-    int numAmmo;
-    int numRum;
-    String suppleType;
+public class Supplies implements Serializable{
+    private int numFood;
+    private int numAmmo;
+    private int numRum;
+    private String suppleType;
 
     public Supplies() {
     }

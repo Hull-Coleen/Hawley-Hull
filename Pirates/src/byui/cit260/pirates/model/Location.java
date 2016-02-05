@@ -5,13 +5,15 @@
  */
 package byui.cit260.pirates.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Thomas
  */
-public class Location {
-    int row;
-    int col;
+public class Location implements Serializable{
+    private int row;
+    private int col;
 
     public Location(int row, int col) {
         this.row = row;

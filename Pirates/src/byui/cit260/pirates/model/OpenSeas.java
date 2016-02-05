@@ -5,13 +5,15 @@
  */
 package byui.cit260.pirates.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Coleen
  */
-public class OpenSeas {
-    boolean storm;
-    boolean opposition;
+public class OpenSeas implements Serializable{
+    private boolean storm;
+    private boolean opposition;
 
     public OpenSeas(boolean storm, boolean opposition) {
         this.storm = storm;
