@@ -10,7 +10,7 @@ import byui.cit260.pirates.model.Player;
 import byui.cit260.pirates.model.Port;
 import byui.cit260.pirates.model.Supplies;
 import byui.cit260.pirates.model.Avatar;
-import byui.cit260.pirates.model.ControlSupplies;
+import byui.cit260.pirates.control.ControlSupplies;
 import byui.cit260.pirates.model.Location;
 import byui.cit260.pirates.model.OpenSeas;
 import byui.cit260.pirates.model.Ship;
