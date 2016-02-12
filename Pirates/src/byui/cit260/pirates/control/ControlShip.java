@@ -10,7 +10,7 @@ package byui.cit260.pirates.control;
  * @author Coleen
  */
 public class ControlShip {
-    public int daysOfFood(int numFoodCrate, int numCrew)
+    public float daysOfFood(int numFoodCrate, int numCrew)
     {
         if (numFoodCrate < 0 || numCrew <= 0)
               return -1;
