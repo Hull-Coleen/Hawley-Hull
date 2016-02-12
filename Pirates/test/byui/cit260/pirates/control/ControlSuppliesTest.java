@@ -49,10 +49,10 @@ public class ControlSuppliesTest {
         result = instance.storage(numFoodCrate, crateFoodSize, numAmmoCrate, crateAmmoSize, numRummCrate, crateRummSize);
         assertEquals(expResult, result);
          /*******************************************
-         *  test 4
+         *  test 3
          */
        // System.out.println("storage test");
-        System.out.println("Test case # 4");
+        System.out.println("Test case # 3");
         numFoodCrate = 11;
         crateFoodSize = 0;
         numAmmoCrate = 11;
@@ -63,10 +63,10 @@ public class ControlSuppliesTest {
         result = instance.storage(numFoodCrate, crateFoodSize, numAmmoCrate, crateAmmoSize, numRummCrate, crateRummSize);
         assertEquals(expResult, result);
         /*******************************************
-         *  test 5
+         *  test 4
          */
        // System.out.println("storage test");
-        System.out.println("Test case # 5");
+        System.out.println("Test case # 4");
         numFoodCrate = 11;
         crateFoodSize = 4;
         numAmmoCrate = 11;
@@ -78,10 +78,10 @@ public class ControlSuppliesTest {
         assertEquals(expResult, result);
         
         /*******************************************
-         *  test 6
+         *  test 5
          */
        // System.out.println("storage test");
-        System.out.println("Test case # 6");
+        System.out.println("Test case # 5");
         numFoodCrate = 34;
         crateFoodSize = 1;
         numAmmoCrate = 34;
@@ -93,10 +93,10 @@ public class ControlSuppliesTest {
         assertEquals(expResult, result);
         
           /*******************************************
-         *  test 7
+         *  test 6
          */
        // System.out.println("storage test");
-        System.out.println("Test case # 7");
+        System.out.println("Test case # 6");
         numFoodCrate = 17;
         crateFoodSize = 2;
         numAmmoCrate = 17;
@@ -108,10 +108,10 @@ public class ControlSuppliesTest {
         assertEquals(expResult, result);       
         
          /*******************************************
-         *  test 8
+         *  test 7
          */
        // System.out.println("storage test");
-        System.out.println("Test case # 8");
+        System.out.println("Test case # 7");
         numFoodCrate = 12;
         crateFoodSize = 3;
         numAmmoCrate = 12;
