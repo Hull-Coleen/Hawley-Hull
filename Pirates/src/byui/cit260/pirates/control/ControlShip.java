@@ -10,14 +10,14 @@ package byui.cit260.pirates.control;
  * @author Coleen
  */
 public class ControlShip {
-    public float daysOfFood(int numFoodCrate, int numCrew)
+    public double daysOfFood(int numFoodCrate, int numCrew)
     {
         if (numFoodCrate < 0 || numCrew <= 0)
               return -1;
         if (numFoodCrate >= 50 || numCrew >= 9)
               return -1;
-        int numOfMeals = numFoodCrate * 9;
-        int daysOfFood = (numOfMeals / numCrew) / 3;
+        double numOfMeals = numFoodCrate * 9;
+        double daysOfFood = (numOfMeals / numCrew) / 3;
         return daysOfFood;
     }
 
