@@ -5,11 +5,13 @@
  */
 package byui.cit260.pirates.control;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Coleen
  */
-public class ControlShip {
+public class ControlShip implements Serializable{
     public double daysOfFood(int numFoodCrate, int numCrew)
     {
         if (numFoodCrate < 0 || numCrew <= 0)
