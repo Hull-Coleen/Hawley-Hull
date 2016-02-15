@@ -123,5 +123,21 @@ public class ControlShipTest {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     } */
+
+  
+
+    /**
+     * Test of checkAmmo method, of class ControlShip.
+     */
+    /*@Test
+    public void testCheckAmmo() {
+        System.out.println("checkAmmo");
+        ControlShip instance = new ControlShip();
+        int expResult = 0;
+        int result = instance.checkAmmo();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype."); 
+     */
     
 }
