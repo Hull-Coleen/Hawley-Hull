@@ -112,32 +112,93 @@ public class ControlShipTest {
     }
 
   
-  /*  @Test
-    
-    public void testCheckAmmo() {
-        System.out.println("checkAmmo");
-        ControlShip instance = new ControlShip();
-        int expResult = 0;
-        int result = instance.checkAmmo();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    } */
-
-  
 
     /**
      * Test of checkAmmo method, of class ControlShip.
      */
-    /*@Test
+    @Test
     public void testCheckAmmo() {
+        /*
+           test 1
+        */
         System.out.println("checkAmmo");
+        int numAmmoCrate = 3;
+        int numCannon = 3;
         ControlShip instance = new ControlShip();
-        int expResult = 0;
-        int result = instance.checkAmmo();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype."); 
-     */
-    
+        double expResult = 9.0;
+        double result = instance.checkAmmo(numAmmoCrate, numCannon);
+        assertEquals(expResult, result, 0.0);
+        /*
+           test 2
+        */
+        System.out.println("checkAmmo");
+        System.out.println("test2");
+        numAmmoCrate = 2;
+        numCannon = 6;
+        expResult = 3.0;
+        result = instance.checkAmmo(numAmmoCrate, numCannon);
+        assertEquals(expResult, result, 0.0);
+        /*
+           test 3
+        */
+        System.out.println("checkAmmo");
+        System.out.println("test3");
+        numAmmoCrate = 0;
+        numCannon = 3;
+        expResult = 0.0;
+        result = instance.checkAmmo(numAmmoCrate, numCannon);
+        assertEquals(expResult, result, 0.0);
+        /*
+           test 4
+        */
+        System.out.println("checkAmmo");
+        System.out.println("test4");
+        numAmmoCrate = 3;
+        numCannon = -1;
+        expResult = -1.0;
+        result = instance.checkAmmo(numAmmoCrate, numCannon);
+        assertEquals(expResult, result, 0.0);
+        /*
+           test 5
+        */
+        System.out.println("checkAmmo");
+        System.out.println("test5");
+        numAmmoCrate = -1;
+        numCannon = 3;
+        expResult = -1.0;
+        result = instance.checkAmmo(numAmmoCrate, numCannon);
+        assertEquals(expResult, result, 0.0);
+        /*
+           test 6
+        */
+        System.out.println("checkAmmo");
+        System.out.println("test6");
+        numAmmoCrate = 5;
+        numCannon = 0;
+        expResult = -1.0;
+        result = instance.checkAmmo(numAmmoCrate, numCannon);
+        assertEquals(expResult, result, 0.0);
+        /*
+           test 7
+        */
+        System.out.println("checkAmmo");
+        System.out.println("test7");
+        numAmmoCrate = 50;
+        numCannon = 3;
+        expResult = -1.0;
+        result = instance.checkAmmo(numAmmoCrate, numCannon);
+        assertEquals(expResult, result, 0.0);
+        /*
+           test 8
+        */
+        System.out.println("checkAmmo");
+        System.out.println("test8");
+        numAmmoCrate = 9;
+        numCannon = 10;
+        expResult = -1.0;
+        result = instance.checkAmmo(numAmmoCrate, numCannon);
+        assertEquals(expResult, result, 0.0);
+    }
 }
+
+   
