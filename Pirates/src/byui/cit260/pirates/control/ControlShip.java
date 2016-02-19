@@ -25,9 +25,16 @@ public class ControlShip implements Serializable{
 
     public void moveShip(){}
     public void fireCannon(){}
-    public int checkAmmo(){
-        int ammo = 0;
-    return ammo;
+    public double checkAmmo(int numAmmoCrate, int numCannon)
+    {
+        if (numAmmoCrate < 0 || numCannon <= 0)
+              return -1;
+        if (numAmmoCrate >= 50 || numCannon >= 9)
+              return -1;
+        int numOfAmmo = numAmmoCrate * 9;
+        double numBattle = (numOfAmmo / numCannon);
+        return numBattle;
     }
+
     
 }
