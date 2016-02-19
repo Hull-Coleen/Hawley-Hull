@@ -15,12 +15,33 @@ import byui.cit260.pirates.model.Location;
 import byui.cit260.pirates.model.OpenSeas;
 import byui.cit260.pirates.model.Ship;
 import byui.cit260.pirates.model.Map;
+import byui.cit260.pirates.view.StartProgramView;
 import java.io.Serializable;
 /**
  *
  * @author Coleen & Thomas
  */
 public class Pirates implements Serializable {
+     private static Game currentgame = null;
+     private static Player player = null;
+
+    public static Game getCurrentgame() {
+        return currentgame;
+    }
+
+    public static void setCurrentgame(Game currentgame) {
+        Pirates.currentgame = currentgame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        Pirates.player = player;
+    }
+     
+    
       public static void testControlSupplies(){
           ControlSupplies supply = new ControlSupplies();
           System.out.println(supply.storage(2, 6, 2, 2, 3, 2));
@@ -91,16 +112,19 @@ public class Pirates implements Serializable {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+       
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView();
         //Location coord = new Location();
-      testPlayerClass();
-      testPortClass();
-      testIslandClass();
-      testSupplyClass();
-      testLocationClass();
-      testAvatarClass();
-      testOpenSeasClass();
-      testShipClass();
-      testMapClass();
-      testControlSupplies();
+      //testPlayerClass();
+      //testPortClass();
+      //testIslandClass();
+      //testSupplyClass();
+      //testLocationClass();
+     // testAvatarClass();
+      //testOpenSeasClass();
+      //testShipClass();
+      //testMapClass();
+      //testControlSupplies();
     }
 }
