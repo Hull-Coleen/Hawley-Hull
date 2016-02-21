@@ -6,6 +6,7 @@
 package byui.cit260.pirates.view;
 
 import byui.cit260.pirates.control.GameControl;
+import java.io.Serializable;
 import java.util.Scanner;
 import pirates.Pirates;
 
@@ -13,7 +14,7 @@ import pirates.Pirates;
  *
  * @author Coleen
  */
-public class MainMenuView {
+public class MainMenuView implements Serializable{
 
     public MainMenuView() {
     }

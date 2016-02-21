@@ -5,13 +5,14 @@
  */
 package byui.cit260.pirates.view;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author hawle_000
  */
-public class HelpMenuView {
+public class HelpMenuView implements Serializable{
     
     public HelpMenuView() {
     }

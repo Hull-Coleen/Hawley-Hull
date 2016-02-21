@@ -9,13 +9,14 @@ package byui.cit260.pirates.view;
 import byui.cit260.pirates.control.GameControl;
 
 import byui.cit260.pirates.model.Player;
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author Coleen
  */
-public class StartProgramView {
+public class StartProgramView implements Serializable{
     private String promptMessage;
     public StartProgramView() {
        this.promptMessage = "\nPlease enter your name: ";

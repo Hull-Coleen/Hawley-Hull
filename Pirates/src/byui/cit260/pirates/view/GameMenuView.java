@@ -5,11 +5,13 @@
  */
 package byui.cit260.pirates.view;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Coleen
  */
-public class GameMenuView {
+public class GameMenuView implements Serializable{
 
     void displayMenu() {
       System.out.println("gameMenuView displayMenu() stubbed");  
