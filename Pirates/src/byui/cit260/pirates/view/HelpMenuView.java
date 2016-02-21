@@ -88,7 +88,7 @@ public class HelpMenuView implements Serializable{
     private void helpSupplies(){
         System.out.println("You can check on your supplies by...");
     }
-    void displayMainMenuView() {
+    void displayHelpMenuView() {
         
          char selection = ' ' ;
        do {
