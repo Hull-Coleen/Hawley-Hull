@@ -100,7 +100,6 @@ public class MainMenuView implements Serializable{
            System.out.println(MENU);
            String input = this.getInput();
            selection = input.charAt(0);
-           //char fUpper = Character.toUpperCase(selection);
            this.doAction(selection);        
        }while(selection != 'E');
     }
