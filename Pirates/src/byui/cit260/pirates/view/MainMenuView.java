@@ -36,13 +36,14 @@ public class MainMenuView implements Serializable{
         Scanner keyboard = new Scanner(System.in);
     
         while(!valid){
-            input = keyboard.nextLine();
+            input = keyboard.nextLine().toUpperCase();
            
             if (input.length() < 1){
             System.out.println("Invalid name: must not be empty");
             continue;
             }
-            break;
+            //break;
+            valid = true;
         }
       
         return input;
@@ -50,22 +51,19 @@ public class MainMenuView implements Serializable{
 
     private void doAction(char selection) {
        switch(selection){
-           case 'N': case 'n':
+           case 'N': 
                this.startNewGame();
                break;
            case 'G':
-           case 'g':
-               this.startExistingGame();
+              this.startExistingGame();
                break;
            case 'H':
-           case 'h':
-               this.displayHelpMenu();
+              this.displayHelpMenu();
               break;
            case 'S':
-           case 's':
-               this.saveGame();
+             this.saveGame();
              break;
-           case 'E': case 'e':
+           case 'E': 
                return;
            default:
                System.out.println("Invalid Entry");
@@ -75,6 +73,12 @@ public class MainMenuView implements Serializable{
 
     private void startNewGame() {
         GameControl.createNewGame(Pirates.getPlayer());
+        //int value = GameControl.createNewGame(Pirates.getPlayer());
+        //if (value < 0){
+          //  System.out.println("ERROR:  Failed to create new game");
+        //}
+        
+                
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayMenu();
     }
@@ -84,7 +88,7 @@ public class MainMenuView implements Serializable{
     }
 
     private void displayHelpMenu() {
-        System.out.println("displayHelpMenu called");
+       // System.out.println("displayHelpMenu called");
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.displayHelpMenuView();
     }
