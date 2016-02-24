@@ -83,7 +83,9 @@ public class GameMenuView implements Serializable{
     }
 
     private void supplyShip() {
-        System.out.println("supplyShip stubbed");
+        //System.out.println("supplyShip stubbed");
+        SupplyShipView supplyShip = new SupplyShipView();
+        supplyShip.supplyShip();
     }
     
     

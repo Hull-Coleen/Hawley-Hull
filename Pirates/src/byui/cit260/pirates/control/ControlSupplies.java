@@ -15,24 +15,24 @@ import java.io.Serializable;
 public class ControlSupplies implements Serializable{
     
     public int storage(int numFoodCrate, int crateFoodSize, int numAmmoCrate,
-            int crateAmmoSize, int numRummCrate, int crateRummSize)
+            int crateAmmoSize, int numRumCrate, int crateRumSize)
     {
         int totalStorage = 100;
         
-        if (numFoodCrate < 1 || numAmmoCrate < 1 || numRummCrate < 1)
+        if (numFoodCrate < 1 || numAmmoCrate < 1 || numRumCrate < 1)
         {
             System.out.println("too small");
             return -1;
            
         }
-        if (crateFoodSize < 1 || crateAmmoSize < 1 || crateRummSize < 1)
+        if (crateFoodSize < 1 || crateAmmoSize < 1 || crateRumSize < 1)
         {
             System.out.println("too small");
             return -1;
         }
             
         int storageSize = (numFoodCrate * crateFoodSize) + (numAmmoCrate * crateAmmoSize) + 
-                (numRummCrate * crateRummSize);
+                (numRumCrate * crateRumSize);
         
         if (storageSize > totalStorage)
         {
