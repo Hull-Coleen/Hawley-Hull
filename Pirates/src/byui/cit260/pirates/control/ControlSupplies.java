@@ -44,11 +44,4 @@ public class ControlSupplies implements Serializable{
 
     public ControlSupplies() {
     }
-
-   // @Override
-   // public String toString() {
-    //    return "ControlSupplies{" + '}';
-    //}
-    
-    
 }

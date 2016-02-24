@@ -69,13 +69,15 @@ public class GameMenuView implements Serializable{
          char selection = ' ' ;
        do {
            System.out.println(MENU);
-           String input = this.getInput();
+           String input = this.getInput().toUpperCase();
            selection = input.charAt(0);
            this.doAction(selection);        
        }while(selection != 'E');
     }
     private void chooseAvatar() {
-        System.out.println("chooseAvatar stubbed");
+        //System.out.println("chooseAvatar stubbed");
+        AvatarView avatar = new AvatarView();
+        avatar.pickAvatar();
     }
 
     private void getShipSize() {
