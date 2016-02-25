@@ -12,20 +12,18 @@ import java.util.Scanner;
  *
  * @author hawle_000
  */
-class MoveView implements Serializable{
-     private final String MENU = "\n"          
+public class MoveView implements Serializable{
+     private final String MOVEMENU = "\n"          
             + "\n-------------------------------"
             + "\n       Game Start Menu         "
             + "\n-------------------------------"
-            + "\nW - Pirate or Navy"
-            + "\nS - Pick Ship Size"
-            + "\nA - Get supplies for ship"
-            + "\nD - Move ship"
+            + "\nW - Move up"
+            + "\nS - Move down"
+            + "\nA - Move left"
+            + "\nD - Move right"
             + "\nE - Exit"
             + "\n--------------------------------";
-    
- 
-     private String getInput() {
+    private String getInput() {
         boolean valid = false;
         String input = null;
         Scanner keyboard = new Scanner(System.in);
@@ -43,7 +41,6 @@ class MoveView implements Serializable{
       
         return input;
     }
-
     private void doAction(char selection) {
        switch(selection){
            case 'W': 
@@ -52,10 +49,10 @@ class MoveView implements Serializable{
            case 'S':
               this.moveShipDown();
                break;
-           case 'A':
+           case 'G':
               this.moveShipLeft();
               break;
-           case 'D':
+           case 'M':
                this.moveShipRight();
                break;
            case 'E': 
@@ -69,26 +66,27 @@ class MoveView implements Serializable{
         
          char selection = ' ' ;
        do {
-           System.out.println(MENU);
+           System.out.println(MOVEMENU);
            String input = this.getInput().toUpperCase();
            selection = input.charAt(0);
            this.doAction(selection);        
        }while(selection != 'E');
     }
-
     private void moveShipUp() {
-        System.out.println("Up");
+        System.out.println("Move ship up stubbed");
+        
     }
 
     private void moveShipDown() {
-        System.out.println("Down");
+       System.out.println("Move ship down stubbed");
     }
 
     private void moveShipLeft() {
-        System.out.println("Left");
+        System.out.println("Move ship left stubbed");
+        
     }
 
     private void moveShipRight() {
-        System.out.println("Right");
+    System.out.println("Move ship right stubbed");   
     }
 }
