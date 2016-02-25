@@ -33,7 +33,6 @@ public class CurrentSupplyView implements Serializable{
             System.out.println("Invalid name: must not be empty");
             continue;
             }
-            //break;
             valid = true;
         }
       
