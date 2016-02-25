@@ -1,4 +1,3 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,30 +5,23 @@
  */
 package byui.cit260.pirates.view;
 
-
 import java.io.Serializable;
 import java.util.Scanner;
 
-
 /**
  *
- * @author Coleen
+ * @author hawle_000
  */
-public class GameMenuView implements Serializable{
-     private final String MENU = "\n"          
+public class CurrentSupplyView implements Serializable{
+    private final String SUPPLYMENU = "\n"          
             + "\n-------------------------------"
             + "\n       Game Start Menu         "
             + "\n-------------------------------"
-            + "\nP - Pirate or Navy"
-            + "\nS - Pick Ship Size"
-            + "\nG - Get supplies for ship"
-            + "\nM - Move ship"
-            + "\nC - Show Current Supplies"
+            + "\nF - Show Days of Food"
+            + "\nA - Show Ammo"
             + "\nE - Exit"
             + "\n--------------------------------";
-    
- 
-     private String getInput() {
+    private String getInput() {
         boolean valid = false;
         String input = null;
         Scanner keyboard = new Scanner(System.in);
@@ -47,24 +39,15 @@ public class GameMenuView implements Serializable{
       
         return input;
     }
-
+    
     private void doAction(char selection) {
        switch(selection){
-           case 'P': 
-               this.chooseAvatar();
+           case 'F': 
+               this.showFood();
                break;
-           case 'S':
-              this.getShipSize();
+           case 'A':
+              this.showAmmo();
                break;
-           case 'G':
-              this.supplyShip();
-              break;
-           case 'M':
-               this.moveShip();
-               break;
-           case 'C':
-                this.currentSupplies();
-                break;
            case 'E': 
                return;
            default:
@@ -76,36 +59,22 @@ public class GameMenuView implements Serializable{
         
          char selection = ' ' ;
        do {
-           System.out.println(MENU);
+           System.out.println(SUPPLYMENU);
            String input = this.getInput().toUpperCase();
            selection = input.charAt(0);
            this.doAction(selection);        
        }while(selection != 'E');
     }
-    private void chooseAvatar() {
-        //System.out.println("chooseAvatar stubbed");
-        AvatarView avatar = new AvatarView();
-        avatar.pickAvatar();
-    }
-
-    private void getShipSize() {
-       System.out.println("getShipSize stubbed");
-    }
-
-    private void supplyShip() {
-        //System.out.println("supplyShip stubbed");
-        SupplyShipView supplyShip = new SupplyShipView();
-        supplyShip.supplyShip();
-    }
-
-    private void moveShip() {
-        MoveView move = new MoveView();
-        move.displayMenu();
-    }
-    private void currentSupplies() {
-        CurrentSupplyView CurrentSupply = new CurrentSupplyView();
-        CurrentSupply.displayMenu();
+    private void showFood() {
+        System.out.println("days of food");
+        //byui.cit260.pirates.control.ControlShip food = new byui.cit260.pirates.control.ControlShip();
+        //food.daysOfFood();
+        
     }
     
+    private void showAmmo() {
+        System.out.println("Ammo Left");
+        
+    }
     
 }
