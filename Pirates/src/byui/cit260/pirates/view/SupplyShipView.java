@@ -13,50 +13,84 @@ import java.util.Scanner;
  * @author Coleen
  */
 public class SupplyShipView {
+    private final String MENU = "This is where we fill the ship with supplies. You will"
+            + " be prompted for the number of crates for food, ammo, and rum. Then you"
+            + "will be prompted for the size of the crate to put the items in.";
+      private int getInput() {
+        boolean valid = false;
+        int input = 0;
+        Scanner keyboard = new Scanner(System.in);
     
+        while(!valid){
+            input = keyboard.nextInt();
+           
+            if (input < 1){
+            System.out.println("Invalid name: must not be empty");
+            continue;
+            }
+            //break;
+            valid = true;
+        }
+      
+        return input;
+    }
+    public boolean doNumCrate(int selection){
+        if (selection < 1 || selection > 16){
+            return false;
+        }
+        return true;
+    }
+    public boolean doCrateSize(int selection){
+        if (selection < 1 || selection > 3){
+            return false;
+        }
+        return true; 
+    }
     public void supplyShip(){
       int ship;
-        
+      //System.out.println(MENU);  
       do{
+        System.out.println(MENU);  
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Enter number of food crates: ");
-        int numFoodCrate = keyboard.nextInt();
-        while (numFoodCrate < 1 || numFoodCrate > 16){
+        int numFoodCrate = getInput();
+        while (!doNumCrate(numFoodCrate)){
             System.out.println("Enter number of food crates: ");
-            numFoodCrate = keyboard.nextInt();
+            numFoodCrate =  getInput();   
+
         }
  
        System.out.println("Enter size of food crate between 1 and 3");
-       int crateFoodSize = keyboard.nextInt();
-       while (crateFoodSize < 1 || crateFoodSize > 3){
+       int crateFoodSize = getInput();
+       while (!doCrateSize(crateFoodSize)){
           System.out.println("Enter size of food crate between 1 and 3");
-          crateFoodSize = keyboard.nextInt(); 
+          crateFoodSize = getInput(); 
        }
        System.out.println("Enter number of ammo crates: ");
-       int numAmmoCrate = keyboard.nextInt();
-       while (numAmmoCrate < 1 || numAmmoCrate > 16){
+       int numAmmoCrate = getInput();
+       while (!doNumCrate(numAmmoCrate)){
             System.out.println("Enter number of ammo crates: ");
-            numAmmoCrate = keyboard.nextInt();
+            numAmmoCrate = getInput();
         }
  
        System.out.println("Enter size of food crate between 1 and 3");
-       int crateAmmoSize = keyboard.nextInt();
-       while (crateAmmoSize < 1 || crateAmmoSize > 3){
+       int crateAmmoSize = getInput();
+       while (!doCrateSize(crateAmmoSize)){
           System.out.println("Enter size of ammo crate between 1 and 3");
-          crateAmmoSize = keyboard.nextInt(); 
+          crateAmmoSize = getInput(); 
        }
         System.out.println("Enter number of rum crates: ");
-        int numRumCrate = keyboard.nextInt();
-        while (numRumCrate < 1 || numRumCrate > 16){
+        int numRumCrate = getInput();
+        while (!doNumCrate(numRumCrate)){
             System.out.println("Enter number of rum crates: ");
-            numRumCrate = keyboard.nextInt();
+            numRumCrate = getInput();
         }
  
        System.out.println("Enter size of rum crate between 1 and 3");
-       int crateRumSize = keyboard.nextInt();
-       while (crateRumSize < 1 || crateRumSize > 3){
+       int crateRumSize = getInput();
+       while (!doCrateSize(crateRumSize)){
           System.out.println("Enter size of rum crate between 1 and 3");
-          crateRumSize = keyboard.nextInt(); 
+          crateRumSize = getInput(); 
        }
      
     
@@ -65,6 +99,8 @@ public class SupplyShipView {
         ship = supplies.storage(numFoodCrate, crateFoodSize, numAmmoCrate, crateAmmoSize, numRumCrate, crateRumSize);
       }while (ship < 1);
     } 
+
+   
     
 }
 
