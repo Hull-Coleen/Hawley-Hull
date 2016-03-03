@@ -26,7 +26,7 @@ public class AvatarView extends View {
           case 'N':
              avatar.setPirate(false);
              System.out.println("Navy");
-              return false;
+              return true;
               
           case 'P':
              avatar.setPirate(true);
