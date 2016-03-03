@@ -10,18 +10,85 @@ import byui.cit260.pirates.control.GameControl;
 
 import byui.cit260.pirates.model.Player;
 import java.io.Serializable;
-import java.util.Scanner;
+
 
 /**
  *
  * @author Coleen
  */
-public class StartProgramView implements Serializable{
-    private String promptMessage;
+public class StartProgramView extends View implements Serializable{
+    //private String promptMessage;
+
+    
+
     public StartProgramView() {
+            super("\nPlease enter your name: ");
+            //this.displayBanner();
+    }
+    
+        
+      
+   // Player player = GameControl.createPlayer(playerName);
+   /* @Override
+    public boolean doAction(String value){
+        Player player = GameControl.createPlayer(value);
+        this.displayBanner();
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.display();
+        return false;
+    }  */
+       private void displayBanner(){
+        System.out.println("********************************************************************");
+        System.out.println("*  It is the Golden age of sailing in the open seas searching for  *");
+        System.out.println("*   adventure and stories to claim your own! Legends are told of   *");
+        System.out.println("* buried treasure just waiting to be found by the most courageous  *");
+        System.out.println("*  of sailors.  It is the 1700's the time of the Pirates! It is    *");
+        System.out.println("*  here that you must decide whether you are with the strong and   *");
+        System.out.println("*   noble navy trying to defend the colonies or with the thrill    *");
+        System.out.println("*   seeking, blood thirsty pirates looking to carve out a bit of   *");
+        System.out.println("* history for themselves.  Our story begins with a map to the lost *");
+        System.out.println("*    treasure of Black Beard! The Navy calls forth its bravest     *");
+        System.out.println("* captain to lead an expedition to recover the gold before anyone  *");
+        System.out.println("*  finds out about its existence. The Pirates find out about it    *");
+        System.out.println("*  through a loose tongue and are now putting together a crew of   *");
+        System.out.println("*       their navy would not expect interference from them.        *");
+        System.out.println("********************************************************************");
+    }
+       @Override
+        public boolean doAction(String value) {
+       
+        if (value.length() < 2){
+            System.out.println("Invalid player name");
+            return false;
+        }
+        Player player = GameControl.createPlayer(value);
+        if (player == null){
+            System.out.println("Error");
+            return false;
+        }
+        this.displayBanner();
+        this.displayNextView(player);   
+        return true;
+    }
+
+    private void displayNextView(Player player) {
+       
+        System.out.println("\n========================================================="
+                        +  "\nWelcome to Pirates on the Open  Seas " + player.getName()
+                        +  "\nWe hope you enjoy the game."
+                      +    "\n=========================================================\n");
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.display();
+    }   
+  /*  public StartProgramView() {
        this.promptMessage = "\nPlease enter your name: ";
        this.displayBanner();
+    }  
+
+    public StartProgramView() {
+        super();
     }
+    
  
 
     private void displayBanner(){
@@ -97,6 +164,8 @@ public class StartProgramView implements Serializable{
                         +  "\nWe hope you enjoy the game."
                       +    "\n=========================================================\n");
         MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.displayMainMenuView();
-    }
+        mainMenuView.display();
+    } */
+
+    
 }

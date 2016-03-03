@@ -7,19 +7,17 @@ package byui.cit260.pirates.view;
 
 import byui.cit260.pirates.control.GameControl;
 import java.io.Serializable;
-import java.util.Scanner;
 import pirates.Pirates;
 
 /**
  *
  * @author Coleen
  */
-public class MainMenuView implements Serializable{
+public class MainMenuView extends View implements Serializable{
 
-    public MainMenuView() {
-    }
-    private final String MENU = "\n"
-            + "\n-------------------------------"
+
+   public MainMenuView() {
+        super( "\n-------------------------------"
             + "\n          Main Menu            "
             + "\n-------------------------------"
             + "\nN - Start new game"
@@ -27,29 +25,13 @@ public class MainMenuView implements Serializable{
             + "\nH - Get help on how to play the game"
             + "\nS - Save Game"
             + "\nE - Exit"
-            + "\n--------------------------------";
-    
- 
-     private String getInput() {
-        boolean valid = false;
-        String input = null;
-        Scanner keyboard = new Scanner(System.in);
-    
-        while(!valid){
-            input = keyboard.nextLine().toUpperCase();
-           
-            if (input.length() < 1){
-            System.out.println("Invalid name: must not be empty");
-            continue;
-            }
-            //break;
-            valid = true;
-        }
-      
-        return input;
+            + "\n--------------------------------"); 
     }
-
-    private void doAction(char selection) {
+    @Override
+    public boolean doAction(String value) {
+    value = value.toUpperCase();
+    char selection;
+     selection = value.charAt(0);
        switch(selection){
            case 'N': 
                this.startNewGame();
@@ -64,23 +46,18 @@ public class MainMenuView implements Serializable{
              this.saveGame();
              break;
            case 'E': 
-               return;
+               return true;
            default:
                System.out.println("Invalid Entry");
                break;
        }
+       return false;
     }
 
     private void startNewGame() {
         GameControl.createNewGame(Pirates.getPlayer());
-        //int value = GameControl.createNewGame(Pirates.getPlayer());
-        //if (value < 0){
-          //  System.out.println("ERROR:  Failed to create new game");
-        //}
-        
-                
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
     }
 
     private void startExistingGame() {
@@ -88,25 +65,12 @@ public class MainMenuView implements Serializable{
     }
 
     private void displayHelpMenu() {
-       // System.out.println("displayHelpMenu called");
+       
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+        helpMenu.display();
     }
 
     private void saveGame() {
         System.out.println("saveGame called");
-    }
-
-    void displayMainMenuView() {
-        
-         char selection = ' ' ;
-       do {
-           System.out.println(MENU);
-           String input = this.getInput();
-           selection = input.charAt(0);
-           this.doAction(selection);        
-       }while(selection != 'E');
-    }
-    
-    
+    }   
 }

@@ -6,57 +6,48 @@
 package byui.cit260.pirates.view;
 
 import byui.cit260.pirates.model.Avatar;
-import java.util.Scanner;
 
 /**
  *
  * @author Coleen
  */
-public class AvatarView {
-    public String getInput(){
-        Scanner keyboard = new Scanner(System.in);
-        boolean valid = false;
-        String selection = null;
-        while (!valid){
-            selection = keyboard.nextLine();
-            selection = selection.trim();
-            if (selection.length() < 1){
-                System.out.println("Invalid entry: try again");
-                continue;
-            }
-            valid = true;
-                
-        }
-        return selection;
+public class AvatarView extends View {
+
+    public AvatarView() {
+        super("Navy or Pirate type N for Navy or P for Pirate: ");
     }
-    public void doAction(char selection){
-        Avatar avatar = new Avatar();
-       
+    
+    public boolean doAction(String value){
+       Avatar avatar = new Avatar();
+       value = value.toUpperCase();
+       char selection;
+       selection = value.charAt(0); 
       switch(selection){    
           case 'N':
-              avatar.setPirate(false);
-              System.out.println("Navy");
-              break;
+             avatar.setPirate(false);
+             System.out.println("Navy");
+              return false;
+              
           case 'P':
-              avatar.setPirate(true);
-              System.out.println("Pirate");
-              break;
-          case 'E':
-              return;
+             avatar.setPirate(true);
+             System.out.println("Pirate");
+              return true;
+         
           default:
               System.out.println("invalid entry");
       }
+        return false;
+    }
+  /*  public void display(){
         
-    }
-    public void pickAvatar(){
-        System.out.println("Navy or Pirate type N for Navy or P for Pirate: ");
-        char selection = ' ' ;
-        do {
-           String input = getInput();
-           selection = input.charAt(0);
-           this.doAction(selection);
-        }while (selection != 'E');
-       
-    }
+        boolean choice = this.doAction(value);
+        if (choice){
+            System.out.println("You chose to be a pirate");
+        }
+        else
+            System.out.println("You chose to be in the Navy");
+        
+    } */
+  
     
 }

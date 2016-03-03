@@ -8,17 +8,18 @@ package byui.cit260.pirates.view;
 
 
 import java.io.Serializable;
-import java.util.Scanner;
+
 
 
 /**
  *
  * @author Coleen
  */
-public class GameMenuView implements Serializable{
-     private final String MENU = "\n"          
-            + "\n-------------------------------"
-            + "\n       Game Start Menu         "
+public class GameMenuView extends View implements Serializable{
+
+    public GameMenuView() {
+        super("\n-------------------------------"
+            + "\n       Game Start  Up Menu     "
             + "\n-------------------------------"
             + "\nP - Pirate or Navy"
             + "\nS - Pick Ship Size"
@@ -26,29 +27,13 @@ public class GameMenuView implements Serializable{
             + "\nM - Move ship"
             + "\nC - Show Current Supplies"
             + "\nE - Exit"
-            + "\n--------------------------------";
-    
- 
-     private String getInput() {
-        boolean valid = false;
-        String input = null;
-        Scanner keyboard = new Scanner(System.in);
-    
-        while(!valid){
-            input = keyboard.nextLine().toUpperCase();
-           
-            if (input.length() < 1){
-            System.out.println("Invalid name: must not be empty");
-            continue;
-            }
-            //break;
-            valid = true;
-        }
-      
-        return input;
+            + "\n--------------------------------");
     }
-
-    private void doAction(char selection) {
+ 
+    public boolean doAction(String value) {
+      value = value.toUpperCase();
+      char selection;
+      selection = value.charAt(0); 
        switch(selection){
            case 'P': 
                this.chooseAvatar();
@@ -66,26 +51,18 @@ public class GameMenuView implements Serializable{
                 this.currentSupplies();
                 break;
            case 'E': 
-               return;
+               return true;
            default:
                System.out.println("Invalid Entry");
                break;
        }
+       return false;
     }
-    void displayMenu() {
-        
-         char selection = ' ' ;
-       do {
-           System.out.println(MENU);
-           String input = this.getInput().toUpperCase();
-           selection = input.charAt(0);
-           this.doAction(selection);        
-       }while(selection != 'E');
-    }
+ 
     private void chooseAvatar() {
-        //System.out.println("chooseAvatar stubbed");
+      
         AvatarView avatar = new AvatarView();
-        avatar.pickAvatar();
+        avatar.display();
     }
 
     private void getShipSize() {
@@ -93,18 +70,17 @@ public class GameMenuView implements Serializable{
     }
 
     private void supplyShip() {
-        //System.out.println("supplyShip stubbed");
         SupplyShipView supplyShip = new SupplyShipView();
-        supplyShip.supplyShip();
+        supplyShip.display();
     }
 
     private void moveShip() {
         MoveView move = new MoveView();
-        move.displayMenu();
+        move.display();
     }
     private void currentSupplies() {
         CurrentSupplyView CurrentSupply = new CurrentSupplyView();
-        CurrentSupply.displayMenu();
+        CurrentSupply.display();
     }
     
     

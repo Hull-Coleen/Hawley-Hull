@@ -12,28 +12,36 @@ import java.util.Scanner;
  *
  * @author Coleen
  */
-public class SupplyShipView {
-    private final String MENU = "This is where we fill the ship with supplies. You will"
+public class SupplyShipView extends View {
+
+   
+    public SupplyShipView() {
+        super("This is where we fill the ship with supplies. You will"
             + " be prompted for the number of crates for food, ammo, and rum. Then you"
-            + "will be prompted for the size of the crate to put the items in.";
-      private int getInput() {
-        boolean valid = false;
-        int input = 0;
-        Scanner keyboard = new Scanner(System.in);
-    
-        while(!valid){
-            input = keyboard.nextInt();
-           
-            if (input < 1){
-            System.out.println("Invalid name: must not be empty");
-            continue;
-            }
-            //break;
-            valid = true;
-        }
-      
-        return input;
+            + "will be prompted for the size of the crate to put the items in.");
     }
+    @Override
+    public boolean doAction(String value){
+       value = value.toUpperCase();
+       char selection;
+       selection = value.charAt(0);
+       switch(selection){
+           case 'R':
+               break;
+           case 'A':
+               break;
+           case 'F':
+               break;
+           case 'E':
+               return true;
+               default:
+                   System.out.println("Invalid entry: Try again");
+       }
+        
+        return false;
+    }
+            
+
     public boolean doNumCrate(int selection){
         if (selection < 1 || selection > 16){
             return false;
@@ -46,21 +54,11 @@ public class SupplyShipView {
         }
         return true; 
     }
-    public void supplyShip(){
-      int ship;
-      //System.out.println(MENU);  
-      do{
-        System.out.println(MENU);  
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("Enter number of food crates: ");
-        int numFoodCrate = getInput();
-        while (!doNumCrate(numFoodCrate)){
-            System.out.println("Enter number of food crates: ");
-            numFoodCrate =  getInput();   
-
-        }
+    //public void display(){
+   // System.out.println("working on this");
+  //}
  
-       System.out.println("Enter size of food crate between 1 and 3");
+    /*   System.out.println("Enter size of food crate between 1 and 3");
        int crateFoodSize = getInput();
        while (!doCrateSize(crateFoodSize)){
           System.out.println("Enter size of food crate between 1 and 3");
@@ -98,7 +96,7 @@ public class SupplyShipView {
         ControlSupplies supplies = new ControlSupplies();
         ship = supplies.storage(numFoodCrate, crateFoodSize, numAmmoCrate, crateAmmoSize, numRumCrate, crateRumSize);
       }while (ship < 1);
-    } 
+    } */
 
    
     

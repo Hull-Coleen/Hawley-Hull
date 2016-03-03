@@ -115,7 +115,7 @@ public class Pirates implements Serializable {
     public static void main(String[] args) {
        
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView();
+        startProgramView.display();
         //Location coord = new Location();
       //testPlayerClass();
       //testPortClass();
