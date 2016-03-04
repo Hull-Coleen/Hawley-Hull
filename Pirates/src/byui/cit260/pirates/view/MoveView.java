@@ -5,6 +5,7 @@
  */
 package byui.cit260.pirates.view;
 
+import byui.cit260.pirates.control.ControlBattles;
 import java.io.Serializable;
 
 
@@ -22,14 +23,15 @@ public class MoveView extends View implements Serializable{
             + "\nS - Move down"
             + "\nA - Move left"
             + "\nD - Move right"
+            + "\nB - Battle"
             + "\nE - Exit"
             + "\n--------------------------------");
     }
     @Override
     public boolean doAction(String value) {
-         value = value.toUpperCase();
-    char selection;
-     selection = value.charAt(0); 
+       value = value.toUpperCase();
+       char selection;
+       selection = value.charAt(0); 
        switch(selection){
            case 'W': 
                this.moveShipUp();
@@ -43,6 +45,9 @@ public class MoveView extends View implements Serializable{
            case 'M':
                this.moveShipRight();
                break;
+           case 'B':
+              this.fight();
+              
            case 'E': 
                return true;
            default:
@@ -68,5 +73,10 @@ public class MoveView extends View implements Serializable{
 
     private void moveShipRight() {
     System.out.println("Move ship right stubbed");   
+    }
+
+    private void fight() {
+       BattleView battle = new BattleView();
+       battle.display();
     }
 }
