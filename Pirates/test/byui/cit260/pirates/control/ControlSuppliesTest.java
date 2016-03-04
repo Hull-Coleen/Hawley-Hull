@@ -17,117 +17,58 @@ public class ControlSuppliesTest {
     public ControlSuppliesTest() {
     }
 
+   
+
     /**
-     * Test  1 of storage method, of class ControlSupplies.
+     * Test of getFood method, of class ControlSupplies.
      */
     @Test
-    public void testStorage() {
-        System.out.println("storage test");
-        System.out.println("Test case # 1");
-        int numFoodCrate = 33;
-        int crateFoodSize = 1;
-        int numAmmoCrate = 33;
-        int crateAmmoSize = 1;
-        int numRummCrate = 33;
-        int crateRummSize = 1;
+    public void testGetFood() {
+        /*System.out.println("getFood");
+        int food = 5;
         ControlSupplies instance = new ControlSupplies();
-        int expResult = 99;
-        int result = instance.storage(numFoodCrate, crateFoodSize, numAmmoCrate, crateAmmoSize, numRummCrate, crateRummSize);
-        assertEquals(expResult, result);
-        /*******************************************
-         *  test 2
-         */
-       // System.out.println("storage test");
-        System.out.println("Test case # 2");
-        numFoodCrate = 16;
-        crateFoodSize = 2;
-        numAmmoCrate = 16;
-        crateAmmoSize = 2;
-        numRummCrate = 16;
-        crateRummSize = 2;
-        expResult = 96;
-        result = instance.storage(numFoodCrate, crateFoodSize, numAmmoCrate, crateAmmoSize, numRummCrate, crateRummSize);
-        assertEquals(expResult, result);
-         /*******************************************
-         *  test 3
-         */
-       // System.out.println("storage test");
-        System.out.println("Test case # 3");
-        numFoodCrate = 11;
-        crateFoodSize = 0;
-        numAmmoCrate = 11;
-        crateAmmoSize = 0;
-        numRummCrate = 11;
-        crateRummSize = 0;
-        expResult = -1;
-        result = instance.storage(numFoodCrate, crateFoodSize, numAmmoCrate, crateAmmoSize, numRummCrate, crateRummSize);
-        assertEquals(expResult, result);
-        /*******************************************
-         *  test 4
-         */
-       // System.out.println("storage test");
-        System.out.println("Test case # 4");
-        numFoodCrate = 11;
-        crateFoodSize = 4;
-        numAmmoCrate = 11;
-        crateAmmoSize = 4;
-        numRummCrate = 11;
-        crateRummSize = 4;
-        expResult = -1;
-        result = instance.storage(numFoodCrate, crateFoodSize, numAmmoCrate, crateAmmoSize, numRummCrate, crateRummSize);
-        assertEquals(expResult, result);
-        
-        /*******************************************
-         *  test 5
-         */
-       // System.out.println("storage test");
-        System.out.println("Test case # 5");
-        numFoodCrate = 34;
-        crateFoodSize = 1;
-        numAmmoCrate = 34;
-        crateAmmoSize = 1;
-        numRummCrate = 34;
-        crateRummSize = 1;
-        expResult = -1;
-        result = instance.storage(numFoodCrate, crateFoodSize, numAmmoCrate, crateAmmoSize, numRummCrate, crateRummSize);
-        assertEquals(expResult, result);
-        
-          /*******************************************
-         *  test 6
-         */
-       // System.out.println("storage test");
-        System.out.println("Test case # 6");
-        numFoodCrate = 17;
-        crateFoodSize = 2;
-        numAmmoCrate = 17;
-        crateAmmoSize = 2;
-        numRummCrate = 17;
-        crateRummSize = 2;
-        expResult = -1;
-        result = instance.storage(numFoodCrate, crateFoodSize, numAmmoCrate, crateAmmoSize, numRummCrate, crateRummSize);
-        assertEquals(expResult, result);       
-        
-         /*******************************************
-         *  test 7
-         */
-       // System.out.println("storage test");
-        System.out.println("Test case # 7");
-        numFoodCrate = 12;
-        crateFoodSize = 3;
-        numAmmoCrate = 12;
-        crateAmmoSize = 3;
-        numRummCrate = 12;
-        crateRummSize = 3;
-        expResult = -1;
-        result = instance.storage(numFoodCrate, crateFoodSize, numAmmoCrate, crateAmmoSize, numRummCrate, crateRummSize);
-        assertEquals(expResult, result);       
-        
-        
-        
-    
-        
-     
+        double expResult = 0.1;
+        double result = instance.getFood(food);
+        assertEquals(expResult, result, 0.0); */
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+         System.out.println("getFood 2");
+         int food = 10;
+        ControlSupplies instance = new ControlSupplies();
+        double expResult = 0.3;
+        double result = instance.getFood(food);
+        assertEquals(expResult, result, 0.0);
+    } 
+
+    /**
+     * Test of getRum method, of class ControlSupplies.
+     */
+   /* @Test
+    public void testGetRum() {
+        System.out.println("getRum");
+        int rum = 0;
+        ControlSupplies instance = new ControlSupplies();
+        double expResult = 0.0;
+        double result = instance.getRum(rum);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
+
+    /**
+     * Test of getAmmo method, of class ControlSupplies.
+     */
+   /* @Test
+    public void testGetAmmo() {
+        System.out.println("getAmmo");
+        int ammo = 0;
+        ControlSupplies instance = new ControlSupplies();
+        double expResult = 0.0;
+        double result = instance.getAmmo(ammo);
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    } */
    
 }
   

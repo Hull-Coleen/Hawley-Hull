@@ -22,9 +22,26 @@ public class StartProgramView extends View implements Serializable{
     
 
     public StartProgramView() {
-            super("\nPlease enter your name: ");
+           // this.displayBanner();
+            super("\n ********************************************************************" 
+                + "\n *  It is the Golden age of sailing in the open seas searching for  *"
+                + "\n *  adventure and stories to claim your own! Legends are told of    *"
+                + "\n * buried treasure just waiting to be found by the most courageous  *"
+                + "\n * of sailors. It is the 1700's the time of the Pirates! It is      *"
+                + "\n * here that you must decide whether you are with the strong and    *"
+                + "\n *   noble navy trying to defend the colonies or with the thrill    *"
+                + "\n *   seeking, blood thirsty pirates looking to carve out a bit of   *"
+                + "\n * history for themselves.  Our story begins with a map to the lost *"
+                + "\n *    treasure of Black Beard! The Navy calls forth its bravest     *"
+                + "\n * captain to lead an expedition to recover the gold before anyone  *" 
+                + "\n *  finds out about its existence. The Pirates find out about it    *" 
+                + "\n *  through a loose tongue and are now putting together a crew of   *"
+                + "\n *       their navy would not expect interference from them.        *"
+                + "\n ********************************************************************"
+                + "\n\nPlease enter your name: ");
             //this.displayBanner();
     }
+    
     
         
       
@@ -37,7 +54,7 @@ public class StartProgramView extends View implements Serializable{
         mainMenuView.display();
         return false;
     }  */
-       private void displayBanner(){
+     /*  private void displayBanner(){
         System.out.println("********************************************************************");
         System.out.println("*  It is the Golden age of sailing in the open seas searching for  *");
         System.out.println("*   adventure and stories to claim your own! Legends are told of   *");
@@ -53,9 +70,10 @@ public class StartProgramView extends View implements Serializable{
         System.out.println("*  through a loose tongue and are now putting together a crew of   *");
         System.out.println("*       their navy would not expect interference from them.        *");
         System.out.println("********************************************************************");
-    }
+    } */
        @Override
         public boolean doAction(String value) {
+            
        
         if (value.length() < 2){
             System.out.println("Invalid player name");
@@ -66,7 +84,7 @@ public class StartProgramView extends View implements Serializable{
             System.out.println("Error");
             return false;
         }
-        this.displayBanner();
+       
         this.displayNextView(player);   
         return true;
     }

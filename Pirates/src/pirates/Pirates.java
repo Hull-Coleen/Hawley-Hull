@@ -10,7 +10,7 @@ import byui.cit260.pirates.model.Player;
 import byui.cit260.pirates.model.Port;
 import byui.cit260.pirates.model.Supplies;
 import byui.cit260.pirates.model.Avatar;
-import byui.cit260.pirates.control.ControlSupplies;
+//import byui.cit260.pirates.control.ControlSupplies;
 import byui.cit260.pirates.model.Game;
 import byui.cit260.pirates.model.Location;
 import byui.cit260.pirates.model.OpenSeas;
@@ -43,10 +43,10 @@ public class Pirates implements Serializable {
     }
      
     
-      public static void testControlSupplies(){
+     /* public static void testControlSupplies(){
           ControlSupplies supply = new ControlSupplies();
           System.out.println(supply.storage(2, 6, 2, 2, 3, 2));
-      }
+      } */
     
       public static void testMapClass(){
           Map map = new Map(2, 19);
