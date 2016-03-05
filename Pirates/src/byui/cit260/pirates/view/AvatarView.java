@@ -38,16 +38,5 @@ public class AvatarView extends View {
       }
         return false;
     }
-  /*  public void display(){
-        
-        boolean choice = this.doAction(value);
-        if (choice){
-            System.out.println("You chose to be a pirate");
-        }
-        else
-            System.out.println("You chose to be in the Navy");
-        
-    } */
-  
-    
+
 }

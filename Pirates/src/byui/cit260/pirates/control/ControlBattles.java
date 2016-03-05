@@ -21,6 +21,14 @@ public class ControlBattles implements Serializable{
         return speed;
         
     }
+
+    public void fight() {
+       System.out.println("This is where we determine what happens if they fight.");
+    }
+
+    public void run() {
+        System.out.println("This is what happens if you run intead");
+    }
     
     
 }

@@ -6,7 +6,7 @@
 package byui.cit260.pirates.view;
 
 import java.io.Serializable;
-import java.util.Scanner;
+
 
 /**
  *
