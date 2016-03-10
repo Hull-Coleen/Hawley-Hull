@@ -5,6 +5,7 @@
  */
 package byui.cit260.pirates.model;
 
+import byui.cit260.pirates.control.GameControl;
 import java.io.Serializable;
 
 /**
@@ -12,12 +13,32 @@ import java.io.Serializable;
  * @author Thomas
  */
 public class Map implements Serializable{
+
+    private static Scene[] createScenes() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    } 
     private int col;
     private int row;
-
-    public Map(int col, int row) {
+    private Location[][] locations;
+    public Map(int row, int col) {
+        if ( row < 1 || col < 1){
+            System.out.println("The number of rows and columns must be more the les than one, ");
+            return;
+        }
+        
         this.col = col;
         this.row = row;
+        this.locations = new Location[row][col];
+        for (int iRow = 0; iRow < row; iRow++){
+            for (int iCol = 0; iCol < col; iCol++){
+                Location location = new Location();
+                location.setCol(iCol);
+                location.setRow(iRow);
+                location.setVisited(false);
+                locations[iRow][iCol] = location;
+                
+            }
+        }
     }
 
     public Map() {
@@ -38,8 +59,13 @@ public class Map implements Serializable{
     public void setRow(int row) {
         this.row = row;
     }
-
-    @Override
+    private static Map createMap() {
+        Map map = new Map(20, 20);
+        Scene[] scenes = createScenes();
+        GameControl.assignScenesToLoactions(map, scenes);
+        return map;
+    }
+   /* @Override
     public int hashCode() {
         int hash = 7;
         hash = 53 * hash + this.col;
@@ -68,6 +94,6 @@ public class Map implements Serializable{
     @Override
     public String toString() {
         return "Map{" + "col=" + col + ", row=" + row + '}';
-    }
+    } */
     
 }

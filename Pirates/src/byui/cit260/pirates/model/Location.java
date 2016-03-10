@@ -6,6 +6,7 @@
 package byui.cit260.pirates.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,10 +15,34 @@ import java.io.Serializable;
 public class Location implements Serializable{
     private int row;
     private int col;
+    private boolean visited;
+   /* private Avatar[] avatars;
 
-    public Location(int row, int col) {
-        this.row = row;
-        this.col = col;
+    public Avatar[] getAvatars() {
+        return avatars;
+    } */
+    private ArrayList<Avatar> avatars = new ArrayList<>();
+
+    public ArrayList<Avatar> getAvatars() {
+        return avatars;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+    private Scene scene;
+    //private ArrayList<Avatar> avatars;
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
     }
 
     public Location() {
@@ -39,7 +64,7 @@ public class Location implements Serializable{
         this.col = col;
     }
 
-    @Override
+   /* @Override
     public int hashCode() {
         int hash = 7;
         hash = 83 * hash + this.row;
@@ -69,6 +94,6 @@ public class Location implements Serializable{
     public String toString() {
         return "Location{" + "row=" + row + ", col=" + col + '}';
     }
-    
+    */
     
 }

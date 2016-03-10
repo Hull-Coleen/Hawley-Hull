@@ -63,23 +63,8 @@ public class Pirates implements Serializable {
           System.out.println(sea.toString());
           
       }
-      public static void testLocationClass()
-              
-      {
-          Location location = new Location(5, 6);
-          System.out.println(location.toString());
-          
-      }
-      public static void testAvatarClass()
-      {
-         Avatar avatar = new Avatar();
-          Location coord = null;
-         avatar.setCoord(coord);
-         avatar.setName("Black Beard");
-         avatar.setPirate(true);
-         System.out.println(avatar.toString());
-         
-      }
+     
+      
       public static void testSupplyClass()
       {
          Supplies supplies = new Supplies(10, 15 , 5, "food");
@@ -127,5 +112,10 @@ public class Pirates implements Serializable {
       //testShipClass();
       //testMapClass();
       //testControlSupplies();
+    }
+
+    public static void setCurrentGame(Game game) {
+       System.out.println("stubbed setCurrentGame in Pirates class");
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

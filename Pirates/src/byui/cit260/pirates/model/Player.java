@@ -64,8 +64,5 @@ private double bestTime;
     }
 
     public double getBestTime() { return bestTime; }
-   // public static void main(String [] args){
-     //   Player playerOne = new Player();
-    //}
-    
+
 }

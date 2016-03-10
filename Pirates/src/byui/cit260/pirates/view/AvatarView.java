@@ -18,18 +18,18 @@ public class AvatarView extends View {
     }
     
     public boolean doAction(String value){
-       Avatar avatar = new Avatar();
+       //Avatar avatar = new Avatar();
        value = value.toUpperCase();
        char selection;
        selection = value.charAt(0); 
       switch(selection){    
           case 'N':
-             avatar.setPirate(false);
+             //avatar.setPirate(false);
              System.out.println("Navy");
               return true;
               
           case 'P':
-             avatar.setPirate(true);
+            // avatar.setPirate(true);
              System.out.println("Pirate");
               return true;
          

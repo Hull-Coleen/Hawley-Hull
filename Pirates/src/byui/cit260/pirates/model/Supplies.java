@@ -13,6 +13,9 @@ import java.util.Objects;
  * @author Coleen
  */
 public class Supplies implements Serializable{
+    public static Object food;
+    public static Object rum;
+    public static Object ammo;
     private int numFood;
     private int numAmmo;
     private int numRum;
@@ -97,6 +100,18 @@ public class Supplies implements Serializable{
     @Override
     public String toString() {
         return "Supplies{" + "numFood=" + numFood + ", numAmmo=" + numAmmo + ", numRum=" + numRum + ", suppleType=" + suppleType + '}';
+    }
+
+    public void setDescription(String food) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setAmountInStock(int i) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setRequiredAmount(int i) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
