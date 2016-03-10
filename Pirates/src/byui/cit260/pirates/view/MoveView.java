@@ -5,14 +5,8 @@
  */
 package byui.cit260.pirates.view;
 
-import byui.cit260.pirates.control.ControlBattles;
 import java.io.Serializable;
 
-
-/**
- *
- * @author hawle_000
- */
 public class MoveView extends View implements Serializable{
 
     public MoveView() {
@@ -80,3 +74,5 @@ public class MoveView extends View implements Serializable{
        battle.display();
     }
 }
+    
+
