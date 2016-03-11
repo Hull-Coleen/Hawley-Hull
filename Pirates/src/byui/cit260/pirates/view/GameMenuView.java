@@ -28,6 +28,7 @@ public class GameMenuView extends View implements Serializable{
             + "\nG - Get supplies for ship"
             + "\nM - Move ship"
             + "\nC - Show Current Supplies"
+            + "\nD - Display Map"
             + "\nE - Exit"
             + "\n--------------------------------");
     }
@@ -93,6 +94,8 @@ public class GameMenuView extends View implements Serializable{
     }
 
     private void displayMap(Map map) {
+       // Location[][] location = new Location();
+        Location[][] locations = map.getLocations();
          String menu = ""
             + "\n***********************************************************************"
             + "\n" + map.getName() + " - " + map.getDescription()
@@ -100,8 +103,13 @@ public class GameMenuView extends View implements Serializable{
             
             System.out.println(menu);
         
+         
         for (Location[] location : map.getLocations()) {
-            System.out.print(map);
+            for (int col = 0; col < map.getLocations().length; col++){
+                
+                
+                System.out.print("| " + map.getLocations() + " | ");
+            }
         }
     } 
 

@@ -10,9 +10,30 @@ package byui.cit260.pirates.model;
  * @author Coleen
  */
 class Point {
+    private int x;
+    private int y;
+    public Point() {
+    }
 
-    Point(int i, int i0) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
     
 }

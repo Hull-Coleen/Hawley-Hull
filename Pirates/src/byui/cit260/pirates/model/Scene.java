@@ -71,21 +71,29 @@ public class Scene implements Serializable {
     private boolean visited;
     private String description;
     private String mapSymbol;
+
+    /*public Scene() {
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    } */
     public String getDescription() {
         return description;
     }
 
-    private void setDescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
    
     private final Point coordinates;
+    public Scene(){
+        this.description = description;
+        coordinates = new Point(1,1); 
+    }
 
-    private Scene() {
+    /*private Scene() {
         this.description = description;
         coordinates = new Point(1,1);
         
-    }
+    } */
 
     public Scene(int travelTime, boolean visited, String description, String mapSymbol, Point coordinates) {
         this.travelTime = travelTime;
@@ -96,15 +104,15 @@ public class Scene implements Serializable {
     }
 
 
-    private void setMapSymbol(String mapSymbol) {
+    public void setMapSymbol(String mapSymbol) {
        this.mapSymbol = mapSymbol;
     }
 
-    private void setVisited(boolean visited) {
+    public void setVisited(boolean visited) {
         this.visited = visited;
     }
 
-    private void setTravelTime(int travelTime) {
+    public void setTravelTime(int travelTime) {
         this.travelTime = travelTime;
     }
 }
