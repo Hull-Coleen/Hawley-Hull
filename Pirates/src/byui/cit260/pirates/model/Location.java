@@ -16,17 +16,20 @@ public class Location implements Serializable{
     private int row;
     private int col;
     private boolean visited;
-   /* private Avatar[] avatars;
-
-    public Avatar[] getAvatars() {
-        return avatars;
-    } */
+    private Scene scene;
     private ArrayList<Avatar> avatars = new ArrayList<>();
+
+    public Location() {
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
     public ArrayList<Avatar> getAvatars() {
         return avatars;
     }
-
+    public void setAvatars(ArrayList<Avatar> avatars) {
+        this.avatars = avatars;
+    }
     public Scene getScene() {
         return scene;
     }
@@ -34,18 +37,12 @@ public class Location implements Serializable{
     public void setScene(Scene scene) {
         this.scene = scene;
     }
-    private Scene scene;
-    //private ArrayList<Avatar> avatars;
-
     public boolean isVisited() {
         return visited;
     }
 
     public void setVisited(boolean visited) {
         this.visited = visited;
-    }
-
-    public Location() {
     }
 
     public int getRow() {
@@ -64,36 +61,4 @@ public class Location implements Serializable{
         this.col = col;
     }
 
-   /* @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 83 * hash + this.row;
-        hash = 83 * hash + this.col;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Location other = (Location) obj;
-        if (this.row != other.row) {
-            return false;
-        }
-        if (this.col != other.col) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Location{" + "row=" + row + ", col=" + col + '}';
-    }
-    */
-    
 }

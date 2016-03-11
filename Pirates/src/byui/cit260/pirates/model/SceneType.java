@@ -9,10 +9,10 @@ package byui.cit260.pirates.model;
  *
  * @author Coleen
  */
-class Point {
-
-    Point(int i, int i0) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+public enum SceneType {
+    start_point,
+    end_point,
+    island,
+    port,
+    sea; 
 }

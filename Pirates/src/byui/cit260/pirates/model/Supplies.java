@@ -13,106 +13,50 @@ import java.util.Objects;
  * @author Coleen
  */
 public class Supplies implements Serializable{
-    public static Object food;
-    public static Object rum;
-    public static Object ammo;
-    private int numFood;
-    private int numAmmo;
-    private int numRum;
-    private String suppleType;
+  
+    private String supplyType;
+    private int numInStock;
+    private int numRequired;
 
     public Supplies() {
     }
-
-    public Supplies(int numFood, int numAmmo, int numRum, String suppleType) {
-        this.numFood = numFood;
-        this.numAmmo = numAmmo;
-        this.numRum = numRum;
-        this.suppleType = suppleType;
-    }
-
-    public int getNumFood() {
-        return numFood;
-    }
-
-    public void setNumFood(int numFood) {
-        this.numFood = numFood;
-    }
-
-    public int getNumAmmo() {
-        return numAmmo;
-    }
-
-    public void setNumAmmo(int numAmmo) {
-        this.numAmmo = numAmmo;
-    }
-
-    public int getNumRum() {
-        return numRum;
-    }
-
-    public void setNumRum(int numRum) {
-        this.numRum = numRum;
-    }
-
-    public String getSuppleType() {
-        return suppleType;
-    }
-
-    public void setSuppleType(String suppleType) {
-        this.suppleType = suppleType;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 61 * hash + this.numFood;
-        hash = 61 * hash + this.numAmmo;
-        hash = 61 * hash + this.numRum;
-        hash = 61 * hash + Objects.hashCode(this.suppleType);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Supplies other = (Supplies) obj;
-        if (this.numFood != other.numFood) {
-            return false;
-        }
-        if (this.numAmmo != other.numAmmo) {
-            return false;
-        }
-        if (this.numRum != other.numRum) {
-            return false;
-        }
-        if (!Objects.equals(this.suppleType, other.suppleType)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Supplies{" + "numFood=" + numFood + ", numAmmo=" + numAmmo + ", numRum=" + numRum + ", suppleType=" + suppleType + '}';
-    }
-
-    public void setDescription(String food) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setAmountInStock(int i) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setRequiredAmount(int i) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public Supplies(String supplyType, int numInStock, int numRequired)
+    {
+        this.supplyType = supplyType;
+        this.numInStock = numInStock;
+        this.numRequired = numRequired;
     }
     
+    public void setSupplyType(String supplyType)
+    {
+        this.supplyType = supplyType;
+    }
+    
+    public void setNumInStock(int numInStock)
+    {
+        this.numInStock = numInStock;
+    }
+    
+    public void setNumRequired(int numRequired)
+    {
+        this.numRequired = numRequired;
+    }
+
+    public String getSupplyType()
+    {
+        return supplyType;
+    }
+    
+    public int getNumInStock()
+    {
+        return numInStock;
+    }
+    
+    public int getNumRequired()
+    {
+        return numRequired;
+    }
+  
     
 }

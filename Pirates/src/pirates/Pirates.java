@@ -63,13 +63,7 @@ public class Pirates implements Serializable {
           System.out.println(sea.toString());
           
       }
-     
-      
-      public static void testSupplyClass()
-      {
-         Supplies supplies = new Supplies(10, 15 , 5, "food");
-         System.out.println(supplies.toString());
-      }
+   
       public static void testIslandClass()
       {
          Island island =  new Island(true, true, false, 10);
@@ -118,4 +112,9 @@ public class Pirates implements Serializable {
        System.out.println("stubbed setCurrentGame in Pirates class");
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public static Game getCurrentGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }

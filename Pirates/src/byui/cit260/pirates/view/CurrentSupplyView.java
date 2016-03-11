@@ -20,6 +20,7 @@ public class CurrentSupplyView extends View implements Serializable{
             + "\n-------------------------------"
             + "\nF - Show Days of Food"
             + "\nA - Show Ammo"
+            + "\nR - Show Rum"
             + "\nE - Exit"
             + "\n--------------------------------");
     }
@@ -35,6 +36,9 @@ public class CurrentSupplyView extends View implements Serializable{
                break;
            case 'A':
               this.showAmmo();
+               break;
+           case 'R':
+               this.showRum();
                break;
            case 'E': 
                 return true;
@@ -53,6 +57,10 @@ public class CurrentSupplyView extends View implements Serializable{
     private void showAmmo() {
         System.out.println("Ammo Left");
         
+    }
+
+    private void showRum() {
+      
     }
     
 }

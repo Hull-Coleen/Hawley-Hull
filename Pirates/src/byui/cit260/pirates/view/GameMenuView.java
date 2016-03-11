@@ -7,6 +7,8 @@
 package byui.cit260.pirates.view;
 
 
+import byui.cit260.pirates.model.Location;
+import byui.cit260.pirates.model.Map;
 import java.io.Serializable;
 
 
@@ -29,11 +31,13 @@ public class GameMenuView extends View implements Serializable{
             + "\nE - Exit"
             + "\n--------------------------------");
     }
- 
+    //Map map = new Map();
     public boolean doAction(String value) {
       value = value.toUpperCase();
       char selection;
       selection = value.charAt(0); 
+       Location locations = new Location();
+       Map map = new Map();
        switch(selection){
            case 'P': 
                this.chooseAvatar();
@@ -50,6 +54,11 @@ public class GameMenuView extends View implements Serializable{
            case 'C':
                 this.currentSupplies();
                 break;
+           case 'D':
+              // Map map = new Map();
+               //this.displayMap(Location[][] locations);
+             //  Location locations = new Location();
+               this.displayMap(map);
            case 'E': 
                return true;
            default:
@@ -82,6 +91,23 @@ public class GameMenuView extends View implements Serializable{
         CurrentSupplyView CurrentSupply = new CurrentSupplyView();
         CurrentSupply.display();
     }
-    
+
+    private void displayMap(Map map) {
+         String menu = ""
+            + "\n***********************************************************************"
+            + "\n" + map.getName() + " - " + map.getDescription()
+            + "\n***********************************************************************";
+            
+            System.out.println(menu);
+        
+        for (Location[] location : map.getLocations()) {
+            System.out.print(map);
+        }
+    } 
+
+
     
 }
+        
+    
+
