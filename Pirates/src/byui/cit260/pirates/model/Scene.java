@@ -67,10 +67,14 @@ public class Scene implements Serializable {
         
         return scenes; 
     }
+
+    public String getMapSymbol() {
+        return mapSymbol;
+    }
     private int travelTime;
     private boolean visited;
     private String description;
-    private String mapSymbol;
+    public String mapSymbol;
 
     /*public Scene() {
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

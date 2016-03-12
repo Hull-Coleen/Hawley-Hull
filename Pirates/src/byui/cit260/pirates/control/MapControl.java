@@ -19,13 +19,14 @@ import java.io.Serializable;
 public class MapControl implements Serializable{
     public static Map createMap(){
         // create the map
-        Map map = new Map(9, 9);
+        Map map = new Map(3, 3);
         
         // create a list of the different scenes
         Scene[] scenes = createScenes();
         
         // assign the different scenes to locations
         assignScenesToLocations(map, scenes);
+        //map.setName(scenes);
         return map;
     }
 
