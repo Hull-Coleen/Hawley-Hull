@@ -14,10 +14,7 @@ import byui.cit260.pirates.model.Map;
  */
 public class MapView {
     public void display(Map map){
-        // String mapName = getMapSymbol();
-       // map.setName(mapName);
-       // Location[][] location = new Location();
-       // map.setScene( );
+       
         Location[][] locations = map.getLocations();
          String menu = ""
             + "\n***********************************************************************"
@@ -27,16 +24,17 @@ public class MapView {
             System.out.println(menu);
         
          
-        for (int row = 0; row < map.getLocations().length; row++) {
-            if (row != 0 && row % 2 == 0)
-                System.out.println("");
-            for (int col = 0; col < map.getLocations().length; col++){
-                System.out.print("| " + map.getScene() + " |");
-               // System.out.print("| " + Scene.getMapSymbol() + " |");
-              // System.out.print("| " +  map.getName() + " | ");
-                if (col != 0 && col % 2 == 0)
-                    System.out.println("");
+        for (int row = 0; row < locations.length; row++) {
+            
+            for (int col = 0; col < locations.length; col++){
+                if (locations[row][col].getScene().getVisited())
+                    System.out.print("|*" + locations[row][col].getScene().getMapSymbol() + "*|");
+                else
+                   System.out.print("| " + locations[row][col].getScene().getMapSymbol() + " |");
+               
             }
+            System.out.println("");
+            
         }
         System.out.println("***************************************");
         
