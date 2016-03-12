@@ -22,9 +22,9 @@ public class MapView {
        // Location[][] currentLocation = Pirates.getCurrentgame().getLocation();
         Location[][] locations = map.getLocations();
         String menu = ""
-            + "\n********************************************"
-            + "\n                    MAP"
-            + "\n********************************************"
+            + "\n*********************"
+            + "\n      GAME MAP"
+            + "\n*********************"
             + "\n      1     2     3";
             
             System.out.println(menu);
@@ -45,7 +45,7 @@ public class MapView {
             System.out.println("");
             
         }
-        System.out.println("***************************************");
+        System.out.println("*********************");
         
     }
 }
