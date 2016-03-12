@@ -24,12 +24,14 @@ public class MapView {
         String menu = ""
             + "\n********************************************"
             + "\n                    MAP"
-            + "\n********************************************";
+            + "\n********************************************"
+            + "\n      1     2     3";
             
             System.out.println(menu);
         
          
         for (int row = 0; row < locations.length; row++) {
+            System.out.print(row + 1 + "  ");
             
             for (int col = 0; col < locations.length; col++){
                 if (locations[row][col].getScene().getVisited())
