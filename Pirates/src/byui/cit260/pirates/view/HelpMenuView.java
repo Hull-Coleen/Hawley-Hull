@@ -33,22 +33,18 @@ public class HelpMenuView extends View implements Serializable{
        selection = value.charAt(0); 
        switch(selection){
            case 'G':
-           case 'g':
                this.helpGoal();
                break;
            case 'M':
-           case 'm':
               this.helpMove();
               break;
            case 'L':
-           case 'l':
               this.helpPosition();
               break;
            case 'S':
-           case 's':
               this.helpSupplies();
               break;
-           case 'E': case 'e':
+           case 'E': 
                return true;
            default:
                System.out.println("Invalid Entry");

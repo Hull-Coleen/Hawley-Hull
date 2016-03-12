@@ -108,13 +108,5 @@ public class Pirates implements Serializable {
       //testControlSupplies();
     }
 
-    public static void setCurrentGame(Game game) {
-       System.out.println("stubbed setCurrentGame in Pirates class");
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public static Game getCurrentGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+  
 }

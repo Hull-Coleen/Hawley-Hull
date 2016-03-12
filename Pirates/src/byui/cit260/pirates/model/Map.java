@@ -18,19 +18,20 @@ public class Map implements Serializable{
     private int col;
     private int row;
     private Location[][] locations;
-
-    public Scene[] getScene() {
+    public String name;
+    private String description;
+    private Scene scene;
+    
+    public Scene getScene() {
         return scene;
     }
 
-    public void setScene(Scene[] scene) {
+    public void setScene(Scene scene) {
         this.scene = scene;
     }
-    public String name;
-    private String description;
-    Scene[] scene;
+  
     public Map() {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      
     }
     public Location[][] getLocations() {
         return locations;
@@ -64,13 +65,6 @@ public class Map implements Serializable{
         return col;
     }
 
-   /* public void setName(Scene[] symbolNames) {
-        for (int i = 0; i < symbolNames.length; i++)
-        {
-            name[i] = symbolNames[i].getMapSymbol();
-        }
-    } */
-
     public void setDescription(String description) {
         this.description = description;
     }
@@ -91,17 +85,10 @@ public class Map implements Serializable{
         return name;
     }
 
-    /*  public String getName() {
-    return name;
-    } */
     public void setName(String name) {    
         this.name = name;
     }
 
-    /*public String getName(int placeHolder)
-    {
-    return name[placeHolder];
-    } */
     public String getDescription() {
         return description;
     }

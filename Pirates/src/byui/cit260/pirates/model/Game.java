@@ -19,6 +19,7 @@ public class Game implements Serializable{
     private Map map;
     private String[] avatars;
     private Scene[] scenes;
+    
     public Supplies[] getSupply() {
         return supply;
     } 
@@ -50,7 +51,6 @@ public class Game implements Serializable{
     }
 
     public void setScenes(Scene[] scenes) {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
        this.scenes = scenes;
     }
 

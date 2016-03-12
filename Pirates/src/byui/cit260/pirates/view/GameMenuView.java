@@ -7,11 +7,10 @@
 package byui.cit260.pirates.view;
 
 
-import byui.cit260.pirates.model.Location;
+
 import byui.cit260.pirates.model.Map;
 import java.io.Serializable;
-import byui.cit260.pirates.control.MapControl;
-import byui.cit260.pirates.model.Scene;
+import pirates.Pirates;
 
 
 
@@ -34,14 +33,12 @@ public class GameMenuView extends View implements Serializable{
             + "\nE - Exit"
             + "\n--------------------------------");
     }
-    //Map map = new Map();
+    
     public boolean doAction(String value) {
       value = value.toUpperCase();
       char selection;
       selection = value.charAt(0); 
-       Location locations = new Location();
-       Map map = new Map();
-       map = MapControl.createMap();
+
        switch(selection){
            case 'P': 
                this.chooseAvatar();
@@ -59,10 +56,8 @@ public class GameMenuView extends View implements Serializable{
                 this.currentSupplies();
                 break;
            case 'D':
-              // Map map = new Map();
-               //this.displayMap(Location[][] locations);
-             //  Location locations = new Location();
                this.displayMap();
+               break;
            case 'E': 
                return true;
            default:
@@ -97,42 +92,13 @@ public class GameMenuView extends View implements Serializable{
     }
 
     private void displayMap() {
-         Location locations = new Location();
-       Map map = new Map();
-       map = MapControl.createMap();
+      
+       Map map = Pirates.getCurrentgame().getMap();
        MapView mapView = new MapView();
        mapView.display(map);
-       
-       /*// String mapName = getMapSymbol();
-       // map.setName(mapName);
-       // Location[][] location = new Location();
-       // map.setScene( );
-        Location[][] locations = map.getLocations();
-         String menu = ""
-            + "\n***********************************************************************"
-            + "\n                            MAP"
-            + "\n***********************************************************************";
-            
-            System.out.println(menu);
-        
-         
-        for (int row = 0; row < map.getLocations().length; row++) {
-            if (row != 0 && row % 2 == 0)
-                System.out.println("");
-            for (int col = 0; col < map.getLocations().length; col++){
-                System.out.print("| " + map.getScene() + " |");
-               // System.out.print("| " + Scene.getMapSymbol() + " |");
-              // System.out.print("| " +  map.getName() + " | ");
-                if (col != 0 && col % 2 == 0)
-                    System.out.println("");
-            }
-        }
-        System.out.println("***************************************");
-               */
+  
     } 
 
-
-    
 }
         
     
