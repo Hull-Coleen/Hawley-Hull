@@ -6,11 +6,9 @@
 package byui.cit260.pirates.control;
 
 import byui.cit260.pirates.model.Game;
-import byui.cit260.pirates.model.Location;
 import byui.cit260.pirates.model.Map;
 import byui.cit260.pirates.model.Player;
 import byui.cit260.pirates.model.Scene;
-import byui.cit260.pirates.model.SceneType;
 import byui.cit260.pirates.model.Ship;
 import byui.cit260.pirates.model.Supplies;
 import pirates.Pirates;
@@ -21,16 +19,23 @@ import pirates.Pirates;
  */
 public class GameControl {
     public static void createNewGame(Player player){
+        // create new game
         Game game = new Game();
-        Pirates.setCurrentGame(game);
+        Pirates.setCurrentgame(game);
+        // get the player info
         game.setPlayer(player);
+        // setup supplies
         Supplies[] supplyList = GameControl.createSuppliesList();
+        // get ship
         Ship ship = new Ship();
         game.setShip(ship);
+        // create scenes
         Scene[] scenes = Scene.createScenes();
         game.setScenes(scenes);
+        // create map
         Map map = MapControl.createMap();
         game.setMap(map);
+        // don't know yet
         MapControl.moveAvatarsToStartingLocation(map);
     }
 
@@ -45,30 +50,6 @@ public class GameControl {
         Pirates.setPlayer(player);
        return player;  
     }
-
-    public static void assignScenesToLoactions(Map map, Scene[] scenes) {
-      Location [][] locations = map.getLocations();
-        
-        locations[1][1].setScene(scenes[SceneType.start_point.ordinal()]);
-        locations[1][1].setVisited(false);
-        locations[1][2].setScene(scenes[SceneType.island.ordinal()]);
-        locations[1][2].setVisited(false);
-        locations[1][3].setScene(scenes[SceneType.sea.ordinal()]);
-        locations[1][3].setVisited(false);
-        locations[2][1].setScene(scenes[SceneType.sea.ordinal()]);
-        locations[2][1].setVisited(false);
-        locations[2][2].setScene(scenes[SceneType.port.ordinal()]);
-        locations[2][2].setVisited(false);
-        locations[2][3].setScene(scenes[SceneType.island.ordinal()]);
-        locations[2][3].setVisited(false);
-        locations[3][1].setScene(scenes[SceneType.sea.ordinal()]);
-        locations[3][1].setVisited(false);
-        locations[3][2].setScene(scenes[SceneType.sea.ordinal()]);
-        locations[3][2].setVisited(false);
-        locations[3][3].setScene(scenes[SceneType.end_point.ordinal()]);
-        locations[3][3].setVisited(false);
-    } 
-
 
     private static Supplies[] createSuppliesList() {
  
