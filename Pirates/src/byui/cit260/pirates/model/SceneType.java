@@ -5,11 +5,13 @@
  */
 package byui.cit260.pirates.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Coleen
  */
-public enum SceneType {
+public enum SceneType implements Serializable {
     start_point,
     end_point,
     island,

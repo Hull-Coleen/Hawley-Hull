@@ -13,8 +13,54 @@ import java.io.Serializable;
  * @author Coleen
  */
 public class Scene implements Serializable {
-   
-   public static Scene[] createScenes() {
+    private int travelTime;
+    private boolean visited;
+    private String description;
+    public String mapSymbol;
+    private final Point coordinates;
+    
+     public Scene(){
+        this.description = description;
+        coordinates = new Point(1,1); 
+    } 
+    
+    public Scene(int travelTime, boolean visited, String description, String mapSymbol, Point coordinates) {
+        this.travelTime = travelTime;
+        this.visited = visited;
+        this.description = description;
+        this.mapSymbol = mapSymbol;
+        this.coordinates = coordinates;
+    } 
+       
+    public String getMapSymbol() {
+        return mapSymbol;
+    }
+  
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setMapSymbol(String mapSymbol) {
+       this.mapSymbol = mapSymbol;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+
+    public void setTravelTime(int travelTime) {
+        this.travelTime = travelTime;
+    }
+    public boolean getVisited(){
+        return this.visited;
+    }
+    
+
+    public static Scene[] createScenes() {
         //Game game = Pirates.getCurrentGame();  // Not necessary here.
         Scene[] scenes = new Scene[SceneType.values().length];
                 
@@ -67,59 +113,5 @@ public class Scene implements Serializable {
         
         return scenes; 
     }
-     
-    public String getMapSymbol() {
-        return mapSymbol;
-    }
-    private int travelTime;
-    private boolean visited;
-    private String description;
-    public String mapSymbol;
-
-    /*public Scene() {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    } */
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-   
-    private final Point coordinates;
-    public Scene(){
-        this.description = description;
-        coordinates = new Point(1,1); 
-    }
-
-    /*private Scene() {
-        this.description = description;
-        coordinates = new Point(1,1);
-        
-    } */
-
-    public Scene(int travelTime, boolean visited, String description, String mapSymbol, Point coordinates) {
-        this.travelTime = travelTime;
-        this.visited = visited;
-        this.description = description;
-        this.mapSymbol = mapSymbol;
-        this.coordinates = coordinates;
-    }
-
-
-    public void setMapSymbol(String mapSymbol) {
-       this.mapSymbol = mapSymbol;
-    }
-
-    public void setVisited(boolean visited) {
-        this.visited = visited;
-    }
-
-    public void setTravelTime(int travelTime) {
-        this.travelTime = travelTime;
-    }
-    public boolean getVisited(){
-        return this.visited;
-    }
 }
+

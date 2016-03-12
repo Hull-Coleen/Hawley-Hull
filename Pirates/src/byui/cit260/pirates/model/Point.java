@@ -5,14 +5,18 @@
  */
 package byui.cit260.pirates.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Coleen
  */
-class Point {
+class Point implements Serializable {
     private int x;
     private int y;
     public Point() {
+        x = 1;
+        y = 1;
     }
 
     public Point(int x, int y) {

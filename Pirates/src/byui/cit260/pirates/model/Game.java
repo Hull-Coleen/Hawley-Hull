@@ -19,6 +19,18 @@ public class Game implements Serializable{
     private Map map;
     private String[] avatars;
     private Scene[] scenes;
+    private Location[][] location;
+
+    public Location[][] getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location[][] location) {
+        this.location = location;
+    }
+    
+    
+    
     
     public Supplies[] getSupply() {
         return supply;

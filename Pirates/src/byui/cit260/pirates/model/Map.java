@@ -22,25 +22,10 @@ public class Map implements Serializable{
     private String description;
     private Scene scene;
     
-    public Scene getScene() {
-        return scene;
-    }
-
-    public void setScene(Scene scene) {
-        this.scene = scene;
-    }
+     public Map() {
   
-    public Map() {
-      
     }
-    public Location[][] getLocations() {
-        return locations;
-    }
-
-    public void setLocations(Location[][] locations) {
-        this.locations = locations;
-    }
-    public Map(int row, int col) {
+      public Map(int row, int col) {
         if ( row < 1 || col < 1){
             System.out.println("The number of rows and columns must be more the les than one, ");
             return;
@@ -59,7 +44,24 @@ public class Map implements Serializable{
                 
             }
         }
+    }  
+    public Scene getScene() {
+        return scene;
     }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+  
+   
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
 
     public int getCol() {
         return col;
