@@ -14,7 +14,7 @@ import java.io.Serializable;
  */
 public class Scene implements Serializable {
    
-    public static Scene[] createScenes() {
+   public static Scene[] createScenes() {
         //Game game = Pirates.getCurrentGame();  // Not necessary here.
         Scene[] scenes = new Scene[SceneType.values().length];
                 
@@ -23,7 +23,7 @@ public class Scene implements Serializable {
                     "\n*** this is where we start ");
       
         startingScene.setMapSymbol("ST");
-        startingScene.setVisited(false);
+        startingScene.setVisited(true);
         startingScene.setTravelTime(240);
         scenes[SceneType.start_point.ordinal()] = startingScene;
         
@@ -37,7 +37,7 @@ public class Scene implements Serializable {
         portScene.setTravelTime(240);
         scenes[SceneType.port.ordinal()] = portScene;
         
-         Scene islandScene = new Scene();
+        Scene islandScene = new Scene();
         portScene.setDescription(
                     "*\n***                                  *"
                     + "\n       Welcome to the Tropical Island."
@@ -47,7 +47,7 @@ public class Scene implements Serializable {
         islandScene.setTravelTime(240);
         scenes[SceneType.island.ordinal()] = islandScene;
         
-         Scene openSeaScene = new Scene();
+        Scene openSeaScene = new Scene();
         openSeaScene.setDescription(
                     "*\n***                                  *"
                     + "\n       Out on the Open Sea."
@@ -67,7 +67,7 @@ public class Scene implements Serializable {
         
         return scenes; 
     }
-
+     
     public String getMapSymbol() {
         return mapSymbol;
     }
@@ -118,5 +118,8 @@ public class Scene implements Serializable {
 
     public void setTravelTime(int travelTime) {
         this.travelTime = travelTime;
+    }
+    public boolean getVisited(){
+        return this.visited;
     }
 }
