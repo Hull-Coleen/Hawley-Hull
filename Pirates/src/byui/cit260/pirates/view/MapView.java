@@ -16,7 +16,7 @@ import pirates.Pirates;
  * @author Coleen
  */
 public class MapView {
-    private Location[][] currentLocation = Pirates.getCurrentgame().getLocation();
+    private final Location[][] currentLocation = Pirates.getCurrentgame().getLocation();
     public void display(Map map){
         
        // Location[][] currentLocation = Pirates.getCurrentgame().getLocation();
@@ -36,7 +36,7 @@ public class MapView {
             for (int col = 0; col < locations.length; col++){
                 if (locations[row][col].getScene().getVisited())
                    System.out.print("|*" + locations[row][col].getScene().getMapSymbol() + "*|");
-                else if (locations == currentLocation)
+                else  if (locations == currentLocation)
                     System.out.print("|$" + locations[row][col].getScene().getMapSymbol() + "$|");
                 else
                     System.out.print("| " + locations[row][col].getScene().getMapSymbol() + " |");

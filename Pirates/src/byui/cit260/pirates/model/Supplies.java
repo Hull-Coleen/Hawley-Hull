@@ -57,6 +57,5 @@ public class Supplies implements Serializable{
     {
         return numRequired;
     }
-  
-    
+ 
 }

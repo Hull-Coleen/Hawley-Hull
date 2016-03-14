@@ -11,6 +11,7 @@ import byui.cit260.pirates.model.Player;
 import byui.cit260.pirates.model.Scene;
 import byui.cit260.pirates.model.Ship;
 import byui.cit260.pirates.model.Supplies;
+import byui.cit260.pirates.model.Supply;
 import pirates.Pirates;
 
 /**
@@ -18,6 +19,7 @@ import pirates.Pirates;
  * @author Coleen
  */
 public class GameControl {
+    Supplies[] supplyList;
     public static void createNewGame(Player player){
         // create new game
         Game game = new Game();
@@ -25,7 +27,7 @@ public class GameControl {
         // get the player info
         game.setPlayer(player);
         // setup supplies
-        Supplies[] supplyList = GameControl.createSuppliesList();
+        Supplies[] supplyList = createSuppliesList();
         // get ship
         Ship ship = new Ship();
         game.setShip(ship);
@@ -51,26 +53,53 @@ public class GameControl {
        return player;  
     }
 
-    private static Supplies[] createSuppliesList() {
- 
-      Supplies[] supply = new Supplies[3];
-      Supplies food = new Supplies();
-      food.setSupplyType("Food");
-      food.setNumInStock(0);
-      food.setNumRequired(0);
-      supply[0] = food;
-      Supplies rum = new Supplies();
-      rum.setSupplyType("Rum");
-      rum.setNumInStock(0);
-      rum.setNumRequired(0);
-      supply[1] = rum;
-      Supplies ammo = new Supplies();
-      ammo.setSupplyType("Ammo");
-      ammo.setNumInStock(0);
-      ammo.setNumRequired(0);
-      supply[2] = ammo;
- 
-      return supply; 
+    public static Supplies[] createSuppliesList(){
+        Supplies[] supply = new Supplies[3];
+        Supplies food = new Supplies();
+        food.setSupplyType("Food");
+        food.setNumInStock(1);
+        food.setNumRequired(0);
+        supply[Supply.food.ordinal()] = food;
+        Supplies rum = new Supplies();
+        rum.setSupplyType("Rum");
+        rum.setNumInStock(2);
+        rum.setNumRequired(0);
+        supply[Supply.rum.ordinal()] = rum;
+        Supplies ammo = new Supplies();
+        ammo.setSupplyType("Ammo");
+        ammo.setNumInStock(3);
+        ammo.setNumRequired(0);
+        supply[Supply.ammo.ordinal()] = ammo;
+    
+        return supply;
     }
+    public void supplyAmount(){
+        // calls sort supply list
+        Supplies supply[] = sortSupplies();
+        // displays the type and amount of the supplies
+        for (Supplies supply1 : supply) {
+            System.out.print(supply1.getSupplyType());
+            System.out.print("  ");
+            System.out.print(supply1.getNumInStock());
+            System.out.println("");
+        }
+        
+    }
+    public Supplies[] sortSupplies(){
+        Supplies[] sortedSupply = createSuppliesList();
+          for (int i =0; i < sortedSupply.length-1; i++) {
+            for (int j = 0; j < sortedSupply.length-1-i; j++){
+                if (sortedSupply[j].getSupplyType().
+                        compareToIgnoreCase(sortedSupply[j + 1].getSupplyType()) > 0) {
+                    Supplies tempSortedSupply = sortedSupply[j];
+                    sortedSupply[j] = sortedSupply[j+1];
+                    sortedSupply[j+1] = tempSortedSupply;
+                }
+            }
+        }
+        return sortedSupply;
+        
+    }
+        
  
 }

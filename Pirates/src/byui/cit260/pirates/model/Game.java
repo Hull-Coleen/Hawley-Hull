@@ -18,7 +18,10 @@ public class Game implements Serializable{
     private Player player;
     private Map map;
     private String[] avatars;
+    private Avatar avatar;
     private Scene[] scenes;
+    
+    
     private Location[][] location;
 
     public Location[][] getLocation() {
@@ -29,13 +32,21 @@ public class Game implements Serializable{
         this.location = location;
     }
     
+
+    public Avatar getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(Avatar avatar) {
+        this.avatar = avatar;
+    }
     
     
     
     public Supplies[] getSupply() {
         return supply;
     } 
-    public String[] getAvatars() {
+   public String[] getAvatars() {
         return avatars;
     }
    

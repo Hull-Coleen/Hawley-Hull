@@ -20,11 +20,22 @@ public enum Avatar implements Serializable{
     
     private final String description;
     private final Point coordinates;
+    private Location[][] location;
 
+    public Location[][] getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location[][] location) {
+        this.location = location;
+    }
+    
+    
     
     Avatar(String description){
        this.description = description;
        coordinates = new Point(1,1);
+       location = new Location[1][1];
     }
     public String getDescription(){
        return description;

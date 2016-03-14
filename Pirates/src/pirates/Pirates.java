@@ -5,6 +5,7 @@
  */
 package pirates;
 
+import byui.cit260.pirates.model.Avatar;
 import byui.cit260.pirates.model.Player;
 import byui.cit260.pirates.model.Game;
 import byui.cit260.pirates.view.StartProgramView;
@@ -16,7 +17,18 @@ import java.io.Serializable;
 public class Pirates implements Serializable {
      private static Game currentgame = null;
      private static Player player = null;
+    /* private static Avatar avater;
 
+    public static Avatar getAvater() {
+        return avater;
+    }
+
+    public static void setAvater(Avatar avater) {
+        Pirates.avater = avater;
+    } */
+     
+     
+     
     public static Game getCurrentgame() {
         return currentgame;
     }

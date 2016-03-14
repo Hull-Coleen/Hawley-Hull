@@ -8,6 +8,7 @@ package byui.cit260.pirates.view;
 
 
 
+import byui.cit260.pirates.control.GameControl;
 import byui.cit260.pirates.model.Map;
 import java.io.Serializable;
 import pirates.Pirates;
@@ -58,6 +59,9 @@ public class GameMenuView extends View implements Serializable{
            case 'D':
                this.displayMap();
                break;
+           case'V':
+               this.displaySupply();
+               break;
            case 'E': 
                return true;
            default:
@@ -98,6 +102,13 @@ public class GameMenuView extends View implements Serializable{
        mapView.display(map);
   
     } 
+
+    private void displaySupply() {
+
+       GameControl game = new GameControl();
+       game.supplyAmount();
+    }
+    
 
 }
         
