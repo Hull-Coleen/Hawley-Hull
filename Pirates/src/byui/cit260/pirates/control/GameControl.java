@@ -73,10 +73,11 @@ public class GameControl {
     
         return supply;
     }
-    public void supplyAmount(){
+    public void viewSupplyAmount(){
         // calls sort supply list
         Supplies supply[] = sortSupplies();
         // displays the type and amount of the supplies
+        // here is the for each loop
         for (Supplies supply1 : supply) {
             System.out.print(supply1.getSupplyType());
             System.out.print("  ");
@@ -86,14 +87,17 @@ public class GameControl {
         
     }
     public Supplies[] sortSupplies(){
+        // create a new array of supplies
         Supplies[] sortedSupply = createSuppliesList();
-          for (int i =0; i < sortedSupply.length-1; i++) {
-            for (int j = 0; j < sortedSupply.length-1-i; j++){
-                if (sortedSupply[j].getSupplyType().
-                        compareToIgnoreCase(sortedSupply[j + 1].getSupplyType()) > 0) {
+        // Interate throught the array
+        for (int i = 0; i < sortedSupply.length - 1; i++) {
+           // interates through the array again checking to see which is bigger i or j 
+           for (int j = 0; j < sortedSupply.length - 1 - i; j++){
+               // If j is bigger than j plus 1 store j in a temp variable and move j plus 1 to the j spot
+               if (sortedSupply[j].getSupplyType().compareToIgnoreCase(sortedSupply[j + 1].getSupplyType()) > 0) {
                     Supplies tempSortedSupply = sortedSupply[j];
-                    sortedSupply[j] = sortedSupply[j+1];
-                    sortedSupply[j+1] = tempSortedSupply;
+                    sortedSupply[j] = sortedSupply[j + 1];
+                    sortedSupply[j + 1] = tempSortedSupply;
                 }
             }
         }

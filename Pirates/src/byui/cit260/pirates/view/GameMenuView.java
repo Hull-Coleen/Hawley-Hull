@@ -53,13 +53,13 @@ public class GameMenuView extends View implements Serializable{
            case 'M':
                this.moveShip();
                break;
-           case 'C':
+           case 'V':
                 this.currentSupplies();
                 break;
            case 'D':
                this.displayMap();
                break;
-           case'V':
+           case'C':
                this.displaySupply();
                break;
            case 'E': 
@@ -106,7 +106,7 @@ public class GameMenuView extends View implements Serializable{
     private void displaySupply() {
 
        GameControl game = new GameControl();
-       game.supplyAmount();
+       game.viewSupplyAmount();
     }
     
 
