@@ -5,7 +5,6 @@
  */
 package byui.cit260.pirates.view;
 
-import byui.cit260.pirates.model.Avatar;
 
 /**
  *
@@ -22,8 +21,10 @@ public class AvatarView extends View {
        value = value.toUpperCase();
        char selection;
        selection = value.charAt(0); 
-      switch(selection){    
+       
+       switch(selection){    
           case 'N':
+              
              //avatar.setPirate(false);
              System.out.println("Navy");
               return true;

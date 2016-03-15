@@ -23,6 +23,7 @@ public enum Avatar implements Serializable{
     private Location[][] location;
 
     public Location[][] getLocation() {
+       // location = new Location[1][1];
         return location;
     }
 
@@ -35,7 +36,7 @@ public enum Avatar implements Serializable{
     Avatar(String description){
        this.description = description;
        coordinates = new Point(1,1);
-       location = new Location[1][1];
+      // location = new Location[1][1];
     }
     public String getDescription(){
        return description;

@@ -96,7 +96,6 @@ public class GameMenuView extends View implements Serializable{
     }
 
     private void displayMap() {
-      
        Map map = Pirates.getCurrentgame().getMap();
        MapView mapView = new MapView();
        mapView.display(map);
@@ -105,8 +104,8 @@ public class GameMenuView extends View implements Serializable{
 
     private void displaySupply() {
 
-       GameControl game = new GameControl();
-       game.viewSupplyAmount();
+       SupplyView supply = new SupplyView();
+       supply.display();
     }
     
 

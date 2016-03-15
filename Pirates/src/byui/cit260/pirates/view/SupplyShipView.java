@@ -49,6 +49,7 @@ public class SupplyShipView extends View {
             if (selection == 'A'){
                System.out.println("how many crates of ammo do you want");
                int ammo = keyboard.nextInt();
+               
                double ammoAmount = supply.getFood(ammo);
                if (ammoAmount > 0)
                  System.out.println("Your ammo is " + ammoAmount + " percent full." );

@@ -20,8 +20,6 @@ public class Game implements Serializable{
     private String[] avatars;
     private Avatar avatar;
     private Scene[] scenes;
-    
-    
     private Location[][] location;
 
     public Location[][] getLocation() {

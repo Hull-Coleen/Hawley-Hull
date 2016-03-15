@@ -23,6 +23,11 @@ public class Location implements Serializable{
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    public Location(int row, int col) {
+        this.row = row;
+        this.col = col;
+    }
+    
 
     public ArrayList<Avatar> getAvatars() {
         return avatars;
