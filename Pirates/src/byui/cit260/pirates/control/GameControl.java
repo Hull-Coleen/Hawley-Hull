@@ -110,6 +110,12 @@ public class GameControl {
         for (Avatar name : names){
            if (name.getDescription() == "Boy navy") 
             System.out.println(name + "  " + name.ordinal());
+           if (name.getDescription() == "Girl navy") 
+            System.out.println(name + "  " + name.ordinal());
+           if (name.getDescription() == "Boy pirate") 
+            System.out.println(name + "  " + name.ordinal());
+           if (name.getDescription() == "Girl pirate") 
+            System.out.println(name + "  " + name.ordinal());
         }
             
      }   
