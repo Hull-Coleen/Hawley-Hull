@@ -5,6 +5,7 @@
  */
 package byui.cit260.pirates.control;
 
+import byui.cit260.pirates.model.Avatar;
 import byui.cit260.pirates.model.Game;
 import byui.cit260.pirates.model.Map;
 import byui.cit260.pirates.model.Player;
@@ -104,6 +105,13 @@ public class GameControl {
         return sortedSupply;
         
     }
-        
+     public static void names(){
+       Avatar[] names = Avatar.values();
+        for (Avatar name : names){
+           if (name.getDescription() == "Boy navy") 
+            System.out.println(name + "  " + name.ordinal());
+        }
+            
+     }   
  
 }

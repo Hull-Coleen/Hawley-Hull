@@ -31,6 +31,7 @@ public class GameMenuView extends View implements Serializable{
             + "\nM - Move ship"
             + "\nC - Show Current Supplies"
             + "\nD - Display Map"
+            + "\nN - Show Avatar name"
             + "\nE - Exit"
             + "\n--------------------------------");
     }
@@ -61,6 +62,9 @@ public class GameMenuView extends View implements Serializable{
                break;
            case'C':
                this.displaySupply();
+               break;
+           case 'N':
+               this.displayName();
                break;
            case 'E': 
                return true;
@@ -106,6 +110,11 @@ public class GameMenuView extends View implements Serializable{
 
        SupplyView supply = new SupplyView();
        supply.display();
+    }
+
+    private void displayName() {
+       GameControl game = new GameControl();
+       game.names();
     }
     
 

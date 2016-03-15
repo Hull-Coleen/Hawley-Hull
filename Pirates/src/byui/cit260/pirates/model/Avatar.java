@@ -13,10 +13,10 @@ import java.io.Serializable;
  * @author Thomas
  */
 public enum Avatar implements Serializable{
-    Pirate_Scarlet("Girl pirate."),
-    Pirate_Pete("Boy pirate."),
-    Captain_Jane("Girl navy."),
-    Captian_Roberts("Boy navy.");
+    Pirate_Scarlet("Girl pirate"),
+    Pirate_Pete("Boy pirate"),
+    Captain_Jane("Girl navy"),
+    Captain_Roberts("Boy navy");
     
     private final String description;
     private final Point coordinates;
