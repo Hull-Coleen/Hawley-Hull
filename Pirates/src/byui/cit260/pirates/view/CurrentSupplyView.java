@@ -5,6 +5,8 @@
  */
 package byui.cit260.pirates.view;
 
+import byui.cit260.pirates.control.ControlShip;
+import byui.cit260.pirates.exception.ControlShipException;
 import java.io.Serializable;
 
 
@@ -49,17 +51,27 @@ public class CurrentSupplyView extends View implements Serializable{
        return false;
     }
   
-    private void showFood() {
-        System.out.println("days of food");
+    public void showFood() {
+        ControlShip ship = new ControlShip();
+        ship.setNumFoodCrate(30);
+        //ship.setNumCrew(6);
+        try
+        {
+          System.out.println( ship.daysOfFood(ship.getNumFoodCrate(), ship.getNumCrew()));
+        }
+        catch(ControlShipException cs)
+        {
+            System.out.println(cs.getMessage());
+        }
   
     }
     
-    private void showAmmo() {
+    public void showAmmo() {
         System.out.println("Ammo Left");
         
     }
 
-    private void showRum() {
+    public void showRum() {
       
     }
     

@@ -14,4 +14,8 @@ public enum Supply {
     rum,
     ammo;
 
+    public void setSupplyType(String rum) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

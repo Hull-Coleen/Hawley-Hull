@@ -59,17 +59,17 @@ public class GameControl {
         Supplies[] supply = new Supplies[3];
         Supplies food = new Supplies();
         food.setSupplyType("Food");
-        food.setNumInStock(1);
+        food.setNumInStock(0);
         food.setNumRequired(0);
         supply[Supply.food.ordinal()] = food;
         Supplies rum = new Supplies();
         rum.setSupplyType("Rum");
-        rum.setNumInStock(2);
+        rum.setNumInStock(0);
         rum.setNumRequired(0);
         supply[Supply.rum.ordinal()] = rum;
         Supplies ammo = new Supplies();
         ammo.setSupplyType("Ammo");
-        ammo.setNumInStock(3);
+        ammo.setNumInStock(0);
         ammo.setNumRequired(0);
         supply[Supply.ammo.ordinal()] = ammo;
     

@@ -26,9 +26,9 @@ public class Point implements Serializable {
     }
 
     public Point() {
-        x= 7;
-        y = 7;
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        x= 5;
+        y = 5;
+      
     }
     
     public int getX() {

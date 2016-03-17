@@ -25,9 +25,9 @@ public class MapView {
         Location[][] locations = map.getLocations();
         
         String menu = ""
-            + "\n*******************************"
+            + "\n*********************************"
             + "\n          GAME MAP"
-            + "\n*******************************"
+            + "\n*********************************"
             + "\n      1     2     3     4     5";
             
             System.out.println(menu);
@@ -48,7 +48,7 @@ public class MapView {
             System.out.println("");
             
         }
-        System.out.println("*********************");
+        System.out.println("*********************************");
         
     }
 }

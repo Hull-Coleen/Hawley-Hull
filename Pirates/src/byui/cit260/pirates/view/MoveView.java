@@ -5,6 +5,10 @@
  */
 package byui.cit260.pirates.view;
 
+import byui.cit260.pirates.control.MapControl;
+import byui.cit260.pirates.exception.MapControlException;
+import byui.cit260.pirates.model.Avatar;
+import byui.cit260.pirates.model.Point;
 import java.io.Serializable;
 
 public class MoveView extends View implements Serializable{
@@ -53,6 +57,17 @@ public class MoveView extends View implements Serializable{
   
     private void moveShipUp() {
         System.out.println("Move ship up stubbed");
+        Avatar avatar = null;
+        Point coordinates = null;
+        try
+        {
+           MapControl.moveAvatarToLocation(avatar, coordinates);
+        }
+        catch(MapControlException me)
+        {
+            System.out.println(me.getMessage());
+        }
+                
         
     }
 

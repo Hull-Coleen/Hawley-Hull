@@ -32,6 +32,7 @@ public class GameMenuView extends View implements Serializable{
             + "\nC - Show Current Supplies"
             + "\nD - Display Map"
             + "\nN - Show Avatar name"
+            + "\nF - Show Supply Amounts"
             + "\nE - Exit"
             + "\n--------------------------------");
     }
@@ -66,6 +67,8 @@ public class GameMenuView extends View implements Serializable{
            case 'N':
                this.displayName();
                break;
+           case 'F':
+               this.displayFoodAmount();
            case 'E': 
                return true;
            default:
@@ -115,6 +118,11 @@ public class GameMenuView extends View implements Serializable{
     private void displayName() {
        GameControl game = new GameControl();
        game.names();
+    }
+
+    private void displayFoodAmount() {
+      CurrentSupplyView supply = new CurrentSupplyView();
+      supply.display();
     }
     
 
