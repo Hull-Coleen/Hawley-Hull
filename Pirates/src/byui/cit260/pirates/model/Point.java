@@ -11,19 +11,26 @@ import java.io.Serializable;
  *
  * @author Coleen
  */
-class Point implements Serializable {
-    private int x;
-    private int y;
-    public Point() {
+public class Point implements Serializable {
+    public int x;
+    public int y;
+    //private coordinates;
+   /* public Point() {
         x = 1;
         y = 1;
     }
-
+    */
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
+    public Point() {
+        x= 7;
+        y = 7;
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     public int getX() {
         return x;
     }

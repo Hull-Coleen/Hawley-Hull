@@ -94,6 +94,16 @@ public class Map implements Serializable{
     public String getDescription() {
         return description;
     }
+
+    public int getNoRows() {
+        return 0;
+      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int getNoOfCol() {
+        return 0;
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
        
 
 }

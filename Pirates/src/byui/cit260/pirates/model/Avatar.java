@@ -35,7 +35,7 @@ public enum Avatar implements Serializable{
     
     Avatar(String description){
        this.description = description;
-       coordinates = new Point(1,1);
+       coordinates = new Point();
       // location = new Location[1][1];
     }
     public String getDescription(){

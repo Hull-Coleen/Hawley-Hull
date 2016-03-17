@@ -6,6 +6,7 @@
 package byui.cit260.pirates.view;
 
 import byui.cit260.pirates.control.GameControl;
+import byui.cit260.pirates.exception.MapControlException;
 import java.io.Serializable;
 import pirates.Pirates;
 
@@ -55,10 +56,27 @@ public class MainMenuView extends View implements Serializable{
     }
 
     private void startNewGame() {
+        try 
+        {
         GameControl.createNewGame(Pirates.getPlayer());
+        } 
+        catch(MapControlException mce)
+        {
+            System.out.println(mce.getMessage());
+            return;
+        }
+        catch(Throwable te)
+        { 
+           System.out.println(te.getMessage());
+           te.printStackTrace();
+           return;
+        } 
+     
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
+        
     }
+
 
     private void startExistingGame() {
         System.out.println("startExistingGame called");

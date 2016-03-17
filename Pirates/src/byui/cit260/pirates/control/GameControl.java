@@ -5,6 +5,7 @@
  */
 package byui.cit260.pirates.control;
 
+import byui.cit260.pirates.exception.MapControlException;
 import byui.cit260.pirates.model.Avatar;
 import byui.cit260.pirates.model.Game;
 import byui.cit260.pirates.model.Map;
@@ -21,7 +22,7 @@ import pirates.Pirates;
  */
 public class GameControl {
     Supplies[] supplyList;
-    public static void createNewGame(Player player){
+    public static void createNewGame(Player player) throws MapControlException{
         // create new game
         Game game = new Game();
         Pirates.setCurrentgame(game);
@@ -74,19 +75,7 @@ public class GameControl {
     
         return supply;
     }
-   /* public void viewSupplyAmount(){
-        // calls sort supply list
-        Supplies supply[] = sortSupplies();
-        // displays the type and amount of the supplies
-        // here is the for each loop
-        for (Supplies supply1 : supply) {
-            System.out.print(supply1.getSupplyType());
-            System.out.print("  ");
-            System.out.print(supply1.getNumInStock());
-            System.out.println("");
-        }
-        
-    } */
+
     public static Supplies[] sortSupplies(){
         // create a new array of supplies
         Supplies[] sortedSupply = createSuppliesList();

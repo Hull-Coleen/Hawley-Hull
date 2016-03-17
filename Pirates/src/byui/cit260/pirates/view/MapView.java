@@ -18,17 +18,17 @@ import pirates.Pirates;
 public class MapView {
     // trying to figure out how to get the avatars current location
    // private final Location[][] currentLocation = Pirates.getCurrentgame().getAvatar().getLocation();
-    private final Location[][] currentLocation = new Location[1][1];
+   // private final Location[][] currentLocation = new Location[1][1];
     public void display(Map map){
-        System.out.println(currentLocation);
+       // System.out.println(currentLocation);
         //Location[][] currentLocation = Pirates.getCurrentgame().getLocation();
         Location[][] locations = map.getLocations();
         
         String menu = ""
-            + "\n*********************"
-            + "\n      GAME MAP"
-            + "\n*********************"
-            + "\n      1     2     3";
+            + "\n*******************************"
+            + "\n          GAME MAP"
+            + "\n*******************************"
+            + "\n      1     2     3     4     5";
             
             System.out.println(menu);
         
