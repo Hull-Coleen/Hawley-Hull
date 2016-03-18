@@ -14,7 +14,7 @@ import java.io.Serializable;
  */
 public class Game implements Serializable{
     private Ship ship;
-    private Supplies[] supply;
+    private Supply[] supplies;
     private Player player;
     private Map map;
     private String[] avatars;
@@ -38,11 +38,19 @@ public class Game implements Serializable{
     public void setAvatar(Avatar avatar) {
         this.avatar = avatar;
     }
+
+    public void setSupplies(Supply[] supplies) {
+        this.supplies = supplies;
+    }
+
+    public void setAvatars(String[] avatars) {
+        this.avatars = avatars;
+    }
     
     
     
-    public Supplies[] getSupply() {
-        return supply;
+    public Supply[] getSupplies() {
+        return supplies;
     } 
    public String[] getAvatars() {
         return avatars;

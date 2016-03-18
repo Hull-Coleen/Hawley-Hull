@@ -49,6 +49,30 @@ public abstract class View implements ViewInterface {
         return input;
      }
      
+        public int getInt(String prompt){
+        int number = 0;
+        
+         Scanner keyboard = new Scanner(System.in);
+     
+        
+        while (number == 0 ){
+            System.out.println(prompt + " Enter C to cancel");
+            String value =keyboard.nextLine(); 
+            
+            value = value.trim().toUpperCase();
+            if (value == "C")
+                return 0;
+            try {
+            number = Integer.parseInt(value);
+            } catch (NumberFormatException nf){
+                System.out.println(nf.getMessage() + " Invalid entry: Try again.");
+                number = 0;
+            }
+            
+        }
+        return number;
+    }
+     
        
                 
 }

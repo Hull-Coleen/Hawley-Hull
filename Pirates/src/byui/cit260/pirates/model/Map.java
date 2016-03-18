@@ -21,6 +21,7 @@ public class Map implements Serializable{
     public String name;
     private String description;
     private Scene scene;
+    private Location currentLocation;
     
      public Map() {
   
@@ -44,7 +45,16 @@ public class Map implements Serializable{
                 
             }
         }
-    }  
+    }
+
+    public Location getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+      
     public Scene getScene() {
         return scene;
     }
@@ -95,15 +105,6 @@ public class Map implements Serializable{
         return description;
     }
 
-    public int getNoRows() {
-        return 0;
-      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public int getNoOfCol() {
-        return 0;
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
        
 
 }

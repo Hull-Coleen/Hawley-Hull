@@ -68,7 +68,7 @@ public class Scene implements Serializable {
         startingScene.setDescription(
                     "\n*** this is where we start ");
       
-        startingScene.setMapSymbol("ST");
+        startingScene.setMapSymbol("STPT");
         startingScene.setVisited(true);
         startingScene.setTravelTime(240);
         scenes[SceneType.start_point.ordinal()] = startingScene;
@@ -78,7 +78,7 @@ public class Scene implements Serializable {
                     "*\n***                                  *"
                     + "\n       Welcome to the Port."
                     + "\n Where would you like to go first? ***");
-        portScene.setMapSymbol("PG");
+        portScene.setMapSymbol("PORT");
         portScene.setVisited(false);
         portScene.setTravelTime(240);
         scenes[SceneType.port.ordinal()] = portScene;
@@ -88,7 +88,7 @@ public class Scene implements Serializable {
                     "*\n***                                  *"
                     + "\n       Welcome to the Tropical Island."
                     + "\n Where would you like to go first? ***");
-        islandScene.setMapSymbol("IG");
+        islandScene.setMapSymbol("ISLE");
         islandScene.setVisited(false);
         islandScene.setTravelTime(240);
         scenes[SceneType.island.ordinal()] = islandScene;
@@ -98,7 +98,7 @@ public class Scene implements Serializable {
                     "*\n***                                  *"
                     + "\n       Out on the Open Sea."
                     + "\n Where would you like to go first? ***");
-        openSeaScene.setMapSymbol("0G");
+        openSeaScene.setMapSymbol("SEAS");
         openSeaScene.setVisited(false);
         openSeaScene.setTravelTime(240);
         scenes[SceneType.sea.ordinal()] = openSeaScene;
@@ -106,7 +106,7 @@ public class Scene implements Serializable {
         Scene finishScene = new Scene();
         finishScene.setDescription(
                     "\nTHis is the end");
-        finishScene.setMapSymbol("FN");
+        finishScene.setMapSymbol("FNPT");
         finishScene.setVisited(false);
         finishScene.setTravelTime(0);
         scenes[SceneType.end_point.ordinal()] = finishScene;

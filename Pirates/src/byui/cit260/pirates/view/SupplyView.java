@@ -6,7 +6,7 @@
 package byui.cit260.pirates.view;
 
 import byui.cit260.pirates.control.GameControl;
-import byui.cit260.pirates.model.Supplies;
+import byui.cit260.pirates.model.Supply;
 
 /**
  *
@@ -15,10 +15,10 @@ import byui.cit260.pirates.model.Supplies;
 public class SupplyView {
       public static void display(){
         // calls sort supply list
-        Supplies supply[] = GameControl.sortSupplies();
+        Supply supply[] = GameControl.sortSupplies();
         // displays the type and amount of the supplies
         // here is the for each loop
-        for (Supplies supply1 : supply) {
+        for (Supply supply1 : supply) {
             System.out.print(supply1.getSupplyType());
             System.out.print("  ");
             System.out.print(supply1.getNumInStock());

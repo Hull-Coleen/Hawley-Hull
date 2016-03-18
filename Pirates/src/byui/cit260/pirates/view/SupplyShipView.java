@@ -8,6 +8,10 @@ package byui.cit260.pirates.view;
 import byui.cit260.pirates.control.ControlShip;
 import byui.cit260.pirates.control.ControlSupplies;
 import byui.cit260.pirates.exception.ControlSuppliesException;
+import byui.cit260.pirates.model.Game;
+import byui.cit260.pirates.model.Supply;
+import java.util.Scanner;
+import pirates.Pirates;
 
 
 /**
@@ -25,17 +29,23 @@ public class SupplyShipView extends View {
     }
     @Override
     public boolean doAction(String value){
+        Game game = Pirates.getCurrentgame();
         value = value.toUpperCase();
         char selection;
         selection = value.charAt(0);
+    
 
-       // Scanner keyboard = new Scanner(System.in);
-        //String input = null;
         ControlSupplies supply = new ControlSupplies();
         ControlShip ship = new ControlShip();
+        
             if (selection == 'R'){
-               System.out.println("how many crates of rum do you want");
-               int rum = getInt();
+               
+               int rum = getInt("How many crates of rum do you want?");
+               // get the current number of stock
+               int currentNumInStock = game.getSupplies()[Supply.rum.ordinal()].getNumInStock();
+               // setting the supplies amount and adding the current num in stock
+               game.getSupplies()[Supply.rum.ordinal()].setNumInStock(rum + 
+                    currentNumInStock);
                double rumAmount = 0;
             try {
                 rumAmount = supply.getRum(rum);
@@ -47,8 +57,13 @@ public class SupplyShipView extends View {
                return false;
             }
             if (selection == 'F'){
-               System.out.println("how many crates of food do you want");
-               int food = getInt();
+                int food = getInt("How many crates of food do you want?");
+                   // get the current number of stock
+               int currentNumInStock = game.getSupplies()[Supply.food.ordinal()].getNumInStock();
+               // setting the supplies amount and adding the current num in stock
+               game.getSupplies()[Supply.food.ordinal()].setNumInStock(food + 
+                    currentNumInStock);
+               
                double foodAmount = 0;
             try {
                 foodAmount = supply.getFood(food);
@@ -61,9 +76,13 @@ public class SupplyShipView extends View {
               return false;
             }
             if (selection == 'A'){
-               System.out.println("how many crates of ammo do you want");
-               int ammo = getInt();
-               
+             // TODO: fix like rum
+               int ammo = getInt("How many crates of ammo do you want?");
+                   // get the current number of stock
+               int currentNumInStock = game.getSupplies()[Supply.ammo.ordinal()].getNumInStock();
+               // setting the supplies amount and adding the current num in stock
+               game.getSupplies()[Supply.ammo.ordinal()].setNumInStock(ammo + 
+                    currentNumInStock);
                double ammoAmount = 0;
             try {
                 ammoAmount = supply.getAmmo(ammo);
@@ -77,17 +96,30 @@ public class SupplyShipView extends View {
             else 
                 return true;
     }
-    public int getInt(){
+    // TODO: move to view class
+  /*  public int getInt(String prompt){
         int number = 0;
+        
+         Scanner keyboard = new Scanner(System.in);
+     
+        
         while (number == 0 ){
-            String value = this.getInput();
+            System.out.println(prompt + " Enter C to cancel");
+            String value =keyboard.nextLine(); 
+            
             value = value.trim().toUpperCase();
-            if ( value == "Q")
-                break;
+            if (value == "C")
+                return 0;
+            try {
             number = Integer.parseInt(value);
+            } catch (NumberFormatException nf){
+                System.out.println(nf.getMessage() + " Invalid entry: Try again.");
+                number = 0;
+            }
+            
         }
         return number;
     }
-    
+    */
 
 }

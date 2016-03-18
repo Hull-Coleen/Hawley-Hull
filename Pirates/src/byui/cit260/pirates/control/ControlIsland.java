@@ -5,11 +5,13 @@
  */
 package byui.cit260.pirates.control;
 
+import java.io.Serializable;
+
 /**
  *
  * @author hawle_000
  */
-public class ControlIsland {
+public class ControlIsland implements Serializable {
     public boolean natives(){
     boolean natives = false;
     return natives;

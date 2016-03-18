@@ -12,16 +12,16 @@ import byui.cit260.pirates.model.Map;
 import byui.cit260.pirates.model.Player;
 import byui.cit260.pirates.model.Scene;
 import byui.cit260.pirates.model.Ship;
-import byui.cit260.pirates.model.Supplies;
 import byui.cit260.pirates.model.Supply;
+import java.io.Serializable;
 import pirates.Pirates;
 
 /**
  *
  * @author Coleen
  */
-public class GameControl {
-    Supplies[] supplyList;
+public class GameControl implements Serializable{
+    Supply[] supplyList;
     public static void createNewGame(Player player) throws MapControlException{
         // create new game
         Game game = new Game();
@@ -29,7 +29,8 @@ public class GameControl {
         // get the player info
         game.setPlayer(player);
         // setup supplies
-        Supplies[] supplyList = createSuppliesList();
+        Supply[] supplyList = createSuppliesList();
+        game.setSupplies(supplyList);
         // get ship
         Ship ship = new Ship();
         game.setShip(ship);
@@ -55,19 +56,19 @@ public class GameControl {
        return player;  
     }
 
-    public static Supplies[] createSuppliesList(){
-        Supplies[] supply = new Supplies[3];
-        Supplies food = new Supplies();
+    public static Supply[] createSuppliesList(){
+        Supply[] supply = new Supply[Supply.values().length];
+        Supply food = Supply.food;
         food.setSupplyType("Food");
         food.setNumInStock(0);
         food.setNumRequired(0);
         supply[Supply.food.ordinal()] = food;
-        Supplies rum = new Supplies();
+        Supply rum = Supply.rum;
         rum.setSupplyType("Rum");
         rum.setNumInStock(0);
         rum.setNumRequired(0);
         supply[Supply.rum.ordinal()] = rum;
-        Supplies ammo = new Supplies();
+        Supply ammo = Supply.ammo;
         ammo.setSupplyType("Ammo");
         ammo.setNumInStock(0);
         ammo.setNumRequired(0);
@@ -76,16 +77,17 @@ public class GameControl {
         return supply;
     }
 
-    public static Supplies[] sortSupplies(){
+    public static Supply[] sortSupplies(){
         // create a new array of supplies
-        Supplies[] sortedSupply = createSuppliesList();
+        Game game = Pirates.getCurrentgame();
+        Supply[] sortedSupply = game.getSupplies(); //createSuppliesList(); 
         // Interate throught the array
         for (int i = 0; i < sortedSupply.length - 1; i++) {
            // interates through the array again checking to see which is bigger i or j 
            for (int j = 0; j < sortedSupply.length - 1 - i; j++){
                // If j is bigger than j plus 1 store j in a temp variable and move j plus 1 to the j spot
                if (sortedSupply[j].getSupplyType().compareToIgnoreCase(sortedSupply[j + 1].getSupplyType()) > 0 ) {
-                    Supplies tempSortedSupply = sortedSupply[j];
+                    Supply tempSortedSupply = sortedSupply[j];
                     sortedSupply[j] = sortedSupply[j + 1];
                     sortedSupply[j + 1] = tempSortedSupply;
                 }
