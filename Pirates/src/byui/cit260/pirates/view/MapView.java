@@ -80,18 +80,7 @@ public class MapView {
                 col = -1;
             }*/
             
-            /*System.out.println(" Enter C to cancel");
-            String value =keyboard.nextLine(); 
-            value = value.trim().toUpperCase();
-            //if (value == "C")
-                
-            try {
-            col = Integer.parseInt(value);
-            } catch (NumberFormatException nf){
-                System.out.println(nf.getMessage() + " Invalid entry: Try again.");
-                col = -1;
-            }
-            */
+            
         
         }
         map.setCurrentLocation(locations[row][col]);
