@@ -94,8 +94,13 @@ public class GameMenuView extends View implements Serializable{
     }
 
     private void moveShip() {
-        MoveView move = new MoveView();
-        move.display();
+        Map map = Pirates.getCurrentgame().getMap();
+        MapView mapView = new MapView();
+        mapView.display(map);
+        mapView.move(map);
+        //MoveView move = new MoveView();
+        //move.display();
+        
     }
     private void currentSupplies() {
         CurrentSupplyView CurrentSupply = new CurrentSupplyView();
