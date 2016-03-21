@@ -10,7 +10,6 @@ import byui.cit260.pirates.control.ControlSupplies;
 import byui.cit260.pirates.exception.ControlSuppliesException;
 import byui.cit260.pirates.model.Game;
 import byui.cit260.pirates.model.Supply;
-import java.util.Scanner;
 import pirates.Pirates;
 
 
@@ -93,8 +92,13 @@ public class SupplyShipView extends View {
                  System.out.println("Your ammo is " + ammoAmount + " percent full." );
                return false;
             }
-            else 
+            if (selection == 'E') 
                 return true;
+            else
+            {
+                System.out.println("Invalid entry: try again");
+                return false;
+            }
     }
     // TODO: move to view class
   /*  public int getInt(String prompt){

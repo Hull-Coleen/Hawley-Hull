@@ -7,7 +7,10 @@ package byui.cit260.pirates.view;
 
 import byui.cit260.pirates.control.ControlShip;
 import byui.cit260.pirates.exception.ControlShipException;
+import byui.cit260.pirates.model.Game;
+import byui.cit260.pirates.model.Supply;
 import java.io.Serializable;
+import pirates.Pirates;
 
 
 /**
@@ -67,7 +70,16 @@ public class CurrentSupplyView extends View implements Serializable{
     }
     
     public void showAmmo() {
-        System.out.println("Ammo Left");
+        Game game = Pirates.getCurrentgame();
+        ControlShip ship = new ControlShip();
+        try
+        {
+             ship.checkAmmo(game.getSupplies()[Supply.ammo.ordinal()].getNumInStock(), ship.getNumCannon());
+        }
+        catch(ControlShipException cs)
+        {
+            System.out.println(cs.getMessage());
+        }
         
     }
 

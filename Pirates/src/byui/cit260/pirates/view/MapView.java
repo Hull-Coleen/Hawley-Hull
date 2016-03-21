@@ -7,6 +7,7 @@ package byui.cit260.pirates.view;
 
 import byui.cit260.pirates.model.Location;
 import byui.cit260.pirates.model.Map;
+import java.util.Scanner;
 //import byui.cit260.pirates.model.Point;
 
 import pirates.Pirates;
@@ -48,4 +49,43 @@ public class MapView {
         System.out.println("*******************************************");
         
     }
+
+    public void move(Map map){
+        
+        Location[][] locations = map.getLocations();
+        
+        
+        Scanner keyboard = new Scanner(System.in);
+        int row = -1;
+        while(row < 0 || row > 4)
+        {
+        System.out.println("enter row");
+        
+        row = keyboard.nextInt();
+        }
+        
+        int col = -1; 
+        while(col < 0 || col > 4)
+        {
+            System.out.println("enter col");
+            col = keyboard.nextInt();
+            /*String value =keyboard.nextLine(); 
+            
+            value = value.trim().toUpperCase();
+            try {
+                col = Integer.parseInt(value);
+            } 
+            catch (NumberFormatException nf){
+                System.out.println(nf.getMessage() + " Invalid entry: Try again.");
+                col = -1;
+            }*/
+            
+            
+        
+        }
+        map.setCurrentLocation(locations[row][col]);
+        locations[row][col].setVisited(true);
+         
+    }
+    
 }
