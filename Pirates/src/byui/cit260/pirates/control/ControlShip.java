@@ -30,6 +30,10 @@ public class ControlShip implements Serializable{
         return numCrew;
     }
 
+    /*public int getNumCannon() {
+        return numCannon;
+    }*/
+     
     //public void setNumCrew(int numCrew) {
      //   this.numCrew = numCrew;
     //}
@@ -55,12 +59,12 @@ public class ControlShip implements Serializable{
 
     public void moveShip(){}
     public void fireCannon(){}
-    public double checkAmmo(int numAmmoCrate, int numCannon)
+    public double checkAmmo(int numAmmoCrate, int numCannon) throws ControlShipException
     {
         if (numAmmoCrate < 0 || numCannon <= 0)
-              return -1;
+            throw new ControlShipException(" Invalid entry try again");  
         if (numAmmoCrate >= 50 || numCannon >= 9)
-              return -1;
+             throw new ControlShipException(" Invalid entry try again"); 
         int numOfAmmo = numAmmoCrate * 9;
         double numBattle = (numOfAmmo / numCannon);
         return numBattle;
