@@ -30,9 +30,9 @@ public class ControlShip implements Serializable{
         return numCrew;
     }
 
-    /*public int getNumCannon() {
+    public int getNumCannon() {
         return numCannon;
-    }*/
+    }
      
     //public void setNumCrew(int numCrew) {
      //   this.numCrew = numCrew;

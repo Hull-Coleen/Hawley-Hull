@@ -74,7 +74,7 @@ public class CurrentSupplyView extends View implements Serializable{
         ControlShip ship = new ControlShip();
         try
         {
-             ship.checkAmmo(game.getSupplies()[Supply.ammo.ordinal()].getNumInStock(), 6);
+             ship.checkAmmo(game.getSupplies()[Supply.ammo.ordinal()].getNumInStock(), ship.getNumCannon());
         }
         catch(ControlShipException cs)
         {
