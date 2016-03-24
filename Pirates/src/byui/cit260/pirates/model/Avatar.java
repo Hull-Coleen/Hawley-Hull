@@ -45,5 +45,11 @@ public enum Avatar implements Serializable{
     public Point getCoordinates(){
        return coordinates;
     }
+
+    @Override
+    public String toString() {
+        return "Avatar{" + "description=" + description + ", coordinates=" + coordinates + ", location=" + location + '}';
+    }
+    
     
 }

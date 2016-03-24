@@ -56,6 +56,7 @@ public class MapView {
         
         
         Scanner keyboard = new Scanner(System.in);
+        //try {
         int row = -1;
         while(row < 0 || row > 4)
         {
@@ -83,6 +84,9 @@ public class MapView {
             
         
         }
+       // }catch(Exception e){
+        ////    System.out.println("\nError reading input: " + e.getMessage());
+        //}
         map.setCurrentLocation(locations[row][col]);
         locations[row][col].setVisited(true);
          

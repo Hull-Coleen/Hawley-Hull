@@ -28,14 +28,15 @@ public class AvatarView extends View {
        value = value.toUpperCase();
        char selection;
        selection = value.charAt(0); 
-       Scanner keyboard = new Scanner(System.in);
+       //Scanner keyboard = new Scanner(System.in);
        String choice;
        char charChoice;
        //int avatar;
+       try {
        switch(selection){    
           case 'N':
               System.out.println("Enter B for boy or G for Girl");
-              choice = keyboard.nextLine();
+              choice = this.keyboard.readLine();
               choice = choice.trim();
                       
               charChoice = choice.charAt(0);
@@ -47,10 +48,11 @@ public class AvatarView extends View {
                   System.out.println("you chose " + names[2]);
               }
               return true;
+       
               
           case 'P':
             System.out.println("Enter B for boy or G for Girl");
-              choice = keyboard.nextLine();
+              choice = this.keyboard.readLine();
               choice = choice.trim();
                       
               charChoice = choice.charAt(0);
@@ -66,7 +68,11 @@ public class AvatarView extends View {
           default:
               System.out.println("invalid entry");
       }
-        return false;
+        
+       }catch(Exception e){
+           System.out.println("\nError reading input:" + e.getMessage());
+       }
+       return false;
     }
 
 }

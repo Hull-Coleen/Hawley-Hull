@@ -7,6 +7,7 @@ package byui.cit260.pirates.view;
 
 import byui.cit260.pirates.control.GameControl;
 import byui.cit260.pirates.exception.MapControlException;
+import byui.cit260.pirates.model.Game;
 import java.io.Serializable;
 import pirates.Pirates;
 
@@ -38,7 +39,7 @@ public class MainMenuView extends View implements Serializable{
                this.startNewGame();
                break;
            case 'G':
-              this.startExistingGame();
+              this.startSavedGame();
                break;
            case 'H':
               this.displayHelpMenu();
@@ -78,8 +79,17 @@ public class MainMenuView extends View implements Serializable{
     }
 
 
-    private void startExistingGame() {
-        System.out.println("startExistingGame called");
+    private void startSavedGame() {
+        //System.out.println("startExistingGame called");
+        this.console.println("\n\nEnter the file path for file where the game"
+                            +" is to be saved.");
+        String filePath = this.getInput();
+        try {
+            // start a saved game
+            GameControl.getSavedGame(filePath);
+        }catch (Exception ex){
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 
     private void displayHelpMenu() {
@@ -89,7 +99,14 @@ public class MainMenuView extends View implements Serializable{
     }
 
     private void saveGame() {
-        System.out.println("saveGame called");
+       // System.out.println("saveGame called");
+        this.console.println("\n\nEnter the file path for file where the game is to be saved. ");
+        String filePath = this.getInput();
+        try{
+            GameControl.saveGame(Pirates.getCurrentgame(), filePath);
+        }catch(Exception ex){
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }   
 
 }

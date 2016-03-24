@@ -105,6 +105,12 @@ public class Map implements Serializable{
         return description;
     }
 
+    @Override
+    public String toString() {
+        return "Map{" + "col=" + col + ", row=" + row + ", locations=" + locations + ", name=" + name + ", description=" + description + ", scene=" + scene + ", currentLocation=" + currentLocation + '}';
+    }
+    
+
        
 
 }

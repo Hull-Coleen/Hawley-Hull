@@ -5,6 +5,7 @@
  */
 package byui.cit260.pirates.control;
 
+import byui.cit260.pirates.exception.GameControlException;
 import byui.cit260.pirates.exception.MapControlException;
 import byui.cit260.pirates.model.Avatar;
 import byui.cit260.pirates.model.Game;
@@ -13,6 +14,10 @@ import byui.cit260.pirates.model.Player;
 import byui.cit260.pirates.model.Scene;
 import byui.cit260.pirates.model.Ship;
 import byui.cit260.pirates.model.Supply;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import pirates.Pirates;
 
@@ -21,6 +26,17 @@ import pirates.Pirates;
  * @author Coleen
  */
 public class GameControl implements Serializable{
+
+    public static void saveGame(Game game, String filepath) throws GameControlException {
+      try( FileOutputStream fops = new FileOutputStream(filepath)) {
+          ObjectOutputStream output = new ObjectOutputStream(fops);
+          
+          output.writeObject(game); // write the game object out to file
+      }
+      catch(Exception e) {
+          throw new GameControlException(e.getMessage());
+      }
+    }
     Supply[] supplyList;
     public static void createNewGame(Player player) throws MapControlException{
         // create new game
@@ -110,5 +126,23 @@ public class GameControl implements Serializable{
         }
             
      }   
+     
+     public static void getSavedGame(String filepath)
+                        throws GameControlException{
+         Game game = null;
+         
+         try(FileInputStream fips = new FileInputStream(filepath)){
+             ObjectInputStream input = new ObjectInputStream(fips);
+             
+             // read the game object from file
+             game = (Game) input.readObject(); 
+         }
+         catch(Exception e){
+             throw new GameControlException(e.getMessage());
+         }
+         
+         //clost the output file
+         Pirates.setCurrentgame(game);
+     }
  
 }

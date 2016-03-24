@@ -113,5 +113,11 @@ public class Scene implements Serializable {
         
         return scenes; 
     }
+
+    @Override
+    public String toString() {
+        return "Scene{" + "travelTime=" + travelTime + ", visited=" + visited + ", description=" + description + ", mapSymbol=" + mapSymbol + ", coordinates=" + coordinates + '}';
+    }
+    
 }
 

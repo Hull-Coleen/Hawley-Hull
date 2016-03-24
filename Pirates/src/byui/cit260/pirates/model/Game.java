@@ -83,5 +83,11 @@ public class Game implements Serializable{
        this.scenes = scenes;
     }
 
+    @Override
+    public String toString() {
+        return "Game{" + "ship=" + ship + ", supplies=" + supplies + ", player=" + player + ", map=" + map + ", avatars=" + avatars + ", avatar=" + avatar + ", scenes=" + scenes + ", location=" + location + '}';
+    }
+    
+
 
 }

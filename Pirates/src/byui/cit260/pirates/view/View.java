@@ -5,13 +5,24 @@
  */
 package byui.cit260.pirates.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import pirates.Pirates;
 
 
 
 public abstract class View implements ViewInterface {
 
- protected String displayMessage;
+    private String message;
+    protected final BufferedReader keyboard = Pirates.getInFile();
+    protected final PrintWriter console = Pirates.getOutFile();
+    
+    public View(){
+    }
+    
+    protected String displayMessage;
+ 
 
         public View(String displayMessage) {
             this.displayMessage = displayMessage;
@@ -33,31 +44,36 @@ public abstract class View implements ViewInterface {
     }
  @Override
      public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
+       // Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
         String input = null;
-        while(!valid){
-            System.out.println("\n" + this.displayMessage);
-            input = keyboard.nextLine();
-            input = input.trim();
-            if (input.length() < 1){
-            System.out.println("*** You must enter a value ***");
-            continue;
-            }
+        try {
+           while(!valid){
+              System.out.println("\n" + this.displayMessage);
+              input = this.keyboard.readLine();
+              input = input.trim();
+              if (input.length() < 1){
+                 System.out.println("*** You must enter a value ***");
+                 continue;
+               }
             break;
-        } 
+        }
+        }catch(Exception e){
+            System.out.println("\nError reading input: " + e.getMessage());
+        }
+       
         return input;
      }
      
         public int getInt(String prompt){
         int number = 0;
         
-         Scanner keyboard = new Scanner(System.in);
+         //Scanner keyboard = new Scanner(System.in);
      
-        
+        try {
         while (number == 0 ){
             System.out.println(prompt + " Enter C to cancel");
-            String value =keyboard.nextLine(); 
+            String value = this.keyboard.readLine(); 
             
             value = value.trim().toUpperCase();
             if (value == "C")
@@ -69,6 +85,9 @@ public abstract class View implements ViewInterface {
                 number = 0;
             }
             
+        }
+        }catch(Exception e){
+            System.out.println("\nError reading input: " + e.getMessage());
         }
         return number;
     }

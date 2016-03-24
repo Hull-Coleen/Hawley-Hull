@@ -66,4 +66,10 @@ public class Location implements Serializable{
         this.col = col;
     }
 
+    @Override
+    public String toString() {
+        return "Location{" + "row=" + row + ", col=" + col + ", visited=" + visited + ", scene=" + scene + ", avatars=" + avatars + '}';
+    }
+    
+
 }
