@@ -7,6 +7,8 @@ package byui.cit260.pirates.view;
 
 import byui.cit260.pirates.model.Location;
 import byui.cit260.pirates.model.Map;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 //import byui.cit260.pirates.model.Point;
 
@@ -17,6 +19,8 @@ import pirates.Pirates;
  * @author Coleen
  */
 public class MapView {
+    protected final BufferedReader keyboard = Pirates.getInFile();
+    protected final PrintWriter console = Pirates.getOutFile();
    
     public void display(Map map){
         // getting location for the map
@@ -54,41 +58,35 @@ public class MapView {
         
         Location[][] locations = map.getLocations();
         
-        
-        Scanner keyboard = new Scanner(System.in);
-        //try {
+        String rowValue = null;
+        String colValue = null;
+        try {
         int row = -1;
         while(row < 0 || row > 4)
         {
         System.out.println("enter row");
-        
-        row = keyboard.nextInt();
+        rowValue = this.keyboard.readLine();
+        rowValue = rowValue.trim().toUpperCase();
+        row = Integer.parseInt(rowValue);
         }
         
         int col = -1; 
         while(col < 0 || col > 4)
         {
             System.out.println("enter col");
-            col = keyboard.nextInt();
-            /*String value =keyboard.nextLine(); 
-            
-            value = value.trim().toUpperCase();
-            try {
-                col = Integer.parseInt(value);
-            } 
-            catch (NumberFormatException nf){
-                System.out.println(nf.getMessage() + " Invalid entry: Try again.");
-                col = -1;
-            }*/
+            colValue = this.keyboard.readLine();
+            colValue = colValue.trim().toUpperCase();
+            col = Integer.parseInt(colValue);
             
             
+            map.setCurrentLocation(locations[row][col]);
+            locations[row][col].setVisited(true);
         
         }
-       // }catch(Exception e){
-        ////    System.out.println("\nError reading input: " + e.getMessage());
-        //}
-        map.setCurrentLocation(locations[row][col]);
-        locations[row][col].setVisited(true);
+        }catch(Exception e){
+            System.out.println("\nError reading input: " + e.getMessage());
+        }
+        
          
     }
     

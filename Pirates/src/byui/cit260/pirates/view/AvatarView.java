@@ -28,7 +28,7 @@ public class AvatarView extends View {
        value = value.toUpperCase();
        char selection;
        selection = value.charAt(0); 
-       //Scanner keyboard = new Scanner(System.in);
+       
        String choice;
        char charChoice;
        //int avatar;

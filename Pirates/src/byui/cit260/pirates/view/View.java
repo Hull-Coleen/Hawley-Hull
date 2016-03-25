@@ -44,7 +44,7 @@ public abstract class View implements ViewInterface {
     }
  @Override
      public String getInput() {
-       // Scanner keyboard = new Scanner(System.in);
+       
         boolean valid = false;
         String input = null;
         try {
@@ -67,8 +67,6 @@ public abstract class View implements ViewInterface {
      
         public int getInt(String prompt){
         int number = 0;
-        
-         //Scanner keyboard = new Scanner(System.in);
      
         try {
         while (number == 0 ){
