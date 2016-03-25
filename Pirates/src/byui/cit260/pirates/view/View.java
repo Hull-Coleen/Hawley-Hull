@@ -49,17 +49,19 @@ public abstract class View implements ViewInterface {
         String input = null;
         try {
            while(!valid){
-              System.out.println("\n" + this.displayMessage);
+              this.console.println("\n" + this.displayMessage);
               input = this.keyboard.readLine();
               input = input.trim();
               if (input.length() < 1){
-                 System.out.println("*** You must enter a value ***");
+                  ErrorView.display(this.getClass().getName(),
+                          "*** You must enter a value ***" );
                  continue;
                }
             break;
         }
         }catch(Exception e){
-            System.out.println("\nError reading input: " + e.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    "\nError reading input: " + e.getMessage());
         }
        
         return input;
@@ -70,7 +72,7 @@ public abstract class View implements ViewInterface {
      
         try {
         while (number == 0 ){
-            System.out.println(prompt + " Enter C to cancel");
+            this.console.println(prompt + " Enter C to cancel");
             String value = this.keyboard.readLine(); 
             
             value = value.trim().toUpperCase();
@@ -79,13 +81,13 @@ public abstract class View implements ViewInterface {
             try {
             number = Integer.parseInt(value);
             } catch (NumberFormatException nf){
-                System.out.println(nf.getMessage() + " Invalid entry: Try again.");
+                this.console.println(nf.getMessage() + " Invalid entry: Try again.");
                 number = 0;
             }
             
         }
         }catch(Exception e){
-            System.out.println("\nError reading input: " + e.getMessage());
+            this.console.println("\nError reading input: " + e.getMessage());
         }
         return number;
     }

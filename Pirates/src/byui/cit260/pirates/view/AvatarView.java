@@ -19,7 +19,7 @@ public class AvatarView extends View {
         super("Navy or Pirate type N for Navy or P for Pirate: ");
       //  Avatar[] names = Avatar.values();
         for (Avatar name : names)
-            System.out.println(name);
+            this.console.println(name);
     }
     
     public boolean doAction(String value){
@@ -35,42 +35,42 @@ public class AvatarView extends View {
        try {
        switch(selection){    
           case 'N':
-              System.out.println("Enter B for boy or G for Girl");
+              this.console.println("Enter B for boy or G for Girl");
               choice = this.keyboard.readLine();
               choice = choice.trim();
                       
               charChoice = choice.charAt(0);
               if (charChoice == 'B'){
                   //avatar = 3;
-                  System.out.println("you chose " + names[3]);
+                  this.console.println("you chose " + names[3]);
               }
               else{
-                  System.out.println("you chose " + names[2]);
+                  this.console.println("you chose " + names[2]);
               }
               return true;
        
               
           case 'P':
-            System.out.println("Enter B for boy or G for Girl");
+              this.console.println("Enter B for boy or G for Girl");
               choice = this.keyboard.readLine();
               choice = choice.trim();
                       
               charChoice = choice.charAt(0);
               if (charChoice == 'B'){
                   //avatar = 3;
-                  System.out.println("you chose " + names[1]);
+                  this.console.println("you chose " + names[1]);
               }
               else{
-                  System.out.println("you chose " + names[0]);
+                  this.console.println("you chose " + names[0]);
               }
               return true;
          
           default:
-              System.out.println("invalid entry");
+              this.console.println("invalid entry");
       }
         
        }catch(Exception e){
-           System.out.println("\nError reading input:" + e.getMessage());
+           this.console.println("\nError reading input:" + e.getMessage());
        }
        return false;
     }

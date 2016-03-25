@@ -35,7 +35,7 @@ public class BattleView extends View {
              
               return true;
           default:
-              System.out.println("invalid entry");
+              this.console.println("invalid entry");
       }
         return false;
     }

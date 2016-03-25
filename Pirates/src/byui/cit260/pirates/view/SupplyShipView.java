@@ -49,10 +49,10 @@ public class SupplyShipView extends View {
             try {
                 rumAmount = supply.getRum(rum);
             } catch (ControlSuppliesException cse) {
-                System.out.println(cse.getMessage());
+                this.console.println(cse.getMessage());
             }
              
-                  System.out.println("Your rum is " + rumAmount + " percent full." );
+                  this.console.println("Your rum is " + rumAmount + " percent full." );
                return false;
             }
             if (selection == 'F'){
@@ -67,11 +67,11 @@ public class SupplyShipView extends View {
             try {
                 foodAmount = supply.getFood(food);
             } catch (ControlSuppliesException cse) {
-                System.out.println(cse.getMessage());
+                this.console.println(cse.getMessage());
             }
                ship.setNumFoodCrate(food);
                if (foodAmount > 0)
-                  System.out.println("Your food is " + foodAmount + " percent full." );
+                  this.console.println("Your food is " + foodAmount + " percent full." );
               return false;
             }
             if (selection == 'A'){
@@ -86,17 +86,17 @@ public class SupplyShipView extends View {
             try {
                 ammoAmount = supply.getAmmo(ammo);
             } catch (ControlSuppliesException cse) {
-                System.out.println(cse.getMessage());
+                this.console.println(cse.getMessage());
             }
                if (ammoAmount > 0)
-                 System.out.println("Your ammo is " + ammoAmount + " percent full." );
+                 this.console.println("Your ammo is " + ammoAmount + " percent full." );
                return false;
             }
             if (selection == 'E') 
                 return true;
             else
             {
-                System.out.println("Invalid entry: try again");
+                this.console.println("Invalid entry: try again");
                 return false;
             }
     }

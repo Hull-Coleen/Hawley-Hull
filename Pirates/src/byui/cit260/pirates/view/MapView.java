@@ -32,25 +32,25 @@ public class MapView {
             + "\n*******************************************"
             + "\n      0       1       2       3       4";
             
-            System.out.println(menu);
+            this.console.println(menu);
         
          // display map with numbers on the side
         for (int row = 0; row < locations.length; row++) {
-            System.out.print(row  + "  ");
+            this.console.print(row  + "  ");
             // TODO: when go to location set to true
             for (int col = 0; col < locations[row].length; col++){
                  if (locations[row][col] == map.getCurrentLocation())
-                   System.out.print("|$" + locations[row][col].getScene().getMapSymbol() + "$|");
+                   this.console.print("|$" + locations[row][col].getScene().getMapSymbol() + "$|");
                  else if (locations[row][col].isVisited())
-                     System.out.print("|*" + locations[row][col].getScene().getMapSymbol() + "*|");
+                     this.console.print("|*" + locations[row][col].getScene().getMapSymbol() + "*|");
                  else
-                    System.out.print("| " + locations[row][col].getScene().getMapSymbol() + " |");
+                    this.console.print("| " + locations[row][col].getScene().getMapSymbol() + " |");
                
             }
-            System.out.println("");
+            this.console.println("");
             
         }
-        System.out.println("*******************************************");
+        this.console.println("*******************************************");
         
     }
 
@@ -64,7 +64,7 @@ public class MapView {
         int row = -1;
         while(row < 0 || row > 4)
         {
-        System.out.println("enter row");
+        this.console.println("enter row");
         rowValue = this.keyboard.readLine();
         rowValue = rowValue.trim().toUpperCase();
         row = Integer.parseInt(rowValue);
@@ -73,7 +73,7 @@ public class MapView {
         int col = -1; 
         while(col < 0 || col > 4)
         {
-            System.out.println("enter col");
+            this.console.println("enter col");
             colValue = this.keyboard.readLine();
             colValue = colValue.trim().toUpperCase();
             col = Integer.parseInt(colValue);
@@ -84,7 +84,7 @@ public class MapView {
         
         }
         }catch(Exception e){
-            System.out.println("\nError reading input: " + e.getMessage());
+            this.console.println("\nError reading input: " + e.getMessage());
         }
         
          

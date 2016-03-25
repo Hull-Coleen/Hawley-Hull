@@ -50,7 +50,7 @@ public class MainMenuView extends View implements Serializable{
            case 'E': 
                return true;
            default:
-               System.out.println("Invalid Entry");
+               this.console.println("Invalid Entry");
                break;
        }
        return false;
@@ -63,12 +63,12 @@ public class MainMenuView extends View implements Serializable{
         } 
         catch(MapControlException mce)
         {
-            System.out.println(mce.getMessage());
+            this.console.println(mce.getMessage());
             return;
         }
         catch(Throwable te)
         { 
-           System.out.println(te.getMessage());
+           this.console.println(te.getMessage());
            te.printStackTrace();
            return;
         } 
@@ -80,7 +80,7 @@ public class MainMenuView extends View implements Serializable{
 
 
     private void startSavedGame() {
-        //System.out.println("startExistingGame called");
+        
         this.console.println("\n\nEnter the file path for file where the game"
                             +" is to be saved.");
         String filePath = this.getInput();
@@ -99,7 +99,7 @@ public class MainMenuView extends View implements Serializable{
     }
 
     private void saveGame() {
-       // System.out.println("saveGame called");
+       
         this.console.println("\n\nEnter the file path for file where the game is to be saved. ");
         String filePath = this.getInput();
         try{

@@ -47,28 +47,28 @@ public class HelpMenuView extends View implements Serializable{
            case 'E': 
                return true;
            default:
-               System.out.println("Invalid Entry");
+               this.console.println("Invalid Entry");
                break;
        }
        return false;
     }
     
     private void helpGoal(){
-        System.out.println("\nThe Goal of this game is to reach the treasure"
+        this.console.println("\nThe Goal of this game is to reach the treasure"
                                 + "\nbefore the oposing team does while trying"
                                 + "\nto stay alive out on the open seas!");
     }
     private void helpMove() {
-        System.out.println("You move by selection the direction you want"
+        this.console.println("You move by selection the direction you want"
                                 + "\nto move the boat on the map");
     }
     private void helpPosition(){
-        System.out.println("You can know where you are at by looking at"
+        this.console.println("You can know where you are at by looking at"
                          + "\nwhere you are on the map."
                          + "\nYou can look at the map by...");
     }
     private void helpSupplies(){
-        System.out.println("You can check on your supplies by...");
+        this.console.println("You can check on your supplies by...");
     }
    
 }

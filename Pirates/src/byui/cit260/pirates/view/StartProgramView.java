@@ -44,12 +44,12 @@ public class StartProgramView extends View implements Serializable{
             
        
         if (value.length() < 2){
-            System.out.println("Invalid player name");
+            this.console.println("Invalid player name");
             return false;
         }
         Player player = GameControl.createPlayer(value);
         if (player == null){
-            System.out.println("Error");
+            this.console.println("Error");
             return false;
         }
        
@@ -59,7 +59,7 @@ public class StartProgramView extends View implements Serializable{
 
     private void displayNextView(Player player) {
        
-        System.out.println("\n========================================================="
+        this.console.println("\n========================================================="
                         +  "\nWelcome to Pirates on the Open  Seas " + player.getName()
                         +  "\nWe hope you enjoy the game."
                       +    "\n=========================================================\n");

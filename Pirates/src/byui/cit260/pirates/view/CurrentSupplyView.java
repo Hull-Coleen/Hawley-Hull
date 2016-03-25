@@ -48,7 +48,7 @@ public class CurrentSupplyView extends View implements Serializable{
            case 'E': 
                 return true;
            default:
-               System.out.println("Invalid Entry");
+               this.console.println("Invalid Entry");
                break;
        }
        return false;
@@ -60,11 +60,11 @@ public class CurrentSupplyView extends View implements Serializable{
         //ship.setNumCrew(6);
         try
         {
-          System.out.println( ship.daysOfFood(ship.getNumFoodCrate(), ship.getNumCrew()));
+          this.console.println( ship.daysOfFood(ship.getNumFoodCrate(), ship.getNumCrew()));
         }
         catch(ControlShipException cs)
         {
-            System.out.println(cs.getMessage());
+            this.console.println(cs.getMessage());
         }
   
     }
@@ -78,7 +78,7 @@ public class CurrentSupplyView extends View implements Serializable{
         }
         catch(ControlShipException cs)
         {
-            System.out.println(cs.getMessage());
+            this.console.println(cs.getMessage());
         }
         
     }
