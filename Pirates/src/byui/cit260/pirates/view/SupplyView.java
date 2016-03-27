@@ -18,16 +18,17 @@ import pirates.Pirates;
 public class SupplyView {
     protected final BufferedReader keyboard = Pirates.getInFile();
     protected final PrintWriter console = Pirates.getOutFile();
-      public static void display(){
+      public void display(){
+          
         // calls sort supply list
         Supply supply[] = GameControl.sortSupplies();
         // displays the type and amount of the supplies
         // here is the for each loop
         for (Supply supply1 : supply) {
-            System.out.print(supply1.getSupplyType());
-            System.out.print("  ");
-            System.out.print(supply1.getNumInStock());
-            System.out.println("");
+            this.console.print(supply1.getSupplyType());
+            this.console.print("\t");
+            this.console.print(supply1.getNumInStock());
+            this.console.println("");
         }
         
     }

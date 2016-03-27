@@ -10,7 +10,11 @@ package byui.cit260.pirates.view;
 
 import byui.cit260.pirates.control.GameControl;
 import byui.cit260.pirates.model.Map;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import pirates.Pirates;
 
 
@@ -33,6 +37,7 @@ public class GameMenuView extends View implements Serializable{
             + "\nD - Display Map"
             + "\nN - Show Avatar name"
             + "\nF - Show Supply Amounts"
+            + "\nR - Show Report"
             + "\nE - Exit"
             + "\n--------------------------------");
     }
@@ -69,6 +74,16 @@ public class GameMenuView extends View implements Serializable{
                break;
            case 'F':
                this.displayFoodAmount();
+               break;
+           case 'R':
+           {
+             try {
+                this.displayReport();
+             } catch (IOException ex) {
+              ErrorView.display("ReportView", ex.getMessage());
+             }
+            }
+               break;
            case 'E': 
                return true;
            default:
@@ -128,6 +143,21 @@ public class GameMenuView extends View implements Serializable{
     private void displayFoodAmount() {
       CurrentSupplyView supply = new CurrentSupplyView();
       supply.display();
+    }
+
+    private void displayReport() throws IOException  {
+        ReportView report = new ReportView();
+        report.reportDisplay();
+       /*String fileName = null;
+        this.console.println("What is the name of the file?: ");
+        fileName = this.keyboard.readLine();
+        try(FileOutputStream fops = new FileOutputStream(fileName)){
+            
+            
+        report.display();
+        }catch(Exception ex){
+            ErrorView.display("ReportView", ex.getMessage());
+        } */
     }
     
 
