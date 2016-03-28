@@ -6,6 +6,7 @@
 package byui.cit260.pirates.view;
 
 import byui.cit260.pirates.control.GameControl;
+import byui.cit260.pirates.exception.ReportViewException;
 import byui.cit260.pirates.model.Supply;
 import java.io.BufferedReader;
 import java.io.FileWriter;
@@ -25,8 +26,8 @@ public class ReportView {
        this.console.println("Enter the file name: ");
         try {
             fileName = this.keyboard.readLine();
-           // throw new ErrorView.display("ReportView",File not found");
-        } catch (IOException ex) {
+            throw new ReportViewException("File not found");
+        } catch (Exception ex) {
             ErrorView.display("ReportView", ex.getMessage());
         }
        try(FileWriter writer = new FileWriter(fileName)){
@@ -42,7 +43,11 @@ public class ReportView {
             writer.write(supply1.getNumInStock());
             writer.write("\n");
         }
-          
+       
+        writer.close();
+        
+        this.console.println("Report sucessfully entered into the file");
+        throw new ReportViewException("Problem writing to file");
        }catch(Exception ex){
     ErrorView.display("ReportView", ex.getMessage());
 }
@@ -51,7 +56,7 @@ public class ReportView {
     
     
     
-        public void display(){
+    /*    public void display(){
           
           this.console.println("\tSupply List\n");
           this.console.println("SupplyType\t Supply Amount");
@@ -68,7 +73,7 @@ public class ReportView {
         }
         
     
-} 
+} */
 
 }
 
