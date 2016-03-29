@@ -60,6 +60,9 @@ public class MapView {
         
         String rowValue = null;
         String colValue = null;
+        
+        // TODO check food if out of food = gameover
+        
         try {
         int row = -1;
         while(row < 0 || row > 4)
@@ -81,11 +84,33 @@ public class MapView {
             
             map.setCurrentLocation(locations[row][col]);
             locations[row][col].setVisited(true);
-        
+            
+            // battle view 
+            if(!locations[row][col].isFriendly())
+            {
+                //call battle view
+                
+                BattleView battle = new BattleView();
+                battle.display();
+                
+                
+            
+            }
+            else 
+                this.console.println("You found a friendly location"
+                                   + "And you continue on your way");
+            if (locations[row][col].isTreasure())
+            {
+                this.console.println("YAY you found the treasure!!"
+                                   + "YOU WIN!!!");
+                System.exit(0);
+                
+            }
         }
         }catch(Exception e){
             this.console.println("\nError reading input: " + e.getMessage());
         }
+        
         
          
     }

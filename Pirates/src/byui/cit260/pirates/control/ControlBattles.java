@@ -22,12 +22,33 @@ public class ControlBattles implements Serializable{
         
     }
 
-    public void fight() {
-       System.out.println("This is where we determine what happens if they fight.");
+    public void battle() {
+        // TODO figure out ammo
+        int ammo = 0;
+       System.out.println("You are in a battle for your life!!");
+       if (ammo > 1)
+           System.out.println("You won the battle!!");
+       else
+       {
+           System.out.println("You didnt have enough ammo to survive the battle"
+                   + "You died...");
+                   System.exit(0);
+        }
+       
     }
 
     public void run() {
-        System.out.println("This is what happens if you run intead");
+        int run = 0;
+        System.out.println("You try to run away"
+                + "lets see if you made it");
+        if(run > 5)
+            System.out.println("You got away!");
+        else 
+        {
+            System.out.println("You were not able to get away!"
+                    + "Prepair for battle!!");
+            battle();
+        }
     }
     
     

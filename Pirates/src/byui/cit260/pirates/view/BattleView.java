@@ -27,7 +27,7 @@ public class BattleView extends View {
        selection = value.charAt(0); 
        switch(selection){    
           case 'F':
-             battle.fight();
+             battle.battle();
              
               return true;
           case 'R':
