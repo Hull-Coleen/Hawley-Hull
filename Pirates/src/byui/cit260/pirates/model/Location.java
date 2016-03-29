@@ -16,8 +16,26 @@ public class Location implements Serializable{
     private int row;
     private int col;
     private boolean visited;
+    private boolean friendly;
+    private boolean treasure;
     private Scene scene;
     private ArrayList<Avatar> avatars = new ArrayList<>();
+
+    public boolean isFriendly() {
+        return friendly;
+    }
+
+    public void setFriendly(boolean friendly) {
+        this.friendly = friendly;
+    }
+
+    public boolean isTreasure() {
+        return treasure;
+    }
+
+    public void setTreasure(boolean treasure) {
+        this.treasure = treasure;
+    }
 
     public Location() {
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

@@ -14,6 +14,8 @@ import java.io.Serializable;
  */
 public class Scene implements Serializable {
     private int travelTime;
+    private boolean treasure;
+    private boolean friendly;
     private boolean visited;
     private String description;
     public String mapSymbol;
