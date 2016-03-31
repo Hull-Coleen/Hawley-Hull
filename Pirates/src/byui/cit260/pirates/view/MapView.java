@@ -5,12 +5,14 @@
  */
 package byui.cit260.pirates.view;
 
+import byui.cit260.pirates.model.Game;
 import byui.cit260.pirates.model.Location;
 import byui.cit260.pirates.model.Map;
+import byui.cit260.pirates.model.Supply;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Scanner;
-//import byui.cit260.pirates.model.Point;
+
 
 import pirates.Pirates;
 
@@ -57,12 +59,20 @@ public class MapView {
     public void move(Map map){
         
         Location[][] locations = map.getLocations();
-        
+        Game game = Pirates.getCurrentgame();
         String rowValue = null;
         String colValue = null;
-        
         // TODO check food if out of food = gameover
-        
+        int currentFoodInStock = game.getSupplies()[Supply.food.ordinal()].getNumInStock();
+       // System.out.println(currentFoodInStock);
+    
+        if (currentFoodInStock < 1){
+            this.console.println("Sorry you ran out of food and lost");
+            System.exit(0);
+        }
+        int newFood = currentFoodInStock - 1;
+        game.getSupplies()[Supply.food.ordinal()].setNumInStock(newFood);
+        //System.out.println(game.getSupplies()[Supply.food.ordinal()].setNumInStock(currentFoodInStock - 1));
         try {
         int row = -1;
         while(row < 0 || row > 4)
@@ -106,13 +116,17 @@ public class MapView {
                 System.exit(0);
                 
             }
+            // take out one crate of food per move
+           // game.getSupplies()[Supply.food.ordinal()].setNumInStock(currentNumInStock - 1); 
+                  //currentNumInStock);
         }
-        }catch(Exception e){
+        }catch(IOException | NumberFormatException e){
             this.console.println("\nError reading input: " + e.getMessage());
         }
-        
+        //game.getSupplies()[Supply.food.ordinal()].setNumInStock(currentFoodInStock - 1);
         
          
     }
+   // game.getSupplies()[Supply.food.ordinal()].setNumInStock(currentFoodInStock - 1);
     
 }

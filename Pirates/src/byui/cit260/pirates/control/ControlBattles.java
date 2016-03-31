@@ -5,7 +5,11 @@
  */
 package byui.cit260.pirates.control;
 
+import byui.cit260.pirates.model.Game;
+import byui.cit260.pirates.model.Supply;
 import java.io.Serializable;
+import java.util.Random;
+import pirates.Pirates;
 
 /**
  *
@@ -24,7 +28,9 @@ public class ControlBattles implements Serializable{
 
     public void battle() {
         // TODO figure out ammo
-        int ammo = 0;
+        Game game = Pirates.getCurrentgame();
+        int ammo = game.getSupplies()[Supply.ammo.ordinal()].getNumInStock();
+        int newAmmo = ammo - 1;
        System.out.println("You are in a battle for your life!!");
        if (ammo > 1)
            System.out.println("You won the battle!!");
@@ -34,22 +40,29 @@ public class ControlBattles implements Serializable{
                    + "You died...");
                    System.exit(0);
         }
+       // take out ammo used during battle
+       game.getSupplies()[Supply.ammo.ordinal()].setNumInStock(newAmmo);
        
     }
 
     public void run() {
-        int run = 0;
+        //int run = 0;
+        // generate random number between zero and ten
+        Random rand = new Random();
+        int run = rand.nextInt(10) + 1;
         System.out.println("You try to run away"
                 + "lets see if you made it");
+  
         if(run > 5)
             System.out.println("You got away!");
         else 
         {
             System.out.println("You were not able to get away!"
-                    + "Prepair for battle!!");
+                    + "prepare for battle!!");
             battle();
         }
     }
+    
     
     
 }

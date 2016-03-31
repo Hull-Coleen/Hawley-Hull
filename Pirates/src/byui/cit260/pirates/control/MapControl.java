@@ -76,8 +76,8 @@ public class MapControl implements Serializable{
         locations[0][4].setTreasure(false);
         locations[1][0].setScene(scenes[SceneType.island.ordinal()]);
         locations[1][0].setVisited(false);
-        locations[0][1].setFriendly(true);
-        locations[0][1].setTreasure(false);
+        locations[1][0].setFriendly(true);
+        locations[1][0].setTreasure(false);
         locations[1][1].setScene(scenes[SceneType.sea.ordinal()]);
         locations[1][1].setVisited(false);
         locations[1][2].setScene(scenes[SceneType.sea.ordinal()]);
