@@ -5,6 +5,7 @@
  */
 package byui.cit260.pirates.view;
 
+import byui.cit260.pirates.control.ControlSupplies;
 import byui.cit260.pirates.model.Game;
 import byui.cit260.pirates.model.Location;
 import byui.cit260.pirates.model.Map;
@@ -62,8 +63,9 @@ public class MapView {
         Game game = Pirates.getCurrentgame();
         String rowValue = null;
         String colValue = null;
+        ControlSupplies supply = new ControlSupplies();
         // TODO check food if out of food = gameover
-        int currentFoodInStock = game.getSupplies()[Supply.food.ordinal()].getNumInStock();
+        int currentFoodInStock = supply.getSupply(Supply.food.getSupplyType(), game.getSupplies()).getNumInStock();
        // System.out.println(currentFoodInStock);
     
         if (currentFoodInStock < 1){
@@ -71,7 +73,7 @@ public class MapView {
             System.exit(0);
         }
         int newFood = currentFoodInStock - 1;
-        game.getSupplies()[Supply.food.ordinal()].setNumInStock(newFood);
+        supply.getSupply(Supply.food.getSupplyType(), game.getSupplies()).setNumInStock(newFood);
         //System.out.println(game.getSupplies()[Supply.food.ordinal()].setNumInStock(currentFoodInStock - 1));
         try {
         int row = -1;

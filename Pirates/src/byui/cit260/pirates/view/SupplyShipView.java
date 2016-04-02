@@ -35,7 +35,7 @@ public class SupplyShipView extends View {
     
 
         ControlSupplies supply = new ControlSupplies();
-        ControlShip ship = new ControlShip();
+        //ControlShip ship = new ControlShip();
         
             if (selection == 'R'){
                
@@ -51,10 +51,11 @@ public class SupplyShipView extends View {
             }
             int currentNumInStock = game.getSupplies()[Supply.rum.ordinal()].getNumInStock();
             if ((currentNumInStock + rum) >= 15)
-                game.getSupplies()[Supply.rum.ordinal()].setNumInStock(15);
+               // game.getSupplies()[Supply.rum.ordinal()].setNumInStock(15);
+                supply.getSupply(Supply.rum.getSupplyType(), game.getSupplies()).setNumInStock(15);
                // setting the supplies amount and adding the current num in stock
             else
-                game.getSupplies()[Supply.rum.ordinal()].setNumInStock(rum + 
+                supply.getSupply(Supply.rum.getSupplyType(), game.getSupplies()).setNumInStock(rum + 
                   currentNumInStock);
             if (rumAmount > 0)
                this.console.println("Your rum is " + rumAmount + " percent full." );
@@ -75,10 +76,10 @@ public class SupplyShipView extends View {
               int currentNumInStock = game.getSupplies()[Supply.food.ordinal()].getNumInStock();
                // setting the supplies amount and adding the current num in stock
               if ((currentNumInStock + food) >= 20)
-                  game.getSupplies()[Supply.food.ordinal()].setNumInStock(20);
+                  supply.getSupply(Supply.food.getSupplyType(), game.getSupplies()).setNumInStock(20);
                   
               else
-                 game.getSupplies()[Supply.food.ordinal()].setNumInStock(food + 
+                 supply.getSupply(Supply.food.getSupplyType(), game.getSupplies()).setNumInStock(food + 
                   currentNumInStock);  
               //ship.setNumFoodCrate(food);
                if (foodAmount > 0)
@@ -99,10 +100,10 @@ public class SupplyShipView extends View {
             }
                int currentNumInStock = game.getSupplies()[Supply.ammo.ordinal()].getNumInStock();
                if ((currentNumInStock + ammo) >= 12)
-                   game.getSupplies()[Supply.ammo.ordinal()].setNumInStock(12);
+                   supply.getSupply(Supply.ammo.getSupplyType(), game.getSupplies()).setNumInStock(12);
                // setting the supplies amount and adding the current num in stock
                else 
-                   game.getSupplies()[Supply.ammo.ordinal()].setNumInStock(ammo + 
+                   supply.getSupply(Supply.ammo.getSupplyType(), game.getSupplies()).setNumInStock(ammo + 
                     currentNumInStock);
                if (ammoAmount > 0)
                  this.console.println("Your ammo is " + ammoAmount + " percent full." );

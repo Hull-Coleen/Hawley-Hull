@@ -29,7 +29,10 @@ public class ControlBattles implements Serializable{
     public void battle() {
         // TODO figure out ammo
         Game game = Pirates.getCurrentgame();
-        int ammo = game.getSupplies()[Supply.ammo.ordinal()].getNumInStock();
+        Supply [] supplies = game.getSupplies();
+        ControlSupplies supply = new ControlSupplies();
+        int ammo = supply.getSupply(Supply.ammo.getSupplyType(), supplies).getNumInStock();
+       // int ammo = supplies[Supply.ammo.ordinal()].getNumInStock();
         int newAmmo = ammo - 1;
        System.out.println("You are in a battle for your life!!");
        if (ammo > 1)
@@ -41,7 +44,7 @@ public class ControlBattles implements Serializable{
                    System.exit(0);
         }
        // take out ammo used during battle
-       game.getSupplies()[Supply.ammo.ordinal()].setNumInStock(newAmmo);
+       supply.getSupply(Supply.ammo.getSupplyType(), supplies).setNumInStock(newAmmo);
        
     }
 

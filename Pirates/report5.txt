@@ -1,0 +1,5 @@
+	Supply List
+SupplyType	 Supply Amount
+Ammo			20
+Food			15
+Rum			12

@@ -7,6 +7,7 @@
 package byui.cit260.pirates.control;
 
 import byui.cit260.pirates.exception.ControlSuppliesException;
+import byui.cit260.pirates.model.Supply;
 import java.io.Serializable;
 
 /**
@@ -44,4 +45,13 @@ public class ControlSupplies implements Serializable{
 
     public ControlSupplies() {
     }
+    public Supply getSupply(String supplyName, Supply[] supplies){
+         for (Supply supply1 : supplies) {
+            if(supply1.getSupplyType().equals(supplyName))
+                return supply1;
+         }
+         return null;
+    }
 }
+        
+    

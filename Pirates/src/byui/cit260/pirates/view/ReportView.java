@@ -21,18 +21,19 @@ import pirates.Pirates;
 public class ReportView {
     protected final BufferedReader keyboard = Pirates.getInFile();
     protected final PrintWriter console = Pirates.getOutFile();
-    public void reportDisplay() {
+    public void reportDisplay()throws ReportViewException, IOException {
        String fileName = null;
        this.console.println("Enter the file name: ");
-        try {
+       try {
             fileName = this.keyboard.readLine();
-            throw new ReportViewException("File not found");
-        } catch (Exception ex) {
-            ErrorView.display("ReportView", ex.getMessage());
-        }
+           // throw new ReportViewException("File not found");
+       }catch(IOException ex)
+       {
+            System.out.println("Error cannot find file " + ex.getMessage());
+       }
        try(FileWriter writer = new FileWriter(fileName)){
-           writer.write("\tSupply List\n");
-           writer.write("SupplyType\t Supply Amount");
+           writer.write("\tSupply List\r\n");
+           writer.write("SupplyType\t Supply Amount\r\n");
            
              Supply supply[] = GameControl.sortSupplies();
         // displays the type and amount of the supplies
@@ -40,14 +41,14 @@ public class ReportView {
         for (Supply supply1 : supply) {
             writer.write(supply1.getSupplyType());
             writer.write("\t\t\t");
-            writer.write(supply1.getNumInStock());
-            writer.write("\n");
+            writer.write(Integer.toString(supply1.getNumInStock()));
+            writer.write("\r\n");
         }
        
         writer.close();
         
         this.console.println("Report sucessfully entered into the file");
-        throw new ReportViewException("Problem writing to file");
+        //throw new ReportViewException("Problem writing to file");
        }catch(Exception ex){
     ErrorView.display("ReportView", ex.getMessage());
 }

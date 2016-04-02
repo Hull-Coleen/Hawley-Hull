@@ -68,21 +68,21 @@ public abstract class View implements ViewInterface {
      }
      
         public int getInt(String prompt){
-        int number = 0;
+        int number = -1;
      
         try {
-        while (number == 0 ){
+        while (number < 0 ){
             this.console.println(prompt + " Enter C to cancel");
             String value = this.keyboard.readLine(); 
             
             value = value.trim().toUpperCase();
             if (value == "C")
-                return 0;
+                return -1;
             try {
             number = Integer.parseInt(value);
             } catch (NumberFormatException nf){
                 this.console.println(nf.getMessage() + " Invalid entry: Try again.");
-                number = 0;
+                number = -1;
             }
             
         }
