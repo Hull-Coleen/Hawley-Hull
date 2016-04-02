@@ -87,6 +87,9 @@ public class MainMenuView extends View implements Serializable{
         try {
             // start a saved game
             GameControl.getSavedGame(filePath);
+            // *** Add these lines to take you to the game menu.
+            GameMenuView gameMenu = new GameMenuView();
+            gameMenu.display();
         }catch (Exception ex){
             ErrorView.display("MainMenuView", ex.getMessage());
         }
