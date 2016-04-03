@@ -56,35 +56,53 @@ public class CurrentSupplyView extends View implements Serializable{
   
     public void showFood() {
         ControlShip ship = new ControlShip();
-        ship.setNumFoodCrate(30);
+        Game game = Pirates.getCurrentgame();
+        //ship.setNumFoodCrate(30);
         //ship.setNumCrew(6);
-        try
-        {
-          this.console.println( ship.daysOfFood(ship.getNumFoodCrate(), ship.getNumCrew()));
-        }
-        catch(ControlShipException cs)
-        {
-            this.console.println(cs.getMessage());
-        }
+        int currentNumInStock = game.getSupplies()[Supply.food.ordinal()].getNumInStock();
+        //try
+        //{
+        //  this.console.println( ship.daysOfFood(currentNumInStock, ship.getNumCrew()));
+        //}
+        //catch(ControlShipException cs)
+        //{
+         //   this.console.println(cs.getMessage());
+        //}
+        this.console.println(currentNumInStock);
   
     }
     
     public void showAmmo() {
         Game game = Pirates.getCurrentgame();
         ControlShip ship = new ControlShip();
-        try
+        int currentNumInStock = game.getSupplies()[Supply.ammo.ordinal()].getNumInStock();
+        /*try
         {
-             ship.checkAmmo(game.getSupplies()[Supply.ammo.ordinal()].getNumInStock(), ship.getNumCannon());
+             ship.checkAmmo(currentNumInStock, ship.getNumCannon());
         }
         catch(ControlShipException cs)
         {
             this.console.println(cs.getMessage());
-        }
+        } */
+        this.console.println(currentNumInStock);
+        
         
     }
 
     public void showRum() {
-      
+         Game game = Pirates.getCurrentgame();
+        ControlShip ship = new ControlShip();
+        int currentNumInStock = game.getSupplies()[Supply.rum.ordinal()].getNumInStock();
+        /*try
+        {
+             ship.checkRum(currentNumInStock);
+        }
+        catch(ControlShipException cs)
+        {
+            this.console.println(cs.getMessage());
+        } */
+        
+      this.console.println(currentNumInStock);
     }
     
 }

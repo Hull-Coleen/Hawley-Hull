@@ -5,7 +5,7 @@
  */
 package byui.cit260.pirates.view;
 
-import byui.cit260.pirates.control.ControlShip;
+
 import byui.cit260.pirates.control.ControlSupplies;
 import byui.cit260.pirates.exception.ControlSuppliesException;
 import byui.cit260.pirates.model.Game;

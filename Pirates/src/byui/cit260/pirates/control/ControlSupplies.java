@@ -22,7 +22,7 @@ public class ControlSupplies implements Serializable{
             throw new ControlSuppliesException("Invalid entry try again");
         }
         else
-           storageUsed = food / storageSize;
+           storageUsed = food / storageSize * 100;
       return storageUsed;  
     }
     public double getRum(int rum) throws ControlSuppliesException{
@@ -30,7 +30,7 @@ public class ControlSupplies implements Serializable{
         if (rum < 0 || rum > 15){
            throw new ControlSuppliesException("Invalid entry try again");
         }
-        double storageUsed = rum / storageSize;
+        double storageUsed = rum / storageSize * 100;
       return storageUsed;   
     }
     public double getAmmo(int ammo) throws ControlSuppliesException{
@@ -38,7 +38,7 @@ public class ControlSupplies implements Serializable{
         if (ammo < 0 || ammo > 12){
             throw new ControlSuppliesException("Invalid entry try again");
         }
-       double storageUsed = ammo / storageSize;
+       double storageUsed = ammo / storageSize * 100;
       return storageUsed;
         
     }

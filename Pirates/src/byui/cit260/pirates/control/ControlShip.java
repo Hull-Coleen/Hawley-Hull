@@ -53,7 +53,7 @@ public class ControlShip implements Serializable{
         if (numFoodCrate >= 50 || numCrew >= 9)
               throw new ControlShipException(" invalid entry");
         double numOfMeals = numFoodCrate * 9;
-        double daysOfFood = (numOfMeals / numCrew) / 3;
+        double daysOfFood = numFoodCrate;
         return daysOfFood;
     }
 
@@ -66,9 +66,15 @@ public class ControlShip implements Serializable{
         if (numAmmoCrate >= 50 || numCannon >= 9)
              throw new ControlShipException(" Invalid entry try again"); 
         int numOfAmmo = numAmmoCrate * 9;
-        double numBattle = (numOfAmmo / numCannon);
+        double numBattle = numAmmoCrate;
         return numBattle;
     }
-
+    public double checkRum(int numRumCrate) throws ControlShipException
+    {
+        int rum = numRumCrate;
+        if (numRumCrate > 15)
+            throw new ControlShipException("Invalid entry: Try again");
+        return rum;
+    }
     
 }
