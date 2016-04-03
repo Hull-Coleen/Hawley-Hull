@@ -20,46 +20,25 @@ public enum Avatar implements Serializable{
     
     private final String description;
     private final Point coordinates;
-    private Location location;
-    private String name;
+    private int spot;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-
-    public Location getLocation() {
-       // location = new Location[1][1];
-        return location;
+    public int getSpot() {
+        return spot;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setSpot(int spot) {
+        this.spot = spot;
     }
-    
-    
-    
-    Avatar(String description){
-       this.description = description;
-       coordinates = new Point();
-      // location = new Location[1][1];
-    }
-    public String getDescription(){
+      public String getDescription(){
        return description;
     }
-    
     public Point getCoordinates(){
        return coordinates;
     }
-
-   // @Override
-   // public String toString() {
-     //   return "Avatar{" + "description= " + description + ", coordinates= " + coordinates + ", location= " + location + '}';
-    //}
+   Avatar(String description){
+       this.description = description;
+       coordinates = new Point();
     
+    }
     
 }

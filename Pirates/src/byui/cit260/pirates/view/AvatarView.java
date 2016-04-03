@@ -14,6 +14,7 @@ import java.util.Scanner;
  * @author Coleen
  */
 public class AvatarView extends View {
+    int spot;
     Avatar[] names = Avatar.values();
     public AvatarView() {
         super("Navy or Pirate type N for Navy or P for Pirate: ");
@@ -41,12 +42,14 @@ public class AvatarView extends View {
                       
               charChoice = choice.charAt(0);
               if (charChoice == 'B'){
-                  Avatar avatarb = Avatar.Captain_Roberts;
-                  this.console.println("you chose " + avatarb);
+                  Avatar avatar = Avatar.Captain_Roberts;
+                  this.console.println("you chose " + avatar);
+                  setSpot(3);
               }
               else if (charChoice == 'G'){
-                  Avatar avatarg = Avatar.Captain_Jane;
-                  this.console.println("you chose " + avatarg);
+                  Avatar avatar = Avatar.Captain_Jane;
+                  this.console.println("you chose " + avatar);
+                  setSpot(2);
               }
                else {
                   this.console.println("Invalid Entry");
@@ -62,12 +65,14 @@ public class AvatarView extends View {
                       
               charChoice = choice.charAt(0);
               if (charChoice == 'B'){
-                  Avatar avatarB = Avatar.Pirate_Pete;
-                  this.console.println("you chose " + avatarB);
+                  Avatar avatar = Avatar.Pirate_Pete;
+                  this.console.println("you chose " + avatar);
+                  setSpot(1);
               }
               else if (charChoice == 'G'){
-                  Avatar avatarG = Avatar.Pirate_Scarlet;
-                  this.console.println("you chose " + avatarG);
+                  Avatar avatar = Avatar.Pirate_Scarlet;
+                  this.console.println("you chose " + avatar);
+                  setSpot(0);
               }
               else {
                   this.console.println("Invalid Entry");
@@ -83,6 +88,14 @@ public class AvatarView extends View {
            this.console.println("\nError reading input:" + e.getMessage());
        }
        return false;
+    }
+    public static int getSpot()
+    { 
+        int spot= 0;
+        return spot;
+    }
+    public void setSpot(int spot){
+        this.spot = spot;
     }
 
 }

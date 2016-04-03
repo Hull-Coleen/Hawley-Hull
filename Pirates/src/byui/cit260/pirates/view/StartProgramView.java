@@ -7,7 +7,6 @@ package byui.cit260.pirates.view;
 
 
 import byui.cit260.pirates.control.GameControl;
-
 import byui.cit260.pirates.model.Player;
 import java.io.Serializable;
 

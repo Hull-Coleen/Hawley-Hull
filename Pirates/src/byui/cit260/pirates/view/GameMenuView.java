@@ -9,6 +9,7 @@ package byui.cit260.pirates.view;
 
 
 import byui.cit260.pirates.control.GameControl;
+import byui.cit260.pirates.model.Avatar;
 import byui.cit260.pirates.model.Map;
 import java.io.IOException;
 import java.io.Serializable;
@@ -123,8 +124,22 @@ public class GameMenuView extends View implements Serializable{
     }
 
     private void displayName() {
-       GameControl game = new GameControl();
-       game.names();
+      // GameControl game = new GameControl();
+      // game.names(); 
+       int spot = AvatarView.getSpot();
+       if (spot == Avatar.Captain_Jane.ordinal()){
+           this.console.println(Avatar.Captain_Jane); 
+       }
+       else if (spot ==Avatar.Captain_Roberts.ordinal()){
+           this.console.println(Avatar.Captain_Roberts);
+       }
+       else if (spot ==Avatar.Pirate_Scarlet.ordinal()){
+           this.console.println(Avatar.Pirate_Scarlet);     
+       }
+       else  
+           this.console.println(Avatar.Pirate_Pete);
+           
+       //this.console.println(Avatar(spot));
     }
 
     private void displayFoodAmount() {
