@@ -21,6 +21,16 @@ public enum Avatar implements Serializable{
     private final String description;
     private final Point coordinates;
     private Location location;
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
 
     public Location getLocation() {
        // location = new Location[1][1];

@@ -10,11 +10,8 @@ package byui.cit260.pirates.view;
 
 import byui.cit260.pirates.control.GameControl;
 import byui.cit260.pirates.model.Map;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import pirates.Pirates;
 
 
@@ -30,7 +27,6 @@ public class GameMenuView extends View implements Serializable{
             + "\n       Game Start  Up Menu     "
             + "\n-------------------------------"
             + "\nP - Pirate or Navy"
-            + "\nS - Pick Ship Size"
             + "\nG - Get supplies for ship"
             + "\nM - Move ship"
             + "\nC - Show Current Supplies"
@@ -50,9 +46,6 @@ public class GameMenuView extends View implements Serializable{
        switch(selection){
            case 'P': 
                this.chooseAvatar();
-               break;
-           case 'S':
-              this.getShipSize();
                break;
            case 'G':
               this.supplyShip();
@@ -99,9 +92,6 @@ public class GameMenuView extends View implements Serializable{
         avatar.display();
     }
 
-    private void getShipSize() {
-       System.out.println("getShipSize stubbed");
-    }
 
     private void supplyShip() {
         SupplyShipView supplyShip = new SupplyShipView();
@@ -112,10 +102,7 @@ public class GameMenuView extends View implements Serializable{
         Map map = Pirates.getCurrentgame().getMap();
         MapView mapView = new MapView();
         mapView.display(map);
-        mapView.move(map);
-        //MoveView move = new MoveView();
-        //move.display();
-        
+        mapView.move(map);   
     }
     private void currentSupplies() {
         CurrentSupplyView CurrentSupply = new CurrentSupplyView();
@@ -147,17 +134,11 @@ public class GameMenuView extends View implements Serializable{
 
     private void displayReport() throws IOException  {
         ReportView report = new ReportView();
+        try {
         report.reportDisplay();
-       /*String fileName = null;
-        this.console.println("What is the name of the file?: ");
-        fileName = this.keyboard.readLine();
-        try(FileOutputStream fops = new FileOutputStream(fileName)){
-            
-            
-        report.display();
         }catch(Exception ex){
-            ErrorView.display("ReportView", ex.getMessage());
-        } */
+            System.out.println(ex.getMessage());
+        }
     }
     
 

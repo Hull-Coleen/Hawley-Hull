@@ -1,0 +1,5 @@
+	Supply List
+SupplyType	 Supply Amount
+Ammo			0
+Food			0
+Rum			0
