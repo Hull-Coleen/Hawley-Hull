@@ -14,7 +14,7 @@ import byui.cit260.pirates.control.ControlBattles;
 public class BattleView extends View {
 
     public BattleView() {
-        super("\nYou've come across another ship on the open seas"
+        super("\nThe people where you landed are attacking."
             + "\nWhat aare you going to do? Are you going to fight?"
             + "\nOr are you going to try to out run the ship?"
             + "\nEnter F for fight or R for run away");

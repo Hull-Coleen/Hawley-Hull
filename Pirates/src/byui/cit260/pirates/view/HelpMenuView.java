@@ -55,20 +55,22 @@ public class HelpMenuView extends View implements Serializable{
     
     private void helpGoal(){
         this.console.println("\nThe Goal of this game is to reach the treasure"
-                                + "\nbefore the oposing team does while trying"
+                                + "\nbefore the running out of food and"
                                 + "\nto stay alive out on the open seas!");
     }
     private void helpMove() {
-        this.console.println("You move by selection the direction you want"
-                                + "\nto move the boat on the map");
+        this.console.println("You move by selecting to row and column for the location"
+                                + "\nyou want to move the boat to on the map");
     }
     private void helpPosition(){
         this.console.println("You can know where you are at by looking at"
                          + "\nwhere you are on the map."
-                         + "\nYou can look at the map by...");
+                         + "\nYou can look at the map by selecting D in the"
+                         + "the Game Menu");
     }
     private void helpSupplies(){
-        this.console.println("You can check on your supplies by...");
+        this.console.println("You can check on your supplies by selecting"
+                          + "\nG in the Game Menu");
     }
    
 }
