@@ -22,12 +22,12 @@ import pirates.Pirates;
  * @author Coleen
  */
 public class MapControl implements Serializable{
-    public static Map createMap(){
+    public static Map createMap(Scene[] scenes){
         // create the map
         Map map = new Map(5, 5);
         
         // create a list of the different scenes
-        Scene[] scenes = Scene.createScenes();
+        //Scene[] scenes = Scene.createScenes();
         
         // assign the different scenes to locations
         assignScenesToLocations(map, scenes);
@@ -63,7 +63,7 @@ public class MapControl implements Serializable{
         locations[0][0].setVisited(true);
         map.setCurrentLocation(locations[0][0]);
         locations[0][1].setScene(scenes[SceneType.island.ordinal()]);
-        locations[0][1].setVisited(true);
+        locations[0][1].setVisited(false);
         locations[0][1].setFriendly(true);
         locations[0][1].setTreasure(false);
         locations[0][2].setScene(scenes[SceneType.sea.ordinal()]);

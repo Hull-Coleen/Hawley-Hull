@@ -54,7 +54,7 @@ public class GameControl implements Serializable{
         Scene[] scenes = Scene.createScenes();
         game.setScenes(scenes);
         // create map
-        Map map = MapControl.createMap();
+        Map map = MapControl.createMap(scenes);
         game.setMap(map);
         // don't know yet
         MapControl.moveAvatarsToStartingLocation(map);
