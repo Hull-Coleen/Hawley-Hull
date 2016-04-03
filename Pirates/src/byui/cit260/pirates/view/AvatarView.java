@@ -18,7 +18,7 @@ public class AvatarView extends View {
     public AvatarView() {
         super("Navy or Pirate type N for Navy or P for Pirate: ");
       //  Avatar[] names = Avatar.values();
-        for (Avatar name : names)
+        for (Avatar name : Avatar.values())
             this.console.println(name);
     }
     
@@ -36,32 +36,42 @@ public class AvatarView extends View {
        switch(selection){    
           case 'N':
               this.console.println("Enter B for boy or G for Girl");
-              choice = this.keyboard.readLine();
+              choice = this.keyboard.readLine().toUpperCase();
               choice = choice.trim();
                       
               charChoice = choice.charAt(0);
               if (charChoice == 'B'){
-                  //avatar = 3;
-                  this.console.println("you chose " + names[3]);
+                  Avatar avatarb = Avatar.Captain_Roberts;
+                  this.console.println("you chose " + avatarb);
               }
-              else{
-                  this.console.println("you chose " + names[2]);
+              else if (charChoice == 'G'){
+                  Avatar avatarg = Avatar.Captain_Jane;
+                  this.console.println("you chose " + avatarg);
+              }
+               else {
+                  this.console.println("Invalid Entry");
+                  return false;
               }
               return true;
        
               
           case 'P':
               this.console.println("Enter B for boy or G for Girl");
-              choice = this.keyboard.readLine();
+              choice = this.keyboard.readLine().toUpperCase();
               choice = choice.trim();
                       
               charChoice = choice.charAt(0);
               if (charChoice == 'B'){
-                  //avatar = 3;
-                  this.console.println("you chose " + names[1]);
+                  Avatar avatarB = Avatar.Pirate_Pete;
+                  this.console.println("you chose " + avatarB);
               }
-              else{
-                  this.console.println("you chose " + names[0]);
+              else if (charChoice == 'G'){
+                  Avatar avatarG = Avatar.Pirate_Scarlet;
+                  this.console.println("you chose " + avatarG);
+              }
+              else {
+                  this.console.println("Invalid Entry");
+                  return false;
               }
               return true;
          

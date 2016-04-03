@@ -46,10 +46,10 @@ public enum Avatar implements Serializable{
        return coordinates;
     }
 
-    @Override
-    public String toString() {
-        return "Avatar{" + "description=" + description + ", coordinates=" + coordinates + ", location=" + location + '}';
-    }
+   // @Override
+   // public String toString() {
+     //   return "Avatar{" + "description= " + description + ", coordinates= " + coordinates + ", location= " + location + '}';
+    //}
     
     
 }
