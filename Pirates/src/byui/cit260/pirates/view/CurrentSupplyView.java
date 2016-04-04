@@ -60,15 +60,16 @@ public class CurrentSupplyView extends View implements Serializable{
         //ship.setNumFoodCrate(30);
         //ship.setNumCrew(6);
         int currentNumInStock = game.getSupplies()[Supply.food.ordinal()].getNumInStock();
-        //try
-        //{
-        //  this.console.println( ship.daysOfFood(currentNumInStock, ship.getNumCrew()));
-        //}
-        //catch(ControlShipException cs)
-        //{
-         //   this.console.println(cs.getMessage());
-        //}
-        this.console.println(currentNumInStock);
+        try
+        {
+          this.console.println("You have " + ControlShip.daysOfFood(currentNumInStock, ship.getNumCrew())
+                               + " days of food.");
+        }
+        catch(ControlShipException cs)
+        {
+            this.console.println(cs.getMessage());
+      }
+        //this.console.println(currentNumInStock);
   
     }
     
@@ -76,33 +77,35 @@ public class CurrentSupplyView extends View implements Serializable{
         Game game = Pirates.getCurrentgame();
         ControlShip ship = new ControlShip();
         int currentNumInStock = game.getSupplies()[Supply.ammo.ordinal()].getNumInStock();
-        /*try
+        try
         {
-             ship.checkAmmo(currentNumInStock, ship.getNumCannon());
+            this.console.println("You have enough ammo to fight " +
+                    ControlShip.checkAmmo(currentNumInStock, ship.getNumCannon()) + " battles.");
         }
         catch(ControlShipException cs)
         {
             this.console.println(cs.getMessage());
-        } */
-        this.console.println(currentNumInStock);
+        } 
+        //this.console.println(currentNumInStock);
         
         
     }
 
     public void showRum() {
          Game game = Pirates.getCurrentgame();
-        ControlShip ship = new ControlShip();
+       // ControlShip ship = new ControlShip();
         int currentNumInStock = game.getSupplies()[Supply.rum.ordinal()].getNumInStock();
-        /*try
+        try
         {
-             ship.checkRum(currentNumInStock);
+             this.console.println("You have " + ControlShip.checkRum(currentNumInStock)
+                                 + " days of rum left.");
         }
         catch(ControlShipException cs)
         {
             this.console.println(cs.getMessage());
-        } */
+        } 
         
-      this.console.println(currentNumInStock);
+      //this.console.println(currentNumInStock);
     }
     
 }
