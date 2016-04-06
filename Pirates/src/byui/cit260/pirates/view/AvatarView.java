@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @author Coleen
  */
 public class AvatarView extends View {
-    int spot;
+    private static int  spot;
     Avatar[] names = Avatar.values();
     public AvatarView() {
         super("Navy or Pirate type N for Navy or P for Pirate: ");
@@ -91,7 +91,6 @@ public class AvatarView extends View {
     }
     public static int getSpot()
     { 
-        int spot= 0;
         return spot;
     }
     public void setSpot(int spot){

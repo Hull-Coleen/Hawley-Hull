@@ -124,8 +124,7 @@ public class GameMenuView extends View implements Serializable{
     }
 
     private void displayName() {
-      // GameControl game = new GameControl();
-      // game.names(); 
+      
        int spot = AvatarView.getSpot();
        if (spot == Avatar.Captain_Jane.ordinal()){
            this.console.println(Avatar.Captain_Jane); 
@@ -138,8 +137,7 @@ public class GameMenuView extends View implements Serializable{
        }
        else  
            this.console.println(Avatar.Pirate_Pete);
-           
-       //this.console.println(Avatar(spot));
+          
     }
 
     private void displayFoodAmount() {
