@@ -77,7 +77,7 @@ public class MapControl implements Serializable{
         locations[1][0].setScene(scenes[SceneType.island.ordinal()]);
         locations[1][0].setVisited(false);
         locations[1][0].setFriendly(true);
-        locations[1][0].setTreasure(false);
+        locations[1][0].setTreasure(true);
         locations[1][1].setScene(scenes[SceneType.sea.ordinal()]);
         locations[1][1].setVisited(false);
         locations[1][2].setScene(scenes[SceneType.sea.ordinal()]);
@@ -110,8 +110,8 @@ public class MapControl implements Serializable{
         locations[3][1].setVisited(false);
         locations[3][2].setScene(scenes[SceneType.port.ordinal()]);
         locations[3][2].setVisited(false);
-        locations[3][1].setFriendly(false);
-        locations[3][1].setTreasure(false);
+        locations[3][2].setFriendly(false);
+        locations[3][2].setTreasure(false);
         locations[3][3].setScene(scenes[SceneType.sea.ordinal()]);
         locations[3][3].setVisited(false);
         locations[3][4].setScene(scenes[SceneType.port.ordinal()]);
@@ -120,8 +120,8 @@ public class MapControl implements Serializable{
         locations[3][4].setTreasure(false);
         locations[4][0].setScene(scenes[SceneType.island.ordinal()]);
         locations[4][0].setVisited(false);
-        locations[0][1].setFriendly(true);
-        locations[0][1].setTreasure(false);
+        locations[4][1].setFriendly(true);
+        locations[4][1].setTreasure(false);
         locations[4][1].setScene(scenes[SceneType.sea.ordinal()]);
         locations[4][1].setVisited(false);
         locations[4][2].setScene(scenes[SceneType.sea.ordinal()]);
@@ -130,8 +130,8 @@ public class MapControl implements Serializable{
         locations[4][3].setVisited(false);
         locations[4][4].setScene(scenes[SceneType.end_point.ordinal()]);
         locations[4][4].setVisited(false);
-        locations[0][1].setFriendly(false);
-        locations[0][1].setTreasure(true);
+        locations[4][4].setFriendly(false);
+        locations[4][4].setTreasure(false);
     }
    
 }

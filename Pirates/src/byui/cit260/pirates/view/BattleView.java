@@ -21,17 +21,16 @@ public class BattleView extends View {
     }
     @Override
     public boolean doAction(String value){
-       ControlBattles battle = new ControlBattles();
        value = value.toUpperCase();
        char selection;
        selection = value.charAt(0); 
        switch(selection){    
           case 'F':
-             battle.battle();
+             ControlBattles.battle();
              
               return true;
           case 'R':
-             battle.run();
+             ControlBattles.run();
              
               return true;
           default:

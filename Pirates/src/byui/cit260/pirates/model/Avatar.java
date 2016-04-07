@@ -40,5 +40,8 @@ public enum Avatar implements Serializable{
        coordinates = new Point();
     
     }
+
+    
+   
     
 }

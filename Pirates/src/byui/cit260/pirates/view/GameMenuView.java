@@ -35,6 +35,7 @@ public class GameMenuView extends View implements Serializable{
             + "\nN - Show Avatar name"
             + "\nF - Show Supply Amounts"
             + "\nR - Show Report"
+            + "\nH - Help Menu"
             + "\nE - Exit"
             + "\n--------------------------------");
     }
@@ -78,6 +79,8 @@ public class GameMenuView extends View implements Serializable{
              }
             }
                break;
+           case 'H':
+               this.help();
            case 'E': 
                return true;
            default:
@@ -126,6 +129,7 @@ public class GameMenuView extends View implements Serializable{
     private void displayName() {
       
        int spot = AvatarView.getSpot();
+       
        if (spot == Avatar.Captain_Jane.ordinal()){
            this.console.println(Avatar.Captain_Jane); 
        }
@@ -136,7 +140,8 @@ public class GameMenuView extends View implements Serializable{
            this.console.println(Avatar.Pirate_Scarlet);     
        }
        else  
-           this.console.println(Avatar.Pirate_Pete);
+           this.console.println(Avatar.Pirate_Pete); 
+       
           
     }
 
@@ -152,6 +157,11 @@ public class GameMenuView extends View implements Serializable{
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
+    }
+
+    private void help() {
+       HelpMenuView help = new HelpMenuView();
+       help.display();
     }
     
 

@@ -26,7 +26,7 @@ public class ControlBattles implements Serializable{
         
     }
 
-    public void battle() {
+    public static void battle() {
         // TODO figure out ammo
         Game game = Pirates.getCurrentgame();
         Supply [] supplies = game.getSupplies();
@@ -48,7 +48,7 @@ public class ControlBattles implements Serializable{
        
     }
 
-    public void run() {
+    public static void run() {
         //int run = 0;
         // generate random number between zero and ten
         Random rand = new Random();
